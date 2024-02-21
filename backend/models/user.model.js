@@ -16,6 +16,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profilePicture: {
+      type: String,
+      default:
+        "https://raw.githubusercontent.com/Dimterion/Posts-app/master/src/assets/svg/personIcon.svg",
+    },
   },
   { timestamps: true }
 );
