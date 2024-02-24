@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema(
       default:
         "https://raw.githubusercontent.com/Dimterion/Posts-app/master/src/assets/svg/personIcon.svg",
     },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );
