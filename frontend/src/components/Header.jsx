@@ -59,9 +59,9 @@ export default function Header() {
     <Navbar className="border-b-2">
       <Link
         to="/"
-        className="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
+        className="self-center whitespace-nowrap sm:text-xl font-semibold dark:text-white"
       >
-        <span className="px-2 py-1 bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 rounded-lg text-white">
+        <span className="p-1 bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 rounded-lg text-white">
           Dimterion&apos;s
         </span>
         <span>site</span>
@@ -76,12 +76,16 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
       </form>
-      <Button className="size-10 sm:hidden" color="gray" onClick={handleSubmit}>
+      <Button
+        className="size-7 md:size-10 sm:hidden"
+        color="gray"
+        onClick={handleSubmit}
+      >
         <AiOutlineSearch />
       </Button>
-      <div className="flex gap-2 md:order-2">
+      <div className="flex gap-1 md:order-2 items-center">
         <Button
-          className="size-10"
+          className="size-7 md:size-10"
           color="gray"
           onClick={() => dispatch(toggleTheme())}
         >
@@ -109,7 +113,7 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to="/sign-in">
-            <Button className="size-10" color="gray">
+            <Button className="size-7 md:size-10" color="gray">
               <SlLogin />
             </Button>
           </Link>
