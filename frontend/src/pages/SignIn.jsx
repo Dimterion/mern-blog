@@ -58,10 +58,10 @@ export default function SignIn() {
         {/* left */}
         <div className="flex-1">
           <Link to="/" className="font-bold dark:text-white text-3xl">
-            <span className="px-2 py-1 bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 rounded-lg text-white">
+            <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-lg text-white">
               Dimterion&apos;s
             </span>
-            Blog
+            <span>site</span>
           </Link>
           <p className="text-sm mt-5">
             Sign in with your email and password or your Google account.
