@@ -53,10 +53,9 @@ export default function SignIn() {
   };
 
   return (
-    <div className="min-h-screen mt-20">
-      <div className="flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5">
-        {/* left */}
-        <div className="flex-1">
+    <main className="min-h-screen mt-20">
+      <section className="flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5">
+        <article className="flex-1">
           <Link to="/" className="font-bold dark:text-white text-3xl">
             <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-lg text-white">
               Dimterion&apos;s
@@ -66,9 +65,8 @@ export default function SignIn() {
           <p className="text-sm mt-5">
             Sign in with your email and password or your Google account.
           </p>
-        </div>
-        {/* right */}
-        <div className="flex-1">
+        </article>
+        <article className="flex-1">
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <div>
               <Label value="Email" />
@@ -115,8 +113,8 @@ export default function SignIn() {
               {errorMessage}
             </Alert>
           )}
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </main>
   );
 }
