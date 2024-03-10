@@ -1,12 +1,12 @@
+import path from "path";
+import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
 import userRoutes from "./routes/user.route.js";
 import authRoutes from "./routes/auth.route.js";
 import postRoutes from "./routes/post.route.js";
 import commentRoutes from "./routes/comment.route.js";
-import cookieParser from "cookie-parser";
-import path from "path";
 
 dotenv.config();
 
