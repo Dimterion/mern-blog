@@ -20,7 +20,6 @@ mongoose
   });
 
 const __dirname = path.resolve();
-
 const app = express();
 
 app.use(express.json());
@@ -34,7 +33,6 @@ app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes);
 app.use("/api/comment", commentRoutes);
-
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
 app.get("*", (req, res) => {

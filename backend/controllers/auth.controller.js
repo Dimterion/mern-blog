@@ -18,11 +18,11 @@ export const signup = async (req, res, next) => {
   }
 
   const hashedPassword = bcryptjs.hashSync(password, 10);
-
   const newUser = new User({ username, email, password: hashedPassword });
 
   try {
     await newUser.save();
+
     res.json("Signup successful.");
   } catch (error) {
     next(error);
@@ -56,7 +56,6 @@ export const signin = async (req, res, next) => {
       },
       process.env.JWT_KEY
     );
-
     const { password: pass, ...rest } = validUser._doc;
 
     res
