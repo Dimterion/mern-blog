@@ -7,13 +7,10 @@ export default function SignUp() {
   const [formData, setFormData] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -62,35 +59,33 @@ export default function SignUp() {
           </p>
         </article>
         <article className="flex-1">
-          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-            <div>
-              <Label value="Username" />
-              <TextInput
-                type="text"
-                placeholder="Name"
-                id="username"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label value="Email" />
-              <TextInput
-                type="email"
-                placeholder="emailname@email.com"
-                id="email"
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label value="Password" />
-              <TextInput
-                type="password"
-                placeholder="**********"
-                id="password"
-                onChange={handleChange}
-              />
-            </div>
+          <form className="flex flex-col" onSubmit={handleSubmit}>
+            <Label value="Username" />
+            <TextInput
+              type="text"
+              placeholder="Name"
+              id="username"
+              className="mb-4"
+              onChange={handleChange}
+            />
+            <Label value="Email" />
+            <TextInput
+              type="email"
+              placeholder="emailname@email.com"
+              id="email"
+              className="mb-4"
+              onChange={handleChange}
+            />
+            <Label value="Password" />
+            <TextInput
+              type="password"
+              placeholder="**********"
+              id="password"
+              className="mb-4"
+              onChange={handleChange}
+            />
             <Button
+              className="mb-4"
               gradientDuoTone="purpleToBlue"
               type="submit"
               disabled={loading}
