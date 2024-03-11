@@ -10,20 +10,18 @@ import {
 
 export default function FooterComponent() {
   return (
-    <Footer container className="border border-t-8 border-sky-500">
-      <div className="w-full max-w-7xl mx-auto">
-        <div className="grid w-full justify-between sm:flex md:grid-cols-1">
-          <div className="mt-5">
-            <Link
-              to="/"
-              className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white"
-            >
-              <span className="p-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-lg text-white">
-                Dimterion&apos;s
-              </span>
-              <span>site</span>
-            </Link>
-          </div>
+    <Footer container className="border-t-2 border-sky-500 rounded-none">
+      <section className="w-full max-w-7xl mx-auto">
+        <article className="grid w-full justify-between sm:flex md:grid-cols-1">
+          <Link
+            to="/"
+            className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white"
+          >
+            <span className="p-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-lg text-white">
+              Dimterion&apos;s
+            </span>
+            <span>site</span>
+          </Link>
           <div className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <Footer.Title title="About" />
@@ -71,15 +69,15 @@ export default function FooterComponent() {
               </Footer.LinkGroup>
             </div>
           </div>
-        </div>
+        </article>
         <Footer.Divider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between">
+        <article className="w-full sm:flex sm:items-center sm:justify-between">
           <Footer.Copyright
             href="https://github.com/Dimterion/mern-blog"
             by="Dimterion's blog"
             year={new Date().getFullYear()}
           />
-          <div className="flex gap-6 mt-4 sm:justify-center">
+          <aside className="flex gap-6 mt-4 sm:mt-0 sm:justify-center">
             <Footer.Icon
               href="https://www.linkedin.com/in/dmitrii-p/"
               target="_blank"
@@ -110,9 +108,9 @@ export default function FooterComponent() {
               rel="noopener noreferrer"
               icon={BsPersonVcardFill}
             />
-          </div>
-        </div>
-      </div>
+          </aside>
+        </article>
+      </section>
     </Footer>
   );
 }
