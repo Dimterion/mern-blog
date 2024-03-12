@@ -190,9 +190,9 @@ export default function DashboardComp() {
           </div>
           <Table hoverable>
             <Table.Head>
-              <Table.HeadCell>Post image</Table.HeadCell>
-              <Table.HeadCell>Post title</Table.HeadCell>
-              <Table.HeadCell>Category</Table.HeadCell>
+              <Table.HeadCell className="p-4">Post image</Table.HeadCell>
+              <Table.HeadCell className="p-4">Post title</Table.HeadCell>
+              <Table.HeadCell className="p-4">Category</Table.HeadCell>
             </Table.Head>
             {posts &&
               posts.map((post) => (

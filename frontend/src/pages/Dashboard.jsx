@@ -21,21 +21,15 @@ export default function Dashboard() {
   }, [location.search]);
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
-      <div className="md:w-56">
-        {/* Sidebar */}
+    <main className="min-h-screen flex flex-col md:flex-row">
+      <section className="md:w-56">
         <DashSidebar />
-      </div>
-      {/* Profile */}
+      </section>
       {tab === "profile" && <DashProfile />}
-      {/* Posts */}
       {tab === "posts" && <DashPosts />}
-      {/* Users */}
       {tab === "users" && <DashUsers />}
-      {/* Comments */}
       {tab === "comments" && <DashComments />}
-      {/* Dashboard comp */}
       {tab === "dash" && <DashboardComp />}
-    </div>
+    </main>
   );
 }
