@@ -1,6 +1,6 @@
-import { Button, Select, TextInput } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Button, Select, TextInput } from "flowbite-react";
 import PostCard from "../components/PostCard";
 
 export default function Search() {
@@ -12,9 +12,7 @@ export default function Search() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(false);
-
   const location = useLocation();
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -68,11 +66,13 @@ export default function Search() {
 
     if (e.target.id === "sort") {
       const order = e.target.value || "desc";
+
       setSidebarData({ ...sidebarData, sort: order });
     }
 
     if (e.target.id === "category") {
       const category = e.target.value || "uncategorized";
+
       setSidebarData({ ...sidebarData, category });
     }
   };

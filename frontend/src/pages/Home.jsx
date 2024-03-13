@@ -1,6 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CallToAction from "../components/CallToAction";
-import { useEffect, useState } from "react";
 import PostCard from "../components/PostCard";
 
 export default function Home() {
@@ -16,6 +16,7 @@ export default function Home() {
 
     fetchPosts();
   }, []);
+
   return (
     <div>
       <div className="flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto">

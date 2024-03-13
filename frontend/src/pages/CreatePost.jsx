@@ -1,7 +1,10 @@
-import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 import {
   getDownloadURL,
   getStorage,
@@ -9,9 +12,6 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-import { useNavigate } from "react-router-dom";
 
 export default function CreatePost() {
   const [file, setFile] = useState(null);
@@ -19,9 +19,7 @@ export default function CreatePost() {
   const [imageUploadError, setImageUploadError] = useState(null);
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
-
   const navigate = useNavigate();
-
   const handleUploadImage = async () => {
     try {
       if (!file) {
@@ -48,6 +46,8 @@ export default function CreatePost() {
         (error) => {
           setImageUploadError("Image upload failed.");
           setImageUploadProgress(null);
+
+          console.log(error);
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -60,6 +60,7 @@ export default function CreatePost() {
     } catch (error) {
       setImageUploadError("Image upload failed.");
       setImageUploadProgress(null);
+
       console.log(error);
     }
   };
