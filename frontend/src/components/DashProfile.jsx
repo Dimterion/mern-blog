@@ -1,7 +1,10 @@
-import { Alert, Button, Modal, TextInput } from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Alert, Button, Modal, TextInput } from "flowbite-react";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 import {
   getDownloadURL,
   getStorage,
@@ -9,8 +12,6 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 import {
   updateStart,
   updateSuccess,
@@ -20,7 +21,6 @@ import {
   deleteUserFailure,
   signoutSuccess,
 } from "../redux/user/userSlice";
-import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 export default function DashProfile() {
   const { currentUser, error, loading } = useSelector((state) => state.user);
@@ -75,6 +75,8 @@ export default function DashProfile() {
         setImageFile(null);
         setImageFileUrl(null);
         setImageFileUploading(false);
+
+        console.log(error);
       },
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
@@ -92,6 +94,7 @@ export default function DashProfile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setUpdateUserError(null);
     setUpdateUserSuccess(null);
 

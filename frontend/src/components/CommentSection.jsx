@@ -1,10 +1,10 @@
-import { Alert, Button, Modal, Textarea } from "flowbite-react";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
-import Comment from "../components/Comment";
+import { Alert, Button, Modal, Textarea } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import Comment from "../components/Comment";
 
 export default function CommentSection({ postId }) {
   const { currentUser } = useSelector((state) => state.user);
@@ -13,9 +13,7 @@ export default function CommentSection({ postId }) {
   const [comments, setComments] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [commentToDelete, setCommentToDelete] = useState(null);
-
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

@@ -1,12 +1,12 @@
-import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { SlLogin } from "react-icons/sl";
-import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme } from "../redux/theme/themeSlice";
 import { signoutSuccess } from "../redux/user/userSlice";
-import { useEffect, useState } from "react";
 
 export default function Header() {
   const path = useLocation().pathname;

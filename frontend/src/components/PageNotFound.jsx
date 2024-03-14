@@ -1,5 +1,5 @@
-import { Button } from "flowbite-react";
 import { Link } from "react-router-dom";
+import { Button } from "flowbite-react";
 
 export default function PageNotFound() {
   return (
