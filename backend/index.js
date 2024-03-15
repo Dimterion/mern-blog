@@ -35,13 +35,14 @@ app.use("/api/post", postRoutes);
 app.use("/api/comment", commentRoutes);
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
-app.get("*", (req, res) => {
+app.get("*", (_req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal server error.";
+
   res.status(statusCode).json({
     success: false,
     statusCode,
