@@ -56,7 +56,7 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2">
+    <Navbar className="border-b-2 px-1">
       <Link
         to="/"
         className="self-center whitespace-nowrap sm:text-xl font-semibold dark:text-white"
@@ -83,14 +83,14 @@ export default function Header() {
       </form>
       <div className="flex gap-1 md:order-2 items-center">
         <Button
-          className="size-7 md:size-10 sm:hidden"
+          className="size-8 sm:hidden"
           color="gray"
           onClick={handleSubmit}
         >
           <AiOutlineSearch />
         </Button>
         <Button
-          className="size-7 md:size-10"
+          className="size-8"
           color="gray"
           onClick={() => dispatch(toggleTheme())}
         >
@@ -101,7 +101,7 @@ export default function Header() {
             arrowIcon={false}
             inline
             label={
-              <Avatar alt="User" img={currentUser.profilePicture} rounded />
+              <Avatar alt="User" img={currentUser.profilePicture} size="sm" />
             }
           >
             <Dropdown.Header>
