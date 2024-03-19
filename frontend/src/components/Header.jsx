@@ -81,7 +81,7 @@ export default function Header() {
           <AiOutlineSearch />
         </button>
       </form>
-      <div className="flex gap-1 md:order-2 items-center">
+      <section className="flex gap-1 md:order-2 items-center">
         <Button
           className="size-8 sm:hidden"
           color="gray"
@@ -118,13 +118,13 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to="/sign-in">
-            <Button className="size-7 md:size-10" color="gray">
+            <Button className="size-8" color="gray">
               <SlLogin />
             </Button>
           </Link>
         )}
         <Navbar.Toggle />
-      </div>
+      </section>
       <Navbar.Collapse>
         <Navbar.Link active={path === "/"} as={"div"}>
           <Link to="/">Home</Link>
