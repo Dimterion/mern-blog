@@ -19,10 +19,10 @@ export default function Home() {
 
   return (
     <main>
-      <section className="flex flex-col gap-6 p-28 px-3 max-w-fit mx-auto">
-        <h1 className="text-3xl font-bold lg:text-6xl">Welcome to my Blog</h1>
-        <p className="text-gray-500 text-lg dark:text-gray-400">
-          Here is the description of the blog.
+      <section className="flex flex-col gap-6 p-16 px-3 max-w-fit mx-auto">
+        <h1 className="text-3xl font-bold md:text-6xl">Welcome to my Blog</h1>
+        <p className="text-gray-500 text-lg dark:text-gray-400 max-w-6xl">
+          Some text placeholder here.
         </p>
         <Link
           to="/search"
