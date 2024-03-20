@@ -21,12 +21,12 @@ export default function Home() {
     <main>
       <section className="flex flex-col gap-6 p-28 px-3 max-w-fit mx-auto">
         <h1 className="text-3xl font-bold lg:text-6xl">Welcome to my Blog</h1>
-        <p className="text-gray-500 text-xs sm:text-sm">
+        <p className="text-gray-500 text-lg dark:text-gray-400">
           Here is the description of the blog.
         </p>
         <Link
           to="/search"
-          className="text-xs sm:text-sm text-teal-500 font-bold hover:underline w-fit"
+          className="text-lg text-teal-500 font-bold hover:underline w-fit"
         >
           View all posts
         </Link>
