@@ -22,7 +22,7 @@ export default function FooterComponent() {
             </span>
             <span>site</span>
           </Link>
-          <div className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-3 sm:gap-6">
+          <aside className="grid grid-cols-2 gap-8 mt-4 sm:grid-cols-3 sm:gap-6">
             <div>
               <Footer.Title title="About" />
               <Footer.LinkGroup col>
@@ -68,7 +68,7 @@ export default function FooterComponent() {
                 <Footer.Link href="#">Terms &amp; Conditions</Footer.Link>
               </Footer.LinkGroup>
             </div>
-          </div>
+          </aside>
         </article>
         <Footer.Divider />
         <article className="w-full sm:flex sm:items-center sm:justify-between">
