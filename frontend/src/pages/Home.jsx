@@ -34,24 +34,22 @@ export default function Home() {
       <section className="p-3 bg-sky-100 dark:bg-slate-700">
         <CallToAction />
       </section>
-      <section className="max-w-6xl mx-auto px-3 flex flex-col py-7">
-        {posts && posts.length > 0 && (
-          <article className="flex flex-col gap-6">
-            <h2 className="text-2xl font-semibold text-center">Recent Posts</h2>
-            <div className="flex flex-wrap gap-4 justify-center">
-              {posts.map((post) => (
-                <PostCard key={post._id} post={post} />
-              ))}
-            </div>
-            <Link
-              to={"/search"}
-              className="text-lg text-teal-500 hover:underline text-center"
-            >
-              View all posts
-            </Link>
-          </article>
-        )}
-      </section>
+      {posts && posts.length > 0 && (
+        <section className="flex flex-col gap-6 px-3 py-7">
+          <h2 className="text-2xl font-semibold text-center">Recent Posts</h2>
+          <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto mt-3">
+            {posts.map((post) => (
+              <PostCard key={post._id} post={post} />
+            ))}
+          </section>
+          <Link
+            to={"/search"}
+            className="text-lg text-teal-500 hover:underline text-center w-fit mx-auto font-bold"
+          >
+            View all posts
+          </Link>
+        </section>
+      )}
     </main>
   );
 }
