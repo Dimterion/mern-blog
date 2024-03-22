@@ -120,7 +120,7 @@ export default function Search() {
 
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="p-7 border-b md:border-r md:min-h-screen border-gray-500">
+      <div className="p-7 border-b md:border-b-0 md:border-r md:min-h-screen border-gray-300">
         <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           <div className="flex items-center gap-2">
             <label className="whitespace-normal font-semibold">
@@ -164,10 +164,7 @@ export default function Search() {
         </form>
       </div>
       <div className="w-full">
-        <h1 className="text-3xl font-semibold sm:border-b border-gray-500 p-3 mt-5">
-          Posts results:
-        </h1>
-        <div className="p-7 flex flex-wrap gap-4">
+        <div className="p-4 flex flex-wrap gap-4">
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
           )}
@@ -178,7 +175,7 @@ export default function Search() {
           {showMore && (
             <button
               onClick={handleShowMore}
-              className="text-teal-500 text-lg hover:underline p-7 w-full"
+              className="text-sky-500 text-lg hover:underline p-7 w-full font-bold"
             >
               Show More
             </button>

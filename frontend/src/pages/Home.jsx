@@ -31,11 +31,11 @@ export default function Home() {
           View all posts
         </Link>
       </section>
-      <section className="p-3 bg-sky-100 dark:bg-slate-700">
+      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7">
         <CallToAction />
       </section>
       {posts && posts.length > 0 && (
-        <section className="flex flex-col gap-6 px-3 py-7">
+        <section className="flex flex-col gap-6 px-3 pb-7">
           <h2 className="text-2xl font-semibold text-center">Recent Posts</h2>
           <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto mt-3">
             {posts.map((post) => (
