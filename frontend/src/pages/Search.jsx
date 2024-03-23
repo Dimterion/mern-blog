@@ -119,12 +119,15 @@ export default function Search() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="p-7 border-b md:border-b-0 md:border-r md:min-h-screen border-gray-300">
-        <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
-          <div className="flex items-center gap-2">
+    <main className="flex flex-col md:flex-row">
+      <section className="px-12 py-4 border-b md:border-b-0 md:border-r md:min-h-screen border-gray-300">
+        <form
+          className="flex flex-col gap-2 max-w-[200px] mx-auto"
+          onSubmit={handleSubmit}
+        >
+          <aside className="mx-2 flex flex-col gap-2">
             <label className="whitespace-normal font-semibold">
-              Search Term:
+              Search term:
             </label>
             <TextInput
               placeholder="Search..."
@@ -133,8 +136,8 @@ export default function Search() {
               value={sidebarData.searchTerm}
               onChange={handleChange}
             />
-          </div>
-          <div className="flex items-center gap-2">
+          </aside>
+          <aside className="mx-2 flex flex-col gap-2">
             <label className="font-semibold">Sort:</label>
             <Select
               onChange={handleChange}
@@ -144,8 +147,8 @@ export default function Search() {
               <option value="desc">Latest</option>
               <option value="asc">Oldest</option>
             </Select>
-          </div>
-          <div className="flex items-center gap-2">
+          </aside>
+          <aside className="mx-2 flex flex-col gap-2">
             <label className="font-semibold">Category:</label>
             <Select
               onChange={handleChange}
@@ -157,14 +160,19 @@ export default function Search() {
               <option value="coding">Coding</option>
               <option value="thoughts">Thoughts</option>
             </Select>
-          </div>
-          <Button type="submit" outline gradientDuoTone="purpleToBlue">
+          </aside>
+          <Button
+            type="submit"
+            outline
+            gradientDuoTone="purpleToBlue"
+            className="mt-4"
+          >
             Search
           </Button>
         </form>
-      </div>
-      <div className="w-full">
-        <div className="p-4 flex flex-wrap gap-4">
+      </section>
+      <section className="w-full">
+        <article className="p-4 flex flex-wrap gap-4">
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
           )}
@@ -180,8 +188,8 @@ export default function Search() {
               Show More
             </button>
           )}
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </main>
   );
 }
