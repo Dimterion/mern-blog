@@ -144,34 +144,49 @@ export default function Search() {
               value={sidebarData.sort || ""}
               id="sort"
             >
-              <option value="desc">Latest</option>
-              <option value="asc">Oldest</option>
+              <option value="desc" className="bg-gray-200 dark:bg-gray-700">
+                Latest
+              </option>
+              <option value="asc" className="bg-gray-200 dark:bg-gray-700">
+                Oldest
+              </option>
             </Select>
           </aside>
           <aside className="mx-2 flex flex-col gap-2">
-            <label className="font-semibold">Category:</label>
+            <label className="font-semibold min-w-[10rem]">Category:</label>
             <Select
               onChange={handleChange}
               value={sidebarData.category || ""}
               id="category"
             >
-              <option value="uncategorized">Uncategorized</option>
-              <option value="project">Project</option>
-              <option value="coding">Coding</option>
-              <option value="thoughts">Thoughts</option>
+              <option
+                value="uncategorized"
+                className="bg-gray-200 dark:bg-gray-700"
+              >
+                Uncategorized
+              </option>
+              <option value="project" className="bg-gray-200 dark:bg-gray-700">
+                Project
+              </option>
+              <option value="coding" className="bg-gray-200 dark:bg-gray-700">
+                Coding
+              </option>
+              <option value="thoughts" className="bg-gray-200 dark:bg-gray-700">
+                Thoughts
+              </option>
             </Select>
           </aside>
           <Button
             type="submit"
             outline
             gradientDuoTone="purpleToBlue"
-            className="mt-4"
+            className="mt-6"
           >
             Search
           </Button>
         </form>
       </section>
-      <section className="w-full">
+      <section className="w-full flex flex-col items-center">
         <article className="p-4 flex flex-wrap gap-4">
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
@@ -180,15 +195,15 @@ export default function Search() {
           {!loading &&
             posts &&
             posts.map((post) => <PostCard key={post._id} post={post} />)}
-          {showMore && (
-            <button
-              onClick={handleShowMore}
-              className="text-sky-500 text-lg hover:underline p-7 w-full font-bold"
-            >
-              Show More
-            </button>
-          )}
         </article>
+        {showMore && (
+          <button
+            onClick={handleShowMore}
+            className="text-sky-500 text-lg hover:underline p-7 w-fit font-bold"
+          >
+            Show More
+          </button>
+        )}
       </section>
     </main>
   );
