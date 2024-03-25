@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Button, Select, TextInput } from "flowbite-react";
+import { Button } from "flowbite-react";
 import PostCard from "../components/PostCard";
 
 export default function Search() {
@@ -129,52 +129,58 @@ export default function Search() {
             <label className="whitespace-normal font-semibold">
               Search term:
             </label>
-            <TextInput
+            <input
               placeholder="Search..."
               id="searchTerm"
               type="text"
               value={sidebarData.searchTerm}
               onChange={handleChange}
+              className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
             />
           </aside>
           <aside className="mx-2 flex flex-col gap-2">
             <label className="font-semibold">Sort:</label>
-            <Select
+            <select
               onChange={handleChange}
               value={sidebarData.sort || ""}
               id="sort"
+              className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600 cursor-pointer"
             >
-              <option value="desc" className="bg-gray-200 dark:bg-gray-700">
+              <option
+                value="desc"
+                className="bg-gray-50 dark:bg-gray-700 cursor-pointer"
+              >
                 Latest
               </option>
-              <option value="asc" className="bg-gray-200 dark:bg-gray-700">
+              <option value="asc" className="bg-gray-50 dark:bg-gray-700">
                 Oldest
               </option>
-            </Select>
+            </select>
           </aside>
           <aside className="mx-2 flex flex-col gap-2">
             <label className="font-semibold min-w-[10rem]">Category:</label>
-            <Select
+            <select
               onChange={handleChange}
               value={sidebarData.category || ""}
               id="category"
+              className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600 cursor-pointer"
             >
               <option
                 value="uncategorized"
-                className="bg-gray-200 dark:bg-gray-700"
+                className="bg-gray-50 dark:bg-gray-700"
               >
                 Uncategorized
               </option>
-              <option value="project" className="bg-gray-200 dark:bg-gray-700">
+              <option value="project" className="bg-gray-50 dark:bg-gray-700">
                 Project
               </option>
-              <option value="coding" className="bg-gray-200 dark:bg-gray-700">
+              <option value="coding" className="bg-gray-50 dark:bg-gray-700">
                 Coding
               </option>
-              <option value="thoughts" className="bg-gray-200 dark:bg-gray-700">
+              <option value="thoughts" className="bg-gray-50 dark:bg-gray-700">
                 Thoughts
               </option>
-            </Select>
+            </select>
           </aside>
           <Button
             type="submit"
@@ -186,7 +192,7 @@ export default function Search() {
           </Button>
         </form>
       </section>
-      <section className="w-full flex flex-col items-center">
+      <section className="w-full flex flex-col">
         <article className="p-4 flex flex-wrap gap-4">
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
@@ -199,7 +205,7 @@ export default function Search() {
         {showMore && (
           <button
             onClick={handleShowMore}
-            className="text-sky-500 text-lg hover:underline p-7 w-fit font-bold"
+            className="text-sky-500 text-lg hover:underline p-7 w-fit mx-auto font-bold"
           >
             Show More
           </button>
