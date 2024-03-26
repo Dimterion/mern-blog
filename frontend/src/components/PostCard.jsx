@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export default function PostCard({ post }) {
   return (
-    <article className="group relative w-full border border-sky-500 hover:border-2 max-w-[400px] h-[400px] overflow-hidden rounded-lg transition-all">
+    <article className="group relative w-[90vw] border border-sky-500 hover:border-2 max-w-[400px] h-[400px] overflow-hidden rounded-lg transition-all sm:w-[430px]">
       <Link to={`/post/${post.slug}`}>
         <img
           src={post.image}
