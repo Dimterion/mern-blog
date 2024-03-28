@@ -129,9 +129,9 @@ export default function CommentSection({ postId }) {
   };
 
   return (
-    <div className="max-w-2xl mx-auto w-full p-3">
+    <section className="max-w-2xl mx-auto w-full p-3">
       {currentUser ? (
-        <div className="flex items-center gap-1 my-5 text-gray-500 text-sm">
+        <aside className="flex items-center gap-1 my-5 text-gray-500 text-sm">
           <p>Signed in as:</p>
           <img
             className="size-5 object-cover rounded-full"
@@ -144,14 +144,14 @@ export default function CommentSection({ postId }) {
           >
             @ {currentUser.username}
           </Link>
-        </div>
+        </aside>
       ) : (
-        <div className="text-sm text-teal-500 my-5 flex gap-1">
+        <aside className="text-sm text-teal-500 my-5 flex gap-1">
           You must be signed in to comment.
           <Link className="text-blue-500 hover:underline" to={"/sign-in"}>
             Sign In
           </Link>
-        </div>
+        </aside>
       )}
       {currentUser && (
         <form
@@ -181,10 +181,10 @@ export default function CommentSection({ postId }) {
         </form>
       )}
       {comments.length === 0 ? (
-        <p className="text-sm my-5">No comments yet.</p>
+        <p className="my-5">No comments yet.</p>
       ) : (
         <>
-          <div className="text-sm my-5 flex items-center gap-1">
+          <div className="my-5 flex items-center gap-1">
             <p>Comments</p>
             <div className="border border-gray-400 py-1 px-2 rounded-sm">
               <p>{comments.length}</p>
@@ -231,7 +231,7 @@ export default function CommentSection({ postId }) {
           </div>
         </Modal.Body>
       </Modal>
-    </div>
+    </section>
   );
 }
 
