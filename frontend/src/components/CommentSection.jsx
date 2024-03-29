@@ -119,8 +119,6 @@ export default function CommentSection({ postId }) {
       });
 
       if (res.ok) {
-        const data = await res.json();
-
         setComments(comments.filter((comment) => comment._id !== commentId));
       }
     } catch (error) {
@@ -165,14 +163,14 @@ export default function CommentSection({ postId }) {
             onChange={(e) => setComment(e.target.value)}
             value={comment}
           />
-          <div className="flex justify-between items-center mt-5">
+          <article className="flex justify-between items-center mt-5">
             <p className="text-gray-500 text-xs">
               {200 - comment.length} characters remaining.
             </p>
             <Button outline gradientDuoTone="purpleToBlue" type="submit">
               Submit
             </Button>
-          </div>
+          </article>
           {commentError && (
             <Alert color="failure" className="mt-5">
               {commentError}
@@ -184,12 +182,10 @@ export default function CommentSection({ postId }) {
         <p className="my-5">No comments yet.</p>
       ) : (
         <>
-          <div className="my-5 flex items-center gap-1">
-            <p>Comments</p>
-            <div className="border border-gray-400 py-1 px-2 rounded-sm">
-              <p>{comments.length}</p>
-            </div>
-          </div>
+          <aside className="my-5 flex items-center gap-1">
+            <p>Comments:</p>
+            <p>{comments.length}</p>
+          </aside>
           {comments.map((comment) => (
             <Comment
               key={comment._id}
@@ -212,12 +208,12 @@ export default function CommentSection({ postId }) {
       >
         <Modal.Header />
         <Modal.Body>
-          <div className="text-center">
+          <section className="text-center">
             <HiOutlineExclamationCircle className="size-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
             <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to delete this comment?
             </h3>
-            <div className="flex justify-center gap-4">
+            <section className="flex justify-center gap-4">
               <Button
                 color="failure"
                 onClick={() => handleDelete(commentToDelete)}
@@ -227,8 +223,8 @@ export default function CommentSection({ postId }) {
               <Button color="gray" onClick={() => setShowModal(false)}>
                 No, cancel
               </Button>
-            </div>
-          </div>
+            </section>
+          </section>
         </Modal.Body>
       </Modal>
     </section>
