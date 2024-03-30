@@ -23,20 +23,20 @@ export default function FooterComponent() {
             <span>site</span>
           </Link>
           <aside className="grid grid-cols-2 mt-6 sm:mt-0 gap-16">
-            <div>
+            <aside>
               <Footer.Title className="mb-4" title="Blog" />
               <Footer.LinkGroup col>
                 <Footer.Link href="/">Home</Footer.Link>
                 <Footer.Link href="/search">Posts</Footer.Link>
               </Footer.LinkGroup>
-            </div>
-            <div>
+            </aside>
+            <aside>
               <Footer.Title className="mb-4" title="Info" />
               <Footer.LinkGroup col>
                 <Footer.Link href="/about">About</Footer.Link>
                 <Footer.Link href="/projects">Projects</Footer.Link>
               </Footer.LinkGroup>
-            </div>
+            </aside>
           </aside>
         </article>
         <hr className="my-4 dark:border-gray-500" />

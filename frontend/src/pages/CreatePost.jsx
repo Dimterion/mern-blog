@@ -95,10 +95,10 @@ export default function CreatePost() {
   };
 
   return (
-    <div className="p-3 max-w-3xl mx-auto min-h-screen">
+    <main className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold">Create a post</h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-4 sm:flex-row justify-between">
+        <section className="flex flex-col gap-4 sm:flex-row justify-between">
           <TextInput
             type="text"
             placeholder="Title"
@@ -119,8 +119,8 @@ export default function CreatePost() {
             <option value="coding">Coding</option>
             <option value="thoughts">Thoughts</option>
           </Select>
-        </div>
-        <div className="flex gap-4 items-center justify-between border-4 border-sky-500 border-dotted p-3">
+        </section>
+        <section className="flex gap-4 items-center justify-between border-4 border-sky-500 border-dotted p-3">
           <FileInput
             type="file"
             accept="image/*"
@@ -135,17 +135,17 @@ export default function CreatePost() {
             disabled={imageUploadProgress}
           >
             {imageUploadProgress ? (
-              <div className="size-16">
+              <aside className="size-16">
                 <CircularProgressbar
                   value={imageUploadProgress}
                   text={`${imageUploadProgress || 0}%`}
                 />
-              </div>
+              </aside>
             ) : (
               "Upload Image"
             )}
           </Button>
-        </div>
+        </section>
         {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
         {formData.image && (
           <img
@@ -172,6 +172,6 @@ export default function CreatePost() {
           </Alert>
         )}
       </form>
-    </div>
+    </main>
   );
 }
