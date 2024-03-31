@@ -81,7 +81,7 @@ export default function DashPosts() {
   };
 
   return (
-    <div className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300">
+    <section className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300">
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
@@ -162,22 +162,22 @@ export default function DashPosts() {
       >
         <Modal.Header />
         <Modal.Body>
-          <div className="text-center">
+          <section className="text-center">
             <HiOutlineExclamationCircle className="size-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
             <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to delete this post?
             </h3>
-            <div className="flex justify-center gap-4">
+            <aside className="flex justify-center gap-4">
               <Button color="failure" onClick={handleDeletePost}>
                 Yes, I&apos;m sure
               </Button>
               <Button color="gray" onClick={() => setShowModal(false)}>
                 No, cancel
               </Button>
-            </div>
-          </div>
+            </aside>
+          </section>
         </Modal.Body>
       </Modal>
-    </div>
+    </section>
   );
 }
