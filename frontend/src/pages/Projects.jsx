@@ -39,16 +39,16 @@ export default function Projects() {
     )
     .map((project) => (
       <section key={project.id} className="project space-y-2">
-        <div className="flex justify-center relative overflow-hidden group cursor-pointer border border-gray-300 dark:border-gray-600 rounded-xl">
+        <article className="flex justify-center relative overflow-hidden group cursor-pointer border border-gray-300 dark:border-gray-600 rounded-xl">
           <img
             src={project.url}
             alt={project.name}
             className="w-full h-full object-cover"
           />
-          <Link className="bg-black text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0">
+          <Link className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0">
             Link
           </Link>
-        </div>
+        </article>
         <p className="font-semibold">{project.name}</p>
         <pre>{project.category}</pre>
       </section>
@@ -71,14 +71,13 @@ export default function Projects() {
       </section>
       <section className="flex flex-col md:flex-row mx-auto container max-w-6xl">
         <article className="space-y-2 p-2 w-full max-w-[10rem]">
-          <h2 className="text-xl font-semibold">Filters</h2>
-          <h3 className="font-semibold">Category</h3>
-          <aside id="projectsFilters-container">
+          <h2 className="text-xl font-semibold">Category</h2>
+          <aside className="flex sm:flex-col gap-2">
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
                 id="React"
-                className="check mr-1"
+                className="mr-1"
                 onChange={handleCheckbox}
               />
               <label htmlFor="React">React</label>
@@ -87,7 +86,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="MERN"
-                className="check mr-1"
+                className="mr-1"
                 onChange={handleCheckbox}
               />
               <label htmlFor="MERN">MERN</label>
@@ -96,17 +95,14 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="JavaScript"
-                className="check mr-1"
+                className="mr-1"
                 onChange={handleCheckbox}
               />
               <label htmlFor="JavaScript">JavaScript</label>
             </div>
           </aside>
         </article>
-        <article
-          id="projects-wrapper"
-          className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-content-center p-2"
-        >
+        <article className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-content-center p-2">
           {displayedProjects}
         </article>
       </section>
