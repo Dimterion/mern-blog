@@ -56,22 +56,22 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
 
   return (
     <section className="flex p-4 border-b dark:border-gray-600 text-sm">
-      <div className="flex-shrink-0 mr-3">
+      <section className="flex-shrink-0 mr-3">
         <img
           className="size-10 rounded-full bg-gray-200"
           src={user.profilePicture}
           alt={user.username}
         />
-      </div>
-      <div className="flex-1">
-        <div className="flex items-center mb-1">
+      </section>
+      <section className="flex-1">
+        <article className="flex items-center mb-1">
           <span className="font-bold mr-1 text-xs truncate">
             {user ? `@${user.username}` : "Anonymous user"}
           </span>
           <span className="text-gray-500 text-xs">
             {moment(comment.createdAt).fromNow()}
           </span>
-        </div>
+        </article>
         {isEditing ? (
           <>
             <Textarea
@@ -79,7 +79,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
               value={editedContent}
               onChange={(e) => setEditedContent(e.target.value)}
             />
-            <div className="flex justify-end gap-2 text-xs">
+            <article className="flex justify-end gap-2 text-xs">
               <Button
                 type="button"
                 size="sm"
@@ -97,12 +97,12 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
               >
                 Cancel
               </Button>
-            </div>
+            </article>
           </>
         ) : (
           <>
             <p className="text-gray-500 pb-2">{comment.content}</p>
-            <div className="flex items-center pt-2 text-xs border-t dark:border-gray-700 max-w-fit gap-2">
+            <article className="flex items-center pt-2 text-xs border-t dark:border-gray-700 max-w-fit gap-2">
               <button
                 type="button"
                 onClick={() => onLike(comment._id)}
@@ -139,10 +139,10 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                     </button>
                   </>
                 )}
-            </div>
+            </article>
           </>
         )}
-      </div>
+      </section>
     </section>
   );
 }
