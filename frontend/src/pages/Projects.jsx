@@ -38,14 +38,17 @@ export default function Projects() {
           .includes(searchQuery.trim().toLowerCase())
     )
     .map((project) => (
-      <section key={project.id} className="project space-y-2">
+      <section key={project.id} className="project space-y-2 mt-2">
         <article className="flex justify-center relative overflow-hidden group cursor-pointer border border-gray-300 dark:border-gray-600 rounded-xl">
           <img
             src={project.url}
             alt={project.name}
             className="w-full h-full object-cover"
           />
-          <Link className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0">
+          <Link
+            to="/"
+            className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0"
+          >
             Link
           </Link>
         </article>
@@ -70,14 +73,14 @@ export default function Projects() {
         </article>
       </section>
       <section className="flex flex-col md:flex-row mx-auto container max-w-6xl">
-        <article className="space-y-2 p-2 w-full max-w-[10rem]">
+        <article className="space-y-4 p-2 w-full max-w-[10rem]">
           <h2 className="text-xl font-semibold">Category</h2>
           <aside className="flex sm:flex-col gap-2">
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
                 id="React"
-                className="mr-1"
+                className="mr-1 rounded-sm"
                 onChange={handleCheckbox}
               />
               <label htmlFor="React">React</label>
@@ -86,7 +89,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="MERN"
-                className="mr-1"
+                className="mr-1 rounded-sm"
                 onChange={handleCheckbox}
               />
               <label htmlFor="MERN">MERN</label>
@@ -95,7 +98,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="JavaScript"
-                className="mr-1"
+                className="mr-1 rounded-sm"
                 onChange={handleCheckbox}
               />
               <label htmlFor="JavaScript">JavaScript</label>
