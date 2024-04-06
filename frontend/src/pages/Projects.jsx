@@ -58,7 +58,7 @@ export default function Projects() {
     ));
 
   return (
-    <main className="min-h-screen mx-auto flex justify-center items-center flex-col gap-6 p-3">
+    <main className="min-h-screen mx-auto flex justify-center items-center flex-col gap-6 p-3 mb-6">
       <h1 className="text-3xl font-semibold">Projects</h1>
       <section>
         <article className="relative">
@@ -72,7 +72,7 @@ export default function Projects() {
           <AiOutlineSearch className="absolute left-3 bottom-1 -translate-y-1/2" />
         </article>
       </section>
-      <section className="flex flex-col md:flex-row mx-auto container max-w-6xl">
+      <section className="flex flex-col md:flex-row mx-auto container max-w-6xl mb-3 pb-4 border-gray-300 dark:border-gray-600 border-b">
         <article className="space-y-4 p-2 w-full max-w-[10rem]">
           <h2 className="text-xl font-semibold">Category</h2>
           <aside className="flex sm:flex-col gap-2">
