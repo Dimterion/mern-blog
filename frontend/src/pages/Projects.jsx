@@ -47,7 +47,7 @@ export default function Projects() {
           />
           <Link
             to="/"
-            className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0"
+            className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-1 translate-y-full transition group-hover:translate-y-0 duration-300"
           >
             Link
           </Link>
@@ -80,28 +80,34 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="React"
-                className="mr-1 rounded-sm"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="React">React</label>
+              <label htmlFor="React" className="cursor-pointer">
+                React
+              </label>
             </div>
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
                 id="MERN"
-                className="mr-1 rounded-sm"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="MERN">MERN</label>
+              <label htmlFor="MERN" className="cursor-pointer">
+                MERN
+              </label>
             </div>
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
                 id="JavaScript"
-                className="mr-1 rounded-sm"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="JavaScript">JavaScript</label>
+              <label htmlFor="JavaScript" className="cursor-pointer">
+                JavaScript
+              </label>
             </div>
           </aside>
         </article>
