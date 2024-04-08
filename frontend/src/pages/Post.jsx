@@ -100,7 +100,7 @@ export default function Post() {
         </span>
       </aside>
       <section
-        className="p-3 max-w-2xl mx-auto w-full post-content"
+        className="p-3 max-w-2xl mx-auto w-full post-content mb-6"
         dangerouslySetInnerHTML={{ __html: post && post.content }}
       ></section>
       <section className="max-w-4xl mx-auto w-full">
@@ -108,8 +108,8 @@ export default function Post() {
       </section>
       <CommentSection postId={post._id} />
       <section className="flex flex-col justify-center items-center mb-5">
-        <h1 className="text-xl font-semibold mt-5">Recent articles</h1>
-        <aside className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-5 justify-center">
+        <h1 className="text-xl font-semibold mt-1">Recent articles</h1>
+        <aside className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5 justify-center">
           {recentPosts &&
             recentPosts.map(
               (recentPost) =>
