@@ -15,7 +15,9 @@ export default function About() {
           </section>
         </article>
       </section>
-      <CallToAction />
+      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
+        <CallToAction />
+      </section>
     </main>
   );
 }
