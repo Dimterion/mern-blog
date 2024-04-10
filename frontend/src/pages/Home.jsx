@@ -12,7 +12,7 @@ export default function Home() {
       const res = await fetch("/api/post/getposts");
       const data = await res.json();
 
-      setPosts(data.posts);
+      setPosts([data.posts[0], data.posts[1], data.posts[2]]);
     };
 
     fetchPosts();
@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <main>
-      <section className="flex flex-col gap-6 p-16 px-3 max-w-fit mx-auto">
+      <section className="flex flex-col gap-6 p-10 px-3 max-w-fit mx-auto">
         <h1 className="text-3xl font-bold md:text-6xl">
           Hi, I&apos;m Dmitrii.
         </h1>
