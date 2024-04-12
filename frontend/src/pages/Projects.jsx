@@ -38,7 +38,10 @@ export default function Projects() {
           .includes(searchQuery.trim().toLowerCase())
     )
     .map((project) => (
-      <section key={project.id} className="project space-y-2 mt-2">
+      <section
+        key={project.id}
+        className="project space-y-2 mt-2 max-w-[300px]"
+      >
         <article className="flex justify-center relative overflow-hidden group cursor-pointer border border-gray-300 dark:border-gray-600 rounded-xl">
           <img
             src={project.url}

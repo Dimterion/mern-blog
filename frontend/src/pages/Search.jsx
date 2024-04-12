@@ -193,7 +193,7 @@ export default function Search() {
         </form>
       </section>
       <section className="w-full flex flex-col">
-        <article className="p-4 flex flex-wrap gap-4">
+        <article className="p-4 flex flex-wrap gap-4 justify-center md:justify-start">
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
           )}
