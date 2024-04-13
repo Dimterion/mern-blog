@@ -50,7 +50,7 @@ export default function Home() {
       {posts && posts.length > 0 && (
         <section id="home-posts" className="flex flex-col gap-6 px-3 pb-7">
           <h2 className="text-2xl font-semibold text-center">Posts</h2>
-          <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto mt-3">
+          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto mt-3">
             {posts.map((post) => (
               <PostCard key={post._id} post={post} />
             ))}

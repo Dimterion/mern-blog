@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 
 export default function PostCard({ post }) {
   return (
-    <article className="group relative w-[90vw] border border-sky-500 hover:border-2 max-w-[400px] h-[400px] overflow-hidden rounded-lg transition-all sm:w-[430px]">
+    <article className="group relative w-[90vw] border border-sky-500 hover:border-2 max-w-[350px] h-[325px] overflow-hidden rounded-lg transition-all sm:w-[350px]">
       <Link to={`/post/${post.slug}`}>
         <img
           src={post.image}
           alt="Post cover."
-          className="h-[260px] w-full object-cover group-hover:h-[240px] transition-all duration-300 z-20"
+          className="h-[230px] w-full object-cover group-hover:h-[190px] transition-all duration-300 z-20"
         />
       </Link>
       <aside className="p-3 flex flex-col gap-2">
