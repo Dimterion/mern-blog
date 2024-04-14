@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -10,21 +9,9 @@ import { signoutSuccess } from "../redux/user/userSlice";
 
 export default function Header() {
   const path = useLocation().pathname;
-  const location = useLocation();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
   const { theme } = useSelector((state) => state.theme);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(location.search);
-    const searchTermFromUrl = urlParams.get("searchTerm");
-
-    if (searchTermFromUrl) {
-      setSearchTerm(searchTermFromUrl);
-    }
-  }, [location.search]);
 
   const handleSignout = async () => {
     try {
@@ -43,18 +30,6 @@ export default function Header() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const urlParams = new URLSearchParams(location.search);
-
-    urlParams.set("searchTerm", searchTerm);
-
-    const searchQuery = urlParams.toString();
-
-    navigate(`/search?${searchQuery}`);
-  };
-
   return (
     <Navbar className="border-b-2 px-1">
       <Link
@@ -66,29 +41,13 @@ export default function Header() {
         </span>
         <span>site</span>
       </Link>
-      <form onSubmit={handleSubmit} className="hidden sm:flex">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="p-2 bg-gray-50 border-gray-300 border-r-0 rounded-l-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
-        />
-        <button
-          type="submit"
-          className="bg-sky-500 hover:bg-sky-400 text-white px-4 py-2 rounded-r-md"
-        >
-          <AiOutlineSearch />
-        </button>
-      </form>
       <section className="flex gap-1 md:order-2 items-center">
-        <Button
-          className="size-8 sm:hidden"
-          color="gray"
-          onClick={handleSubmit}
+        <Link
+          to="/search"
+          className="border rounded-lg size-8 p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
         >
           <AiOutlineSearch />
-        </Button>
+        </Link>
         <Button
           className="size-8"
           color="gray"
