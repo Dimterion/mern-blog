@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Avatar, Button, Dropdown, Navbar } from "flowbite-react";
+import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon, FaSun } from "react-icons/fa6";
 import { SlLogin } from "react-icons/sl";
@@ -44,17 +44,16 @@ export default function Header() {
       <section className="flex gap-1 md:order-2 items-center">
         <Link
           to="/search"
-          className="border rounded-lg size-8 p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+          className="border rounded-lg p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
         >
           <AiOutlineSearch />
         </Link>
-        <Button
-          className="size-8"
-          color="gray"
+        <button
+          className="border rounded-lg p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
           onClick={() => dispatch(toggleTheme())}
         >
           {theme === "light" ? <FaMoon /> : <FaSun />}
-        </Button>
+        </button>
         {currentUser ? (
           <Dropdown
             arrowIcon={false}
@@ -77,9 +76,9 @@ export default function Header() {
           </Dropdown>
         ) : (
           <Link to="/sign-in">
-            <Button className="size-8" color="gray">
+            <button className="border rounded-lg p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100">
               <SlLogin />
-            </Button>
+            </button>
           </Link>
         )}
         <Navbar.Toggle />
