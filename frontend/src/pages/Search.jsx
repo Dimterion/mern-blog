@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "flowbite-react";
 import PostCard from "../components/PostCard";
 
@@ -120,7 +120,7 @@ export default function Search() {
 
   return (
     <main className="flex flex-col md:flex-row">
-      <section className="px-12 py-4 border-b md:border-b-0 md:border-r md:min-h-screen border-gray-300 dark:border-gray-600">
+      <section className="flex flex-col items-center gap-6 px-12 py-4 border-b md:border-b-0 md:border-r md:min-h-screen border-gray-300 dark:border-gray-600">
         <form
           className="flex flex-col gap-2 max-w-[200px] mx-auto"
           onSubmit={handleSubmit}
@@ -186,11 +186,17 @@ export default function Search() {
             type="submit"
             outline
             gradientDuoTone="purpleToBlue"
-            className="mt-6"
+            className="mt-6 font-bold"
           >
             Search
           </Button>
         </form>
+        <Link
+          to="/search"
+          className="font-bold border-2 border-sky-500 rounded-lg w-56 max-w-[200px] text-center py-2 text-sm hover:bg-sky-500 mx-auto hover:text-white"
+        >
+          All posts
+        </Link>
       </section>
       <section className="w-full flex flex-col">
         <article className="p-4 flex flex-wrap gap-4 justify-center md:justify-start">
