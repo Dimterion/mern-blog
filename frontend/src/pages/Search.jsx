@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Button } from "flowbite-react";
 import PostCard from "../components/PostCard";
 
 export default function Search() {
@@ -182,18 +181,16 @@ export default function Search() {
               </option>
             </select>
           </aside>
-          <Button
+          <button
             type="submit"
-            outline
-            gradientDuoTone="purpleToBlue"
-            className="mt-6 font-bold"
+            className="font-bold mt-6 border-2 border-sky-500 rounded-lg w-56 max-w-[200px] text-center py-2 text-sm bg-sky-500 text-white mx-auto hover:text-sky-500 hover:bg-white dark:hover:bg-transparent"
           >
             Search
-          </Button>
+          </button>
         </form>
         <Link
           to="/search"
-          className="font-bold border-2 border-sky-500 rounded-lg w-56 max-w-[200px] text-center py-2 text-sm hover:bg-sky-500 mx-auto hover:text-white"
+          className="font-bold border-2 border-sky-500 rounded-lg w-56 max-w-[200px] text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white"
         >
           All posts
         </Link>
