@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
-import { projects } from "../assets/projects/projectsList";
 import CallToAction from "../components/CallToAction";
 
 export default function Projects() {
+  const [posts, setPosts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch("/api/post/getposts");
+      const data = await res.json();
+
+      setPosts(data.posts);
+    };
+
+    fetchPosts();
+  }, []);
 
   function handleSearch(e) {
     setSearchQuery(e.target.value);
@@ -24,7 +35,7 @@ export default function Projects() {
     }
   }
 
-  const displayedProjects = projects
+  const displayedProjects = posts
     .filter(
       (project) =>
         selectedCategories.length === 0 ||
@@ -32,21 +43,23 @@ export default function Projects() {
     )
     .filter(
       (project) =>
-        project.name.toLowerCase().includes(searchQuery.trim().toLowerCase()) ||
+        project.title
+          .toLowerCase()
+          .includes(searchQuery.trim().toLowerCase()) ||
         project.category
           .toLowerCase()
           .includes(searchQuery.trim().toLowerCase())
     )
     .map((project) => (
       <section
-        key={project.id}
+        key={project._id}
         className="project space-y-2 mt-2 max-w-[300px]"
       >
         <article className="flex justify-center relative overflow-hidden group cursor-pointer border border-gray-300 dark:border-gray-600 rounded-xl">
           <img
-            src={project.url}
-            alt={project.name}
-            className="w-full h-full object-cover"
+            src={project.image}
+            alt={project.title}
+            className="w-full h-[200px] max-h-[40vh] object-cover"
           />
           <Link
             to="/"
@@ -82,34 +95,34 @@ export default function Projects() {
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
-                id="React"
+                id="project"
                 className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="React" className="cursor-pointer">
-                React
+              <label htmlFor="project" className="cursor-pointer">
+                project
               </label>
             </div>
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
-                id="MERN"
+                id="thoughts"
                 className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="MERN" className="cursor-pointer">
-                MERN
+              <label htmlFor="thoughts" className="cursor-pointer">
+                thoughts
               </label>
             </div>
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
-                id="JavaScript"
+                id="coding"
                 className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="JavaScript" className="cursor-pointer">
-                JavaScript
+              <label htmlFor="coding" className="cursor-pointer">
+                coding
               </label>
             </div>
           </aside>
