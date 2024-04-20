@@ -4,20 +4,60 @@ import { AiOutlineSearch } from "react-icons/ai";
 import CallToAction from "../components/CallToAction";
 
 export default function Projects() {
+  const [sidebarData, setSidebarData] = useState({
+    searchTerm: "",
+    sort: "desc",
+    category: "uncategorized",
+  });
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [showMore, setShowMore] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const res = await fetch("/api/post/getposts");
-      const data = await res.json();
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get("searchTerm");
+    const sortFromUrl = urlParams.get("sort");
+    const categoryFromUrl = urlParams.get("category");
 
-      setPosts(data.posts);
+    if (searchTermFromUrl || sortFromUrl || categoryFromUrl) {
+      setSidebarData({
+        ...sidebarData,
+        searchTerm: searchTermFromUrl,
+        sort: sortFromUrl,
+        category: categoryFromUrl,
+      });
+    }
+
+    const fetchPosts = async () => {
+      setLoading(true);
+
+      const searchQuery = urlParams.toString();
+      const res = await fetch(`/api/post/getposts?${searchQuery}`);
+
+      if (!res.ok) {
+        setLoading(false);
+
+        return;
+      }
+
+      if (res.ok) {
+        const data = await res.json();
+
+        setPosts(data.posts);
+        setLoading(false);
+
+        if (data.posts.length === 6) {
+          setShowMore(true);
+        } else {
+          setShowMore(false);
+        }
+      }
     };
 
     fetchPosts();
-  }, []);
+  }, [location.search]);
 
   function handleSearch(e) {
     setSearchQuery(e.target.value);
@@ -34,6 +74,33 @@ export default function Projects() {
       );
     }
   }
+
+  const handleShowMore = async () => {
+    const numberOfPosts = posts.length;
+    const startIndex = numberOfPosts;
+    const urlParams = new URLSearchParams(location.search);
+
+    urlParams.set("startIndex", startIndex);
+
+    const searchQuery = urlParams.toString();
+    const res = await fetch(`/api/post/getposts?${searchQuery}`);
+
+    if (!res.ok) {
+      return;
+    }
+
+    if (res.ok) {
+      const data = await res.json();
+
+      setPosts([...posts, ...data.posts]);
+
+      if (data.posts.length === 6) {
+        setShowMore(true);
+      } else {
+        setShowMore(false);
+      }
+    }
+  };
 
   const displayedProjects = posts
     .filter(
@@ -68,7 +135,7 @@ export default function Projects() {
             Link
           </Link>
         </article>
-        <p className="font-semibold">{project.name}</p>
+        <p className="font-semibold">{project.title}</p>
         <pre>{project.category}</pre>
       </section>
     ));
@@ -88,7 +155,7 @@ export default function Projects() {
           <AiOutlineSearch className="absolute left-3 bottom-1 -translate-y-1/2" />
         </article>
       </section>
-      <section className="flex flex-col md:flex-row mx-auto container max-w-6xl mb-3 pb-4 border-gray-300 dark:border-gray-600 border-b">
+      <section className="flex flex-col md:flex-row mx-auto container max-w-6xl">
         <article className="space-y-4 p-2 w-full max-w-[10rem]">
           <h2 className="text-xl font-semibold">Category</h2>
           <aside className="flex sm:flex-col gap-2">
@@ -100,7 +167,7 @@ export default function Projects() {
                 onChange={handleCheckbox}
               />
               <label htmlFor="project" className="cursor-pointer">
-                project
+                Project
               </label>
             </div>
             <div className="flex flex-row items-center">
@@ -111,7 +178,7 @@ export default function Projects() {
                 onChange={handleCheckbox}
               />
               <label htmlFor="thoughts" className="cursor-pointer">
-                thoughts
+                Thoughts
               </label>
             </div>
             <div className="flex flex-row items-center">
@@ -122,15 +189,27 @@ export default function Projects() {
                 onChange={handleCheckbox}
               />
               <label htmlFor="coding" className="cursor-pointer">
-                coding
+                Coding
               </label>
             </div>
           </aside>
         </article>
-        <article className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-content-center p-2">
-          {displayedProjects}
-        </article>
+        {loading ? (
+          <article>Loading...</article>
+        ) : (
+          <article className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-content-center p-2">
+            {displayedProjects}
+          </article>
+        )}
       </section>
+      {showMore && (
+        <button
+          onClick={handleShowMore}
+          className="text-sky-500 text-lg hover:underline p-7 w-fit mx-auto font-bold"
+        >
+          Show More
+        </button>
+      )}
       <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
         <CallToAction />
       </section>
