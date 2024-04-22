@@ -15,7 +15,7 @@ export default function Projects() {
     const fetchPosts = async () => {
       setLoading(true);
 
-      const res = await fetch("/api/post/getposts");
+      const res = await fetch("/api/post/getposts?category=project");
 
       if (!res.ok) {
         setLoading(false);
@@ -29,7 +29,7 @@ export default function Projects() {
         setPosts(data.posts);
         setLoading(false);
 
-        if (data.posts.length === 6) {
+        if (data.posts.length >= 6) {
           setShowMore(true);
         } else {
           setShowMore(false);
@@ -38,7 +38,7 @@ export default function Projects() {
     };
 
     fetchPosts();
-  }, [location.search]);
+  }, []);
 
   function handleSearch(e) {
     setSearchQuery(e.target.value);
@@ -64,7 +64,9 @@ export default function Projects() {
     urlParams.set("startIndex", startIndex);
 
     const searchQuery = urlParams.toString();
-    const res = await fetch(`/api/post/getposts?${searchQuery}`);
+    const res = await fetch(
+      `/api/post/getposts?${searchQuery}&category=project`
+    );
 
     if (!res.ok) {
       return;
@@ -75,7 +77,7 @@ export default function Projects() {
 
       setPosts([...posts, ...data.posts]);
 
-      if (data.posts.length === 6) {
+      if (data.posts.length >= 6) {
         setShowMore(true);
       } else {
         setShowMore(false);
@@ -176,7 +178,7 @@ export default function Projects() {
           </aside>
         </article>
         {loading ? (
-          <article className="mx-auto">
+          <article className="mx-auto my-16">
             <Spinner size="xl" />
           </article>
         ) : (
