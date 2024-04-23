@@ -129,7 +129,7 @@ export default function Search() {
               Search term:
             </label>
             <input
-              placeholder="Search..."
+              placeholder="Search posts..."
               id="searchTerm"
               type="text"
               value={sidebarData.searchTerm}

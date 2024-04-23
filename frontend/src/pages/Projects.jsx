@@ -112,7 +112,7 @@ export default function Projects() {
             className="w-full h-[200px] max-h-[40vh] object-cover"
           />
           <Link
-            to="/"
+            to={`/post/${project.slug}`}
             className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-1 translate-y-full transition group-hover:translate-y-0 duration-300"
           >
             Link
@@ -125,9 +125,9 @@ export default function Projects() {
 
   return (
     <main className="min-h-screen mx-auto flex justify-center items-center flex-col gap-6 p-3 mb-6">
-      <h1 className="text-3xl font-semibold">Projects</h1>
+      <h1 className="text-3xl font-semibold my-6">Projects</h1>
       <section>
-        <article className="relative">
+        <article className="relative mb-6">
           <input
             type="text"
             id="search"
@@ -190,7 +190,7 @@ export default function Projects() {
       {showMore && (
         <button
           onClick={handleShowMore}
-          className="text-sky-500 text-lg hover:underline p-7 w-fit mx-auto font-bold"
+          className="text-sky-500 text-lg hover:underline mb-4 w-fit mx-auto font-bold"
         >
           Show More
         </button>
