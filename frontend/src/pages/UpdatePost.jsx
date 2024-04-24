@@ -197,6 +197,14 @@ export default function UpdatePost() {
             setFormData({ ...formData, content: value });
           }}
         />
+        <TextInput
+          type="text"
+          placeholder="Link"
+          id="link"
+          className="flex-1"
+          onChange={(e) => setFormData({ ...formData, link: e.target.value })}
+          value={formData.link}
+        />
         <Button type="submit" gradientDuoTone="purpleToBlue">
           Update
         </Button>

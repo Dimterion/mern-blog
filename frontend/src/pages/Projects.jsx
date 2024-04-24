@@ -115,7 +115,7 @@ export default function Projects() {
             to={`/post/${project.slug}`}
             className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-1 translate-y-full transition group-hover:translate-y-0 duration-300"
           >
-            Link
+            {project.link || "Link"}
           </Link>
         </article>
         <p className="font-semibold">{project.title}</p>

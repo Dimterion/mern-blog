@@ -99,6 +99,7 @@ export const updatePost = async (req, res, next) => {
           content: req.body.content,
           category: req.body.category,
           image: req.body.image,
+          link: req.body.link,
         },
       },
       { new: true }
