@@ -20,8 +20,8 @@ export default function DashPosts() {
         if (res.ok) {
           setUserPosts(data.posts);
 
-          if (data.posts.length < 9) {
-            showMore(false);
+          if (data.posts.length === 0) {
+            setShowMore(false);
           }
         }
       } catch (error) {
@@ -46,7 +46,7 @@ export default function DashPosts() {
       if (res.ok) {
         setUserPosts((prev) => [...prev, ...data.posts]);
 
-        if (data.posts.length < 9) {
+        if (data.posts.length === 0) {
           setShowMore(false);
         }
       }

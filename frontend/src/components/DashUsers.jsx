@@ -20,8 +20,8 @@ export default function DashUsers() {
         if (res.ok) {
           setUsers(data.users);
 
-          if (data.users.length < 9) {
-            showMore(false);
+          if (data.users.length === 0) {
+            setShowMore(false);
           }
         }
       } catch (error) {
@@ -44,7 +44,7 @@ export default function DashUsers() {
       if (res.ok) {
         setUsers((prev) => [...prev, ...data.users]);
 
-        if (data.users.length < 9) {
+        if (data.users.length === 0) {
           setShowMore(false);
         }
       }

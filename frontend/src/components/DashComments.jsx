@@ -19,8 +19,8 @@ export default function DashComments() {
         if (res.ok) {
           setComments(data.comments);
 
-          if (data.comments.length < 9) {
-            showMore(false);
+          if (data.comments.length === 0) {
+            setShowMore(false);
           }
         }
       } catch (error) {
@@ -45,7 +45,7 @@ export default function DashComments() {
       if (res.ok) {
         setComments((prev) => [...prev, ...data.comments]);
 
-        if (data.comments.length < 9) {
+        if (data.comments.length === 0) {
           setShowMore(false);
         }
       }
