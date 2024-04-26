@@ -191,6 +191,13 @@ export default function Search() {
         <Link
           to="/search"
           className="font-bold border-2 border-sky-500 rounded-lg w-56 max-w-[200px] text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white"
+          onClick={() =>
+            setSidebarData({
+              searchTerm: "",
+              sort: "desc",
+              category: "uncategorized",
+            })
+          }
         >
           All posts
         </Link>
