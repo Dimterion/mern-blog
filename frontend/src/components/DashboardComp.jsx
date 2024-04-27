@@ -188,11 +188,10 @@ export default function DashboardComp() {
               <Link to={"/dashboard?tab=posts"}>See all</Link>
             </Button>
           </div>
-          <Table hoverable>
+          <Table hoverable className="text-center">
             <Table.Head>
-              <Table.HeadCell className="p-4">Post image</Table.HeadCell>
-              <Table.HeadCell className="p-4">Post title</Table.HeadCell>
-              <Table.HeadCell className="p-4">Category</Table.HeadCell>
+              <Table.HeadCell>Post image</Table.HeadCell>
+              <Table.HeadCell>Post title</Table.HeadCell>
             </Table.Head>
             {posts &&
               posts.map((post) => (
@@ -206,7 +205,6 @@ export default function DashboardComp() {
                       />
                     </Table.Cell>
                     <Table.Cell className="w-96">{post.title}</Table.Cell>
-                    <Table.Cell className="w-5">{post.category}</Table.Cell>
                   </Table.Row>
                 </Table.Body>
               ))}
