@@ -21,12 +21,12 @@ export default function Search() {
     const categoryFromUrl = urlParams.get("category");
 
     if (searchTermFromUrl || sortFromUrl || categoryFromUrl) {
-      setSidebarData({
-        ...sidebarData,
+      setSidebarData((prevSidebarData) => ({
+        ...prevSidebarData,
         searchTerm: searchTermFromUrl,
         sort: sortFromUrl,
         category: categoryFromUrl,
-      });
+      }));
     }
 
     const fetchPosts = async () => {
@@ -81,7 +81,7 @@ export default function Search() {
 
     const urlParams = new URLSearchParams(location.search);
 
-    urlParams.set("searchTerm", sidebarData.searchTerm);
+    urlParams.set("searchTerm", sidebarData.searchTerm || "");
     urlParams.set("sort", sidebarData.sort);
     urlParams.set("category", sidebarData.category);
 
@@ -132,7 +132,7 @@ export default function Search() {
               placeholder="Search posts..."
               id="searchTerm"
               type="text"
-              value={sidebarData.searchTerm}
+              value={sidebarData.searchTerm || ""}
               onChange={handleChange}
               className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
             />
