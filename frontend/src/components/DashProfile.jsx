@@ -46,47 +46,50 @@ export default function DashProfile() {
 
   useEffect(() => {
     if (imageFile) {
+      const uploadImage = async () => {
+        setImageFileUploading(true);
+        setImageFileUploadError(null);
+
+        const storage = getStorage(app);
+        const fileName = new Date().getTime() + imageFile.name;
+        const storageRef = ref(storage, fileName);
+        const uploadTask = uploadBytesResumable(storageRef, imageFile);
+
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            const progress =
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+            setImageFileUploadProgress(progress.toFixed(0));
+          },
+          (error) => {
+            setImageFileUploadError(
+              "Could not upload image. File must be less than 2MB."
+            );
+            setImageFileUploadProgress(null);
+            setImageFile(null);
+            setImageFileUrl(null);
+            setImageFileUploading(false);
+
+            console.log(error);
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+              setImageFileUrl(downloadURL);
+              setFormData((prevFormData) => ({
+                ...prevFormData,
+                profilePicture: downloadURL,
+              }));
+              setImageFileUploading(false);
+            });
+          }
+        );
+      };
+
       uploadImage();
     }
   }, [imageFile]);
-
-  const uploadImage = async () => {
-    setImageFileUploading(true);
-    setImageFileUploadError(null);
-
-    const storage = getStorage(app);
-    const fileName = new Date().getTime() + imageFile.name;
-    const storageRef = ref(storage, fileName);
-    const uploadTask = uploadBytesResumable(storageRef, imageFile);
-
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-
-        setImageFileUploadProgress(progress.toFixed(0));
-      },
-      (error) => {
-        setImageFileUploadError(
-          "Could not upload image. File must be less than 2MB."
-        );
-        setImageFileUploadProgress(null);
-        setImageFile(null);
-        setImageFileUrl(null);
-        setImageFileUploading(false);
-
-        console.log(error);
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          setImageFileUrl(downloadURL);
-          setFormData({ ...formData, profilePicture: downloadURL });
-          setImageFileUploading(false);
-        });
-      }
-    );
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
