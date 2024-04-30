@@ -183,11 +183,17 @@ export default function Projects() {
           </article>
         ) : (
           <article className="w-full mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-content-center p-2">
-            {displayedProjects}
+            {displayedProjects.length > 0 ? (
+              displayedProjects
+            ) : (
+              <p className="mx-auto font-semibold text-center">
+                No projects found at the moment.
+              </p>
+            )}
           </article>
         )}
       </section>
-      {showMore && (
+      {showMore && displayedProjects.length > 0 && (
         <button
           onClick={handleShowMore}
           className="text-sky-500 text-lg hover:underline mb-4 w-fit mx-auto font-bold"
@@ -195,7 +201,7 @@ export default function Projects() {
           Show More
         </button>
       )}
-      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
+      <section className="p-3 bg-sky-100 dark:bg-slate-700 mt-10 mb-7 max-w-[1000px] mx-auto rounded-md">
         <CallToAction />
       </section>
     </main>
