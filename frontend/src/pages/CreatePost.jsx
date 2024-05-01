@@ -96,19 +96,19 @@ export default function CreatePost() {
 
   return (
     <main className="p-3 max-w-3xl mx-auto min-h-screen">
-      <h1 className="text-center text-3xl my-7 font-semibold">Create a post</h1>
+      <h1 className="text-center text-3xl mt-7 mb-10 font-semibold">
+        Create a post
+      </h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <TextInput
+          type="text"
+          placeholder="Title"
+          required
+          id="title"
+          className="flex-1"
+          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+        />
         <section className="flex flex-col gap-4 sm:flex-row justify-between">
-          <TextInput
-            type="text"
-            placeholder="Title"
-            required
-            id="title"
-            className="flex-1"
-            onChange={(e) =>
-              setFormData({ ...formData, title: e.target.value })
-            }
-          />
           <Select
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
@@ -119,8 +119,15 @@ export default function CreatePost() {
             <option value="coding">Coding</option>
             <option value="thoughts">Thoughts</option>
           </Select>
+          <TextInput
+            type="text"
+            placeholder="Link"
+            id="link"
+            className="flex-1"
+            onChange={(e) => setFormData({ ...formData, link: e.target.value })}
+          />
         </section>
-        <section className="flex gap-4 items-center justify-between border-4 border-sky-500 border-dotted p-3">
+        <section className="flex gap-4 items-center justify-between border-2 border-sky-500 border-dotted p-3">
           <FileInput
             type="file"
             accept="image/*"
@@ -162,13 +169,6 @@ export default function CreatePost() {
           onChange={(value) => {
             setFormData({ ...formData, content: value });
           }}
-        />
-        <TextInput
-          type="text"
-          placeholder="Link"
-          id="link"
-          className="flex-1"
-          onChange={(e) => setFormData({ ...formData, link: e.target.value })}
         />
         <Button type="submit" gradientDuoTone="purpleToBlue">
           Publish
