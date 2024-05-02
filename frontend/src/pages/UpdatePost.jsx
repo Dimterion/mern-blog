@@ -126,7 +126,7 @@ export default function UpdatePost() {
   };
 
   return (
-    <div className="p-3 max-w-3xl mx-auto min-h-screen">
+    <main className="p-3 max-w-3xl mx-auto min-h-screen mb-10">
       <h1 className="text-center text-3xl mt-7 mb-10 font-semibold">
         Update a post
       </h1>
@@ -140,7 +140,7 @@ export default function UpdatePost() {
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
           value={formData.title || ""}
         />
-        <div className="flex flex-col gap-4 sm:flex-row justify-between">
+        <section className="flex flex-col gap-4 sm:flex-row justify-between">
           <Select
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
@@ -160,8 +160,8 @@ export default function UpdatePost() {
             onChange={(e) => setFormData({ ...formData, link: e.target.value })}
             value={formData.link || ""}
           />
-        </div>
-        <div className="flex gap-4 items-center justify-between border-2 border-sky-500 border-dotted p-3">
+        </section>
+        <section className="flex gap-4 items-center justify-between border-2 border-sky-500 border-dotted p-3">
           <FileInput
             type="file"
             accept="image/*"
@@ -176,17 +176,17 @@ export default function UpdatePost() {
             disabled={imageUploadProgress}
           >
             {imageUploadProgress ? (
-              <div className="size-16">
+              <aside className="size-16">
                 <CircularProgressbar
                   value={imageUploadProgress}
                   text={`${imageUploadProgress || 0}%`}
                 />
-              </div>
+              </aside>
             ) : (
               "Upload Image"
             )}
           </Button>
-        </div>
+        </section>
         {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
         {formData.image && (
           <img
@@ -214,6 +214,6 @@ export default function UpdatePost() {
           </Alert>
         )}
       </form>
-    </div>
+    </main>
   );
 }

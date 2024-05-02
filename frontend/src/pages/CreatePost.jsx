@@ -95,7 +95,7 @@ export default function CreatePost() {
   };
 
   return (
-    <main className="p-3 max-w-3xl mx-auto min-h-screen">
+    <main className="p-3 max-w-3xl mx-auto min-h-screen mb-10">
       <h1 className="text-center text-3xl mt-7 mb-10 font-semibold">
         Create a post
       </h1>
