@@ -4,6 +4,9 @@ export default function About() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-12 pb-10">
       <h1 className="text-3xl font-bold">About me</h1>
+      <h2 className="text-xl">
+        Web Developer | React.js | JavaScript | CSS | HTML | Tailwind CSS | Git
+      </h2>
       <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
         <CallToAction />
       </section>

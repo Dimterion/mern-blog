@@ -109,7 +109,7 @@ export default function Post() {
       <CommentSection postId={post._id} />
       <section className="flex flex-col justify-center items-center mb-5">
         <h1 className="text-xl font-semibold mt-1">Recent articles</h1>
-        <aside className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-5 justify-center">
+        <aside className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-5 justify-center">
           {recentPosts &&
             recentPosts.map(
               (recentPost) =>
