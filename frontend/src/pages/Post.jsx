@@ -81,7 +81,12 @@ export default function Post() {
         to={`/search?category=${post && post.category}`}
         className="self-center my-2"
       >
-        <Button color="gray" pill size="xs" className="pb-1">
+        <Button
+          color="gray"
+          pill
+          size="xs"
+          className="px-4 py-1 rounded-2xl uppercase"
+        >
           {post && post.category}
         </Button>
       </Link>
