@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Interweave } from "interweave";
 import { Button, Spinner } from "flowbite-react";
 import CallToAction from "../components/CallToAction";
 import CommentSection from "../components/CommentSection";
@@ -104,10 +105,9 @@ export default function Post() {
           min read
         </span>
       </aside>
-      <section
-        className="p-3 max-w-2xl mx-auto w-full post-content mb-6"
-        dangerouslySetInnerHTML={{ __html: post && post.content }}
-      ></section>
+      <section className="p-3 max-w-2xl mx-auto w-full post-content mb-6">
+        <Interweave content={post && post.content} noWrap={true} />
+      </section>
       <section className="max-w-4xl mx-auto w-full">
         <CallToAction />
       </section>
