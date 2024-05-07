@@ -15,12 +15,9 @@ export default function FooterComponent() {
         <article className="grid justify-center sm:justify-between sm:flex md:grid-cols-1">
           <Link
             to="/"
-            className="self-center whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white mx-auto sm:mx-0"
+            className="self-center sm:text-xl font-semibold mx-auto sm:mx-0 px-4 sm:px-6 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-tl-full rounded-br-full text-white"
           >
-            <span className="p-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-lg text-white">
-              Dimterion&apos;s
-            </span>
-            <span>site</span>
+            Dimterion
           </Link>
           <aside className="grid grid-cols-2 mt-6 sm:mt-0 gap-16">
             <aside>

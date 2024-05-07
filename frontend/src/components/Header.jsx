@@ -34,12 +34,9 @@ export default function Header() {
     <Navbar className="border-b-2 px-1">
       <Link
         to="/"
-        className="self-center whitespace-nowrap sm:text-xl font-semibold dark:text-white"
+        className="sm:text-xl px-4 sm:px-6 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-tl-full rounded-br-full text-white font-semibold"
       >
-        <span className="p-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-lg text-white">
-          Dimterion&apos;s
-        </span>
-        <span>site</span>
+        Dimterion
       </Link>
       <section className="flex gap-1 md:order-2 items-center">
         <Link
