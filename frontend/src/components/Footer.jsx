@@ -45,30 +45,35 @@ export default function FooterComponent() {
           />
           <aside className="flex gap-6 sm:justify-center">
             <Footer.Icon
+              ariaLabel="Go to LinkedIn profile"
               href="https://www.linkedin.com/in/dmitrii-p/"
               target="_blank"
               rel="noopener noreferrer"
               icon={BsLinkedin}
             />
             <Footer.Icon
+              ariaLabel="Go to GitHub profile"
               href="https://github.com/Dimterion"
               target="_blank"
               rel="noopener noreferrer"
               icon={BsGithub}
             />
             <Footer.Icon
+              ariaLabel="Go to Medium blog"
               href="https://medium.com/@dimterion"
               target="_blank"
               rel="noopener noreferrer"
               icon={BsMedium}
             />
             <Footer.Icon
+              ariaLabel="Go to Twitter profile"
               href="https://twitter.com/Dimterion"
               target="_blank"
               rel="noopener noreferrer"
               icon={BsTwitterX}
             />
             <Footer.Icon
+              ariaLabel="Go to personal profile site"
               href="http://dimterion.github.io/"
               target="_blank"
               rel="noopener noreferrer"
