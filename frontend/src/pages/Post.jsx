@@ -94,7 +94,7 @@ export default function Post() {
       <img
         src={post && post.image}
         alt={post && post.title}
-        className="my-4 max-h-[400px] w-full object-cover rounded-md"
+        className="my-4 h-[30vh] sm:h-full max-h-[400px] w-full max-w-[1000px] m-auto object-cover rounded-md"
       />
       <aside className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-sm">
         <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>

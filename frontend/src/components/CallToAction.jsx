@@ -31,7 +31,7 @@ export default function CallToAction() {
       <img
         src="https://dimterion.github.io/assets/profile_picture.jpg"
         alt="Placeholder image."
-        className="rounded-lg sm:max-w-[400px] sm:max-h-[400px] sm:object-cover"
+        className="rounded-lg w-[200px] h-[200px] max-w-[95vw] max-h-[50vh] sm:object-cover"
       />
     </section>
   );
