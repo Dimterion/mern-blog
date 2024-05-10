@@ -1,12 +1,28 @@
+import { Link } from "react-router-dom";
 import CallToAction from "../components/CallToAction";
 
 export default function About() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-12 pb-10">
-      <h1 className="text-3xl font-bold">About me</h1>
-      <h2 className="text-xl">
+    <main className="min-h-screen flex flex-col items-center justify-center gap-10 pb-10">
+      <h1 className="text-3xl font-bold mt-10">About me</h1>
+      <h2 className="text-xl text-center">
         Web Developer | React.js | JavaScript | CSS | HTML | Tailwind CSS | Git
       </h2>
+      <div className="flex gap-2 sm:gap-4">
+        <Link
+          to="/search"
+          className="sm:text-lg text-sky-500 font-bold hover:underline w-fit flex items-center gap-1"
+        >
+          View posts
+        </Link>
+        <span className="text-sky-500 font-bold">|</span>
+        <Link
+          to="/projects"
+          className="sm:text-lg text-sky-500 font-bold hover:underline w-fit flex items-center gap-1"
+        >
+          View projects
+        </Link>
+      </div>
       <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
         <CallToAction />
       </section>
