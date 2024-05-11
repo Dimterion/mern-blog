@@ -108,7 +108,7 @@ export default function Post() {
       <section className="p-3 max-w-2xl mx-auto w-full post-content mb-6">
         <Interweave content={post && post.content} noWrap={true} />
       </section>
-      <section className="max-w-4xl mx-auto w-full">
+      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
         <CallToAction />
       </section>
       <CommentSection postId={post._id} />
