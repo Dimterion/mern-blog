@@ -81,7 +81,7 @@ export default function DashPosts() {
   };
 
   return (
-    <section className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300">
+    <section className="table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300 text-center">
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
@@ -135,7 +135,7 @@ export default function DashPosts() {
                       className="text-teal-500 hover:underline"
                       to={`/update-post/${post._id}`}
                     >
-                      <span>Edit</span>
+                      <span className="text-sky-500">Edit</span>
                     </Link>
                   </Table.Cell>
                 </Table.Row>
@@ -145,7 +145,7 @@ export default function DashPosts() {
           {showMore && (
             <button
               onClick={handleShowMore}
-              className="w-full text-teal-500 self-center text-sm py-7"
+              className="text-sky-500 hover:underline p-7 w-fit font-bold"
             >
               Show More
             </button>
