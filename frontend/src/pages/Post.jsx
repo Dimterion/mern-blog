@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Interweave } from "interweave";
-import { Button, Spinner } from "flowbite-react";
+import { Spinner } from "flowbite-react";
 import CallToAction from "../components/CallToAction";
 import CommentSection from "../components/CommentSection";
 import PostCard from "../components/PostCard";
@@ -80,16 +80,9 @@ export default function Post() {
       </h1>
       <Link
         to={`/search?category=${post && post.category}`}
-        className="self-center my-2"
+        className="self-center my-2 px-4 py-1 text-sm border-2 border-gray-400 rounded-2xl uppercase font-semibold text-gray-500 hover:bg-gray-400 hover:text-gray-100 dark:border-gray-500 dark:hover:bg-sky-500 dark:hover:text-gray-100 dark:hover:border-sky-500"
       >
-        <Button
-          color="gray"
-          pill
-          size="xs"
-          className="px-4 py-1 rounded-2xl uppercase"
-        >
-          {post && post.category}
-        </Button>
+        {post && post.category}
       </Link>
       <img
         src={post && post.image}
