@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -87,13 +87,34 @@ export default function Header() {
       </section>
       <Navbar.Collapse>
         <Navbar.Link active={path === "/"} as={"div"}>
-          <Link to="/">Home</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-sky-500" : "text-gray-500 hover:text-sky-500"
+            }
+          >
+            Home
+          </NavLink>
         </Navbar.Link>
         <Navbar.Link active={path === "/projects"} as={"div"}>
-          <Link to="/projects">Projects</Link>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? "text-sky-500" : "text-gray-500 hover:text-sky-500"
+            }
+          >
+            Projects
+          </NavLink>
         </Navbar.Link>
         <Navbar.Link active={path === "/about"} as={"div"}>
-          <Link to="/about">About</Link>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "text-sky-500" : "text-gray-500 hover:text-sky-500"
+            }
+          >
+            About
+          </NavLink>
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
