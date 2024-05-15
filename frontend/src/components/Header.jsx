@@ -86,31 +86,49 @@ export default function Header() {
         <Navbar.Toggle />
       </section>
       <Navbar.Collapse>
-        <Navbar.Link active={path === "/"} as={"div"}>
+        <Navbar.Link
+          className="bg-transparent border-none"
+          active={path === "/"}
+          as={"div"}
+        >
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-sky-500" : "text-gray-500 hover:text-sky-500"
+              isActive
+                ? "text-sky-500 font-bold"
+                : "text-gray-500 hover:text-sky-500"
             }
           >
             Home
           </NavLink>
         </Navbar.Link>
-        <Navbar.Link active={path === "/projects"} as={"div"}>
+        <Navbar.Link
+          className="bg-transparent border-none"
+          active={path === "/projects"}
+          as={"div"}
+        >
           <NavLink
             to="/projects"
             className={({ isActive }) =>
-              isActive ? "text-sky-500" : "text-gray-500 hover:text-sky-500"
+              isActive
+                ? "text-sky-500 font-bold"
+                : "text-gray-500 hover:text-sky-500"
             }
           >
             Projects
           </NavLink>
         </Navbar.Link>
-        <Navbar.Link active={path === "/about"} as={"div"}>
+        <Navbar.Link
+          className="bg-transparent border-none"
+          active={path === "/about"}
+          as={"div"}
+        >
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-sky-500" : "text-gray-500 hover:text-sky-500"
+              isActive
+                ? "text-sky-500 font-bold"
+                : "text-gray-500 hover:text-sky-500"
             }
           >
             About
