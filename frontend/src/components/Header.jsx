@@ -96,7 +96,7 @@ export default function Header() {
             className={({ isActive }) =>
               isActive
                 ? "text-sky-500 font-bold"
-                : "text-gray-500 hover:text-sky-500"
+                : "text-gray-500 dark:text-gray-400 hover:text-sky-500"
             }
           >
             Home
@@ -112,7 +112,7 @@ export default function Header() {
             className={({ isActive }) =>
               isActive
                 ? "text-sky-500 font-bold"
-                : "text-gray-500 hover:text-sky-500"
+                : "text-gray-500 dark:text-gray-400 hover:text-sky-500"
             }
           >
             Projects
@@ -128,7 +128,7 @@ export default function Header() {
             className={({ isActive }) =>
               isActive
                 ? "text-sky-500 font-bold"
-                : "text-gray-500 hover:text-sky-500"
+                : "text-gray-500 dark:text-gray-400 hover:text-sky-500"
             }
           >
             About

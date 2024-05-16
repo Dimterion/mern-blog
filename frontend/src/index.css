@@ -32,7 +32,7 @@ body {
 }
 
 .post-content a {
-  color: rgb(73, 149, 199);
+  color: rgb(14 165 233);
   text-decoration: none;
 }
 
@@ -41,5 +41,5 @@ body {
 }
 
 .dark .post-content a {
-  color: cyan;
+  color: rgb(14 165 233);
 }
