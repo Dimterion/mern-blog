@@ -101,17 +101,17 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
           </>
         ) : (
           <>
-            <p className="text-gray-600 dark:text-gray-400 pb-2">
+            <p className="text-gray-600 dark:text-gray-400 pb-2 break-all">
               {comment.content}
             </p>
             <article className="flex items-center pt-2 text-xs border-t dark:border-gray-700 max-w-fit gap-2">
               <button
                 type="button"
                 onClick={() => onLike(comment._id)}
-                className={`text-gray-400 hover:text-blue-500 ${
+                className={`text-gray-400 hover:text-sky-500 ${
                   currentUser &&
                   comment.likes.includes(currentUser._id) &&
-                  "!text-blue-500"
+                  "!text-sky-500"
                 }`}
               >
                 <FaThumbsUp className="text-sm" />
@@ -128,7 +128,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
                     <button
                       type="button"
                       onClick={handleEdit}
-                      className="text-gray-400 hover:text-blue-500"
+                      className="text-gray-400 hover:text-sky-500"
                     >
                       Edit
                     </button>

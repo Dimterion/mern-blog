@@ -167,9 +167,12 @@ export default function CommentSection({ postId }) {
             <p className="text-gray-500 text-xs">
               {200 - comment.length} characters remaining.
             </p>
-            <Button outline gradientDuoTone="purpleToBlue" type="submit">
+            <button
+              className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2 uppercase text-sm"
+              type="submit"
+            >
               Submit
-            </Button>
+            </button>
           </article>
           {commentError && (
             <Alert color="failure" className="mt-5">
@@ -182,9 +185,9 @@ export default function CommentSection({ postId }) {
         <p className="my-5">No comments yet.</p>
       ) : (
         <>
-          <aside className="my-5 flex items-center gap-1">
+          <aside className="my-5 flex items-center gap-1 font-semibold">
             <p>Comments:</p>
-            <p>{comments.length}</p>
+            <p className="text-sm">{comments.length}</p>
           </aside>
           {comments.map((comment) => (
             <Comment
