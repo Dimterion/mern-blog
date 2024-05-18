@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
-import { Alert, Button, Modal, Textarea } from "flowbite-react";
+import { Alert, Modal, Textarea } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import Comment from "../components/Comment";
 
@@ -217,15 +217,18 @@ export default function CommentSection({ postId }) {
               Are you sure you want to delete this comment?
             </h3>
             <section className="flex justify-center gap-4">
-              <Button
-                color="failure"
+              <button
+                className="border p-2 rounded-md w-28 bg-red-500 text-gray-100 hover:opacity-80"
                 onClick={() => handleDelete(commentToDelete)}
               >
                 Yes, I&apos;m sure
-              </Button>
-              <Button color="gray" onClick={() => setShowModal(false)}>
+              </button>
+              <button
+                className="border px-2 py-1 rounded-md w-28 text-gray-500 hover:opacity-80"
+                onClick={() => setShowModal(false)}
+              >
                 No, cancel
-              </Button>
+              </button>
             </section>
           </section>
         </Modal.Body>

@@ -87,7 +87,7 @@ export default function Header() {
       </section>
       <Navbar.Collapse>
         <Navbar.Link
-          className="bg-transparent border-none"
+          className="bg-transparent border-none w-fit"
           active={path === "/"}
           as={"div"}
         >
@@ -103,7 +103,7 @@ export default function Header() {
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="bg-transparent border-none"
+          className="bg-transparent border-none w-fit"
           active={path === "/projects"}
           as={"div"}
         >
@@ -119,7 +119,7 @@ export default function Header() {
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="bg-transparent border-none"
+          className="bg-transparent border-none w-fit"
           active={path === "/about"}
           as={"div"}
         >
