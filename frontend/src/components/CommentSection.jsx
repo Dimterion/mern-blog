@@ -209,8 +209,8 @@ export default function CommentSection({ postId }) {
         popup
         size="md"
       >
-        <Modal.Header />
-        <Modal.Body>
+        <Modal.Header className="bg-gray-200 rounded-t-md" />
+        <Modal.Body className="bg-gray-200 rounded-b-md">
           <section className="text-center">
             <HiOutlineExclamationCircle className="size-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
             <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
@@ -218,13 +218,13 @@ export default function CommentSection({ postId }) {
             </h3>
             <section className="flex justify-center gap-4">
               <button
-                className="border p-2 rounded-md w-28 bg-red-500 text-gray-100 hover:opacity-80"
+                className="border p-2 rounded-md w-28 bg-red-500 text-gray-100 hover:opacity-85"
                 onClick={() => handleDelete(commentToDelete)}
               >
                 Yes, I&apos;m sure
               </button>
               <button
-                className="border px-2 py-1 rounded-md w-28 text-gray-500 hover:opacity-80"
+                className="bg-gray-400 px-2 py-1 rounded-md w-28 text-gray-100 hover:opacity-85"
                 onClick={() => setShowModal(false)}
               >
                 No, cancel
