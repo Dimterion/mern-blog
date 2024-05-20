@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Button, Modal, Table } from "flowbite-react";
+import { Modal, Table } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { FaCheck, FaTimes } from "react-icons/fa";
 
@@ -139,20 +139,26 @@ export default function DashUsers() {
         popup
         size="md"
       >
-        <Modal.Header />
-        <Modal.Body>
+        <Modal.Header className="bg-gray-200 rounded-t-md" />
+        <Modal.Body className="bg-gray-200 rounded-b-md">
           <section className="text-center">
             <HiOutlineExclamationCircle className="size-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
             <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to delete this user?
             </h3>
             <aside className="flex justify-center gap-4">
-              <Button color="failure" onClick={handleDeleteUser}>
+              <button
+                className="border p-2 rounded-md w-28 bg-red-500 text-gray-100 hover:opacity-85"
+                onClick={handleDeleteUser}
+              >
                 Yes, I&apos;m sure
-              </Button>
-              <Button color="gray" onClick={() => setShowModal(false)}>
+              </button>
+              <button
+                className="bg-gray-400 px-2 py-1 rounded-md w-28 text-gray-100 hover:opacity-85"
+                onClick={() => setShowModal(false)}
+              >
                 No, cancel
-              </Button>
+              </button>
             </aside>
           </section>
         </Modal.Body>
