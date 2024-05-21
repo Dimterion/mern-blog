@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Alert, Button, Modal, TextInput } from "flowbite-react";
+import { Alert, Modal, TextInput } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -244,23 +244,21 @@ export default function DashProfile() {
           placeholder="Password"
           onChange={handleChange}
         />
-        <Button
+        <button
           type="submit"
-          gradientDuoTone="purpleToBlue"
-          outline
+          className="border-2 border-sky-500 p-2 rounded-lg text-sky-500 font-semibold hover:bg-sky-500 hover:text-gray-100"
           disabled={loading || imageFileUploading}
         >
           {loading ? "Loading..." : "Update"}
-        </Button>
+        </button>
         {currentUser.isAdmin && (
           <Link to="/create-post">
-            <Button
+            <button
               type="button"
-              gradientDuoTone="purpleToBlue"
-              className="w-full"
+              className="w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
             >
               Create a post
-            </Button>
+            </button>
           </Link>
         )}
       </form>
