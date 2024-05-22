@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Button, Table } from "flowbite-react";
+import { Table } from "flowbite-react";
 import {
   HiAnnotation,
   HiArrowNarrowUp,
@@ -130,9 +130,12 @@ export default function DashboardComp() {
         <article className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent users</h1>
-            <Button outline gradientDuoTone="purpleToBlue">
-              <Link to={"/dashboard?tab=users"}>See all</Link>
-            </Button>
+            <Link
+              className="border-2 bg-sky-500 border-sky-500 px-4 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              to={"/dashboard?tab=users"}
+            >
+              See all
+            </Link>
           </div>
           <Table hoverable>
             <Table.Head>
@@ -159,9 +162,12 @@ export default function DashboardComp() {
         <article className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent comments</h1>
-            <Button outline gradientDuoTone="purpleToBlue">
-              <Link to={"/dashboard?tab=comments"}>See all</Link>
-            </Button>
+            <Link
+              className="border-2 bg-sky-500 border-sky-500 px-4 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              to={"/dashboard?tab=comments"}
+            >
+              See all
+            </Link>
           </div>
           <Table hoverable>
             <Table.Head>
@@ -184,9 +190,12 @@ export default function DashboardComp() {
         <article className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent posts</h1>
-            <Button outline gradientDuoTone="purpleToBlue">
-              <Link to={"/dashboard?tab=posts"}>See all</Link>
-            </Button>
+            <Link
+              className="border-2 bg-sky-500 border-sky-500 px-4 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              to={"/dashboard?tab=posts"}
+            >
+              See all
+            </Link>
           </div>
           <Table hoverable className="text-center">
             <Table.Head>

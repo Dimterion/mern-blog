@@ -252,13 +252,11 @@ export default function DashProfile() {
           {loading ? "Loading..." : "Update"}
         </button>
         {currentUser.isAdmin && (
-          <Link to="/create-post">
-            <button
-              type="button"
-              className="w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
-            >
-              Create a post
-            </button>
+          <Link
+            className="text-center w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+            to="/create-post"
+          >
+            Create a post
           </Link>
         )}
       </form>
