@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
+import { Alert, Label, Spinner, TextInput } from "flowbite-react";
 import {
   signInStart,
   signInSuccess,
@@ -80,9 +80,8 @@ export default function SignIn() {
               className="mb-4"
               onChange={handleChange}
             />
-            <Button
-              className="mb-4"
-              gradientDuoTone="purpleToBlue"
+            <button
+              className="flex justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white mb-4"
               type="submit"
               disabled={loading}
             >
@@ -94,12 +93,12 @@ export default function SignIn() {
               ) : (
                 "Sign In"
               )}
-            </Button>
+            </button>
             <OAuth />
           </form>
           <aside className="flex gap-2 text-sm mt-5">
             <span>Don&apos;t have an account?</span>
-            <Link to="/sign-up" className="text-blue-500">
+            <Link to="/sign-up" className="text-sky-500">
               Sign Up
             </Link>
           </aside>

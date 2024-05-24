@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Button } from "flowbite-react";
 import { AiFillGoogleCircle } from "react-icons/ai";
 import { GoogleAuthProvider, signInWithPopup, getAuth } from "firebase/auth";
 import { app } from "../firebase";
@@ -38,13 +37,11 @@ export default function OAuth() {
   };
 
   return (
-    <Button
-      type="button"
-      gradientDuoTone="purpleToBlue"
-      outline
+    <button
+      className="flex items-center justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white"
       onClick={handleGoogleClick}
     >
-      <AiFillGoogleCircle className="size-6 mr-2" /> Continue with Google
-    </Button>
+      <AiFillGoogleCircle className="size-5 mr-2" /> Continue with Google
+    </button>
   );
 }

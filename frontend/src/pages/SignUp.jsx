@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
+import { Alert, Label, Spinner, TextInput } from "flowbite-react";
 import OAuth from "../components/OAuth";
 
 export default function SignUp() {
@@ -84,9 +84,8 @@ export default function SignUp() {
               className="mb-4"
               onChange={handleChange}
             />
-            <Button
-              className="mb-4"
-              gradientDuoTone="purpleToBlue"
+            <button
+              className="flex justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white mb-4"
               type="submit"
               disabled={loading}
             >
@@ -98,12 +97,12 @@ export default function SignUp() {
               ) : (
                 "Sign Up"
               )}
-            </Button>
+            </button>
             <OAuth />
           </form>
           <aside className="flex gap-2 text-sm mt-5">
             <span>Have an account?</span>
-            <Link to="/sign-in" className="text-blue-500">
+            <Link to="/sign-in" className="text-sky-500">
               Sign In
             </Link>
           </aside>
