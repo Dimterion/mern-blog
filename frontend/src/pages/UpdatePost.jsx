@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
+import { Alert, FileInput, Select, TextInput } from "flowbite-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { CircularProgressbar } from "react-circular-progressbar";
@@ -167,11 +167,8 @@ export default function UpdatePost() {
             accept="image/*"
             onChange={(e) => setFile(e.target.files[0])}
           />
-          <Button
-            type="button"
-            gradientDuoTone="purpleToBlue"
-            size="sm"
-            outline
+          <button
+            className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2 text-sm"
             onClick={handleUploadImage}
             disabled={imageUploadProgress}
           >
@@ -185,7 +182,7 @@ export default function UpdatePost() {
             ) : (
               "Upload Image"
             )}
-          </Button>
+          </button>
         </section>
         {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
         {formData.image && (
@@ -199,15 +196,18 @@ export default function UpdatePost() {
           theme="snow"
           value={formData.content || ""}
           placeholder="Write something..."
-          className="h-72 mb-12"
+          className="h-72 mb-24 sm:mb-12"
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
           }}
         />
-        <Button type="submit" gradientDuoTone="purpleToBlue">
+        <button
+          type="submit"
+          className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2"
+        >
           Update
-        </Button>
+        </button>
         {publishError && (
           <Alert className="mt-5" color="failure">
             {publishError}

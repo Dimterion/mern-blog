@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Alert, Button, FileInput, Select, TextInput } from "flowbite-react";
+import { Alert, FileInput, Select, TextInput } from "flowbite-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { CircularProgressbar } from "react-circular-progressbar";
@@ -133,11 +133,8 @@ export default function CreatePost() {
             accept="image/*"
             onChange={(e) => setFile(e.target.files[0])}
           />
-          <Button
-            type="button"
-            gradientDuoTone="purpleToBlue"
-            size="sm"
-            outline
+          <button
+            className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2 text-sm"
             onClick={handleUploadImage}
             disabled={imageUploadProgress}
           >
@@ -151,7 +148,7 @@ export default function CreatePost() {
             ) : (
               "Upload Image"
             )}
-          </Button>
+          </button>
         </section>
         {imageUploadError && <Alert color="failure">{imageUploadError}</Alert>}
         {formData.image && (
@@ -164,15 +161,18 @@ export default function CreatePost() {
         <ReactQuill
           theme="snow"
           placeholder="Write something..."
-          className="h-72 mb-12"
+          className="h-72 mb-24 sm:mb-12"
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
           }}
         />
-        <Button type="submit" gradientDuoTone="purpleToBlue">
+        <button
+          type="submit"
+          className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2"
+        >
           Publish
-        </Button>
+        </button>
         {publishError && (
           <Alert className="mt-5" color="failure">
             {publishError}
