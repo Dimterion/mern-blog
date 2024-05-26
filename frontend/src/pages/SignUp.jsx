@@ -60,7 +60,7 @@ export default function SignUp() {
         </article>
         <article className="flex-1">
           <form className="flex flex-col" onSubmit={handleSubmit}>
-            <Label value="Username" />
+            <Label value="Username" className="mb-1" />
             <TextInput
               type="text"
               placeholder="Name"
@@ -68,7 +68,7 @@ export default function SignUp() {
               className="mb-4"
               onChange={handleChange}
             />
-            <Label value="Email" />
+            <Label value="Email" className="mb-1" />
             <TextInput
               type="email"
               placeholder="emailname@email.com"
@@ -76,7 +76,7 @@ export default function SignUp() {
               className="mb-4"
               onChange={handleChange}
             />
-            <Label value="Password" />
+            <Label value="Password" className="mb-1" />
             <TextInput
               type="password"
               placeholder="**********"
@@ -85,7 +85,7 @@ export default function SignUp() {
               onChange={handleChange}
             />
             <button
-              className="flex justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white mb-4"
+              className="flex justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white mt-2 mb-4"
               type="submit"
               disabled={loading}
             >
@@ -98,8 +98,8 @@ export default function SignUp() {
                 "Sign Up"
               )}
             </button>
-            <OAuth />
           </form>
+          <OAuth />
           <aside className="flex gap-2 text-sm mt-5">
             <span>Have an account?</span>
             <Link to="/sign-in" className="text-sky-500">
