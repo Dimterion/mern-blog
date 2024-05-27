@@ -75,7 +75,7 @@ export default function DashboardComp() {
   return (
     <section className="p-3 md:mx-auto">
       <section className="flex flex-wrap gap-4 justify-center">
-        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 md:w-72 w-full rounded-md shadow-md">
+        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 lg:w-60 w-full rounded-md shadow-md mx-2 lg:mx-0">
           <div className="flex justify-between">
             <div>
               <h3 className="text-gray-500 text-md uppercase">Total Users</h3>
@@ -91,7 +91,7 @@ export default function DashboardComp() {
             <div className="text-gray-500">Last month</div>
           </div>
         </article>
-        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 md:w-72 w-full rounded-md shadow-md">
+        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 lg:w-60 w-full rounded-md shadow-md mx-2 lg:mx-0">
           <div className="flex justify-between">
             <div>
               <h3 className="text-gray-500 text-md uppercase">
@@ -109,7 +109,7 @@ export default function DashboardComp() {
             <div className="text-gray-500">Last month</div>
           </div>
         </article>
-        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 md:w-72 w-full rounded-md shadow-md">
+        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 lg:w-60 w-full rounded-md shadow-md mx-2 lg:mx-0">
           <div className="flex justify-between">
             <div>
               <h3 className="text-gray-500 text-md uppercase">Total Posts</h3>
@@ -127,11 +127,11 @@ export default function DashboardComp() {
         </article>
       </section>
       <section className="flex flex-wrap gap-4 py-3 mx-auto justify-center">
-        <article className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
+        <article className="flex flex-col w-full lg:max-w-[240px] lg:w-auto shadow-md p-2 rounded-md mx-2 lg:mx-0 dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent users</h1>
             <Link
-              className="border-2 bg-sky-500 border-sky-500 px-4 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="border-2 bg-sky-500 border-sky-500 px-2 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=users"}
             >
               See all
@@ -159,11 +159,11 @@ export default function DashboardComp() {
               ))}
           </Table>
         </article>
-        <article className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
+        <article className="flex flex-col w-full lg:max-w-[240px] lg:w-auto shadow-md p-2 rounded-md mx-2 lg:mx-0 dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent comments</h1>
             <Link
-              className="border-2 bg-sky-500 border-sky-500 px-4 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="border-2 bg-sky-500 border-sky-500 px-2 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=comments"}
             >
               See all
@@ -187,11 +187,11 @@ export default function DashboardComp() {
               ))}
           </Table>
         </article>
-        <article className="flex flex-col w-full md:w-auto shadow-md p-2 rounded-md dark:bg-gray-800">
+        <article className="flex flex-col w-full lg:max-w-[240px] lg:w-auto shadow-md p-2 rounded-md mx-2 lg:mx-0 dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="text-center p-2">Recent posts</h1>
             <Link
-              className="border-2 bg-sky-500 border-sky-500 px-4 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="border-2 bg-sky-500 border-sky-500 px-2 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=posts"}
             >
               See all
