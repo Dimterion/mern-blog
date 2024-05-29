@@ -54,6 +54,11 @@ export default function DashSidebar() {
                 active={tab === "dash" || !tab}
                 icon={HiChartPie}
                 as="div"
+                className={
+                  tab === "dash"
+                    ? "bg-gray-200 hover:bg-gray-200"
+                    : "hover:bg-gray-200"
+                }
               >
                 Dashboard
               </Sidebar.Item>
@@ -66,6 +71,11 @@ export default function DashSidebar() {
               label={currentUser.isAdmin ? "Admin" : "User"}
               labelColor="dark"
               as="div"
+              className={
+                tab === "profile"
+                  ? "bg-gray-200 hover:bg-gray-200"
+                  : "hover:bg-gray-200"
+              }
             >
               Profile
             </Sidebar.Item>
@@ -76,6 +86,11 @@ export default function DashSidebar() {
                 active={tab === "posts"}
                 icon={HiDocumentText}
                 as="div"
+                className={
+                  tab === "posts"
+                    ? "bg-gray-200 hover:bg-gray-200"
+                    : "hover:bg-gray-200"
+                }
               >
                 Posts
               </Sidebar.Item>
@@ -88,6 +103,11 @@ export default function DashSidebar() {
                   active={tab === "users"}
                   icon={HiOutlineUserGroup}
                   as="div"
+                  className={
+                    tab === "users"
+                      ? "bg-gray-200 hover:bg-gray-200"
+                      : "hover:bg-gray-200"
+                  }
                 >
                   Users
                 </Sidebar.Item>
@@ -97,6 +117,11 @@ export default function DashSidebar() {
                   active={tab === "comments"}
                   icon={HiAnnotation}
                   as="div"
+                  className={
+                    tab === "comments"
+                      ? "bg-gray-200 hover:bg-gray-200"
+                      : "hover:bg-gray-200"
+                  }
                 >
                   Comments
                 </Sidebar.Item>
@@ -105,7 +130,7 @@ export default function DashSidebar() {
           )}
           <Sidebar.Item
             icon={HiArrowSmRight}
-            className="cursor-pointer"
+            className="cursor-pointer hover:bg-gray-200"
             onClick={handleSignout}
           >
             Sign Out
