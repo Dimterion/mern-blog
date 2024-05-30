@@ -207,13 +207,22 @@ export default function DashboardComp() {
                 <Table.Body key={post._id} className="divide-y">
                   <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                     <Table.Cell>
-                      <img
-                        src={post.image}
-                        alt="Post image"
-                        className="w-14 h-10 rounded-md bg-gray-500"
-                      />
+                      <Link to={`/post/${post.slug}`}>
+                        <img
+                          src={post.image}
+                          alt="Post image"
+                          className="size-10 rounded-md bg-gray-500 m-auto"
+                        />
+                      </Link>
                     </Table.Cell>
-                    <Table.Cell className="w-96">{post.title}</Table.Cell>
+                    <Table.Cell className="w-96">
+                      <Link
+                        className="font-medium text-gray-600 dark:text-gray-300"
+                        to={`/post/${post.slug}`}
+                      >
+                        {post.title}
+                      </Link>
+                    </Table.Cell>
                   </Table.Row>
                 </Table.Body>
               ))}
