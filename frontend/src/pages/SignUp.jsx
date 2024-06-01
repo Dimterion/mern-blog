@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Alert, Label, Spinner, TextInput } from "flowbite-react";
+import { Alert, Spinner } from "flowbite-react";
 import OAuth from "../components/OAuth";
 
 export default function SignUp() {
@@ -60,28 +60,34 @@ export default function SignUp() {
         </article>
         <article className="flex-1">
           <form className="flex flex-col" onSubmit={handleSubmit}>
-            <Label value="Username" className="mb-1" />
-            <TextInput
+            <label className="mb-1 whitespace-normal font-semibold">
+              Username
+            </label>
+            <input
               type="text"
               placeholder="Name"
               id="username"
-              className="mb-4"
+              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
               onChange={handleChange}
             />
-            <Label value="Email" className="mb-1" />
-            <TextInput
+            <label className="mb-1 whitespace-normal font-semibold">
+              Email
+            </label>
+            <input
               type="email"
               placeholder="emailname@email.com"
               id="email"
-              className="mb-4"
+              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
               onChange={handleChange}
             />
-            <Label value="Password" className="mb-1" />
-            <TextInput
+            <label className="mb-1 whitespace-normal font-semibold">
+              Password
+            </label>
+            <input
               type="password"
               placeholder="**********"
               id="password"
-              className="mb-4"
+              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
               onChange={handleChange}
             />
             <button

@@ -64,10 +64,7 @@ export default function SignIn() {
         </article>
         <article className="flex-1">
           <form className="flex flex-col" onSubmit={handleSubmit}>
-            <label
-              value="Email"
-              className="mb-1 whitespace-normal font-semibold"
-            >
+            <label className="mb-1 whitespace-normal font-semibold">
               Email
             </label>
             <input
@@ -77,10 +74,7 @@ export default function SignIn() {
               className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
               onChange={handleChange}
             />
-            <label
-              value="Password"
-              className="mb-1 whitespace-normal font-semibold"
-            >
+            <label className="mb-1 whitespace-normal font-semibold">
               Password
             </label>
             <input
