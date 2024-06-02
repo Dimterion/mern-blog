@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Alert, Modal, TextInput } from "flowbite-react";
+import { Alert, Modal } from "flowbite-react";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -224,36 +224,39 @@ export default function DashProfile() {
         {imageFileUploadError && (
           <Alert color="failure">{imageFileUploadError}</Alert>
         )}
-        <TextInput
+        <input
           type="text"
           id="username"
           placeholder="Name"
+          className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
           defaultValue={currentUser.username}
           onChange={handleChange}
         />
-        <TextInput
+        <input
           type="email"
           id="email"
           placeholder="email"
+          className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
           defaultValue={currentUser.email}
           onChange={handleChange}
         />
-        <TextInput
+        <input
           type="password"
           id="password"
           placeholder="Password"
+          className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
           onChange={handleChange}
         />
         <button
           type="submit"
-          className="border-2 border-sky-500 p-2 rounded-lg text-sky-500 font-semibold hover:bg-sky-500 hover:text-gray-100"
+          className="border-2 border-sky-500 p-2 rounded-md text-sky-500 font-semibold hover:bg-sky-500 hover:text-gray-100"
           disabled={loading || imageFileUploading}
         >
           {loading ? "Loading..." : "Update"}
         </button>
         {currentUser.isAdmin && (
           <Link
-            className="text-center w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+            className="text-center w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-md text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
             to="/create-post"
           >
             Create a post
