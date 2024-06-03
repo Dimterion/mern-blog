@@ -228,7 +228,7 @@ export default function DashProfile() {
           type="text"
           id="username"
           placeholder="Name"
-          className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+          className="p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
           defaultValue={currentUser.username}
           onChange={handleChange}
         />
@@ -236,7 +236,7 @@ export default function DashProfile() {
           type="email"
           id="email"
           placeholder="email"
-          className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+          className="p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
           defaultValue={currentUser.email}
           onChange={handleChange}
         />
@@ -244,19 +244,19 @@ export default function DashProfile() {
           type="password"
           id="password"
           placeholder="Password"
-          className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+          className="p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
           onChange={handleChange}
         />
         <button
           type="submit"
-          className="border-2 border-sky-500 p-2 rounded-md text-sky-500 font-semibold hover:bg-sky-500 hover:text-gray-100"
+          className="border-2 border-sky-500 p-2 rounded-lg text-sky-500 font-semibold hover:bg-sky-500 hover:text-gray-100"
           disabled={loading || imageFileUploading}
         >
           {loading ? "Loading..." : "Update"}
         </button>
         {currentUser.isAdmin && (
           <Link
-            className="text-center w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-md text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+            className="text-center w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
             to="/create-post"
           >
             Create a post
@@ -307,13 +307,13 @@ export default function DashProfile() {
             </h3>
             <aside className="flex justify-center gap-4">
               <button
-                className="border p-2 rounded-md w-28 bg-red-500 text-gray-100 hover:opacity-85"
+                className="p-2 rounded-lg w-28 bg-red-500 text-gray-100 hover:opacity-85"
                 onClick={handleDeleteUser}
               >
                 Yes, I&apos;m sure
               </button>
               <button
-                className="bg-gray-400 px-2 py-1 rounded-md w-28 text-gray-100 hover:opacity-85"
+                className="p-2 rounded-lg w-28 bg-gray-400 text-gray-100 hover:opacity-85"
                 onClick={() => setShowModal(false)}
               >
                 No, cancel
