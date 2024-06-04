@@ -67,7 +67,7 @@ export default function SignUp() {
               type="text"
               placeholder="Name"
               id="username"
-              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
               onChange={handleChange}
             />
             <label className="mb-1 whitespace-normal font-semibold">
@@ -77,7 +77,7 @@ export default function SignUp() {
               type="email"
               placeholder="emailname@email.com"
               id="email"
-              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
               onChange={handleChange}
             />
             <label className="mb-1 whitespace-normal font-semibold">
@@ -87,11 +87,11 @@ export default function SignUp() {
               type="password"
               placeholder="**********"
               id="password"
-              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
               onChange={handleChange}
             />
             <button
-              className="flex justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white mt-2 mb-4"
+              className="flex justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white my-4"
               type="submit"
               disabled={loading}
             >
@@ -108,7 +108,7 @@ export default function SignUp() {
           <OAuth />
           <aside className="flex gap-2 text-sm mt-5">
             <span>Have an account?</span>
-            <Link to="/sign-in" className="text-sky-500">
+            <Link to="/sign-in" className="text-sky-500 hover:underline">
               Sign In
             </Link>
           </aside>
