@@ -87,7 +87,7 @@ export default function Header() {
       </section>
       <Navbar.Collapse>
         <Navbar.Link
-          className="bg-transparent border-none w-fit"
+          className="bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/"}
           as={"div"}
         >
@@ -96,14 +96,14 @@ export default function Header() {
             className={({ isActive }) =>
               isActive
                 ? "text-sky-500 font-bold"
-                : "text-gray-500 dark:text-gray-400 hover:text-sky-500"
+                : "text-gray-500 dark:text-gray-400 hover:text-sky-500 dark:hover:text-sky-500"
             }
           >
             Home
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="bg-transparent border-none w-fit"
+          className="bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/projects"}
           as={"div"}
         >
@@ -112,14 +112,14 @@ export default function Header() {
             className={({ isActive }) =>
               isActive
                 ? "text-sky-500 font-bold"
-                : "text-gray-500 dark:text-gray-400 hover:text-sky-500"
+                : "text-gray-500 dark:text-gray-400 hover:text-sky-500 dark:hover:text-sky-500"
             }
           >
             Projects
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="bg-transparent border-none w-fit"
+          className="bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/about"}
           as={"div"}
         >
@@ -128,7 +128,7 @@ export default function Header() {
             className={({ isActive }) =>
               isActive
                 ? "text-sky-500 font-bold"
-                : "text-gray-500 dark:text-gray-400 hover:text-sky-500"
+                : "text-gray-500 dark:text-gray-400 hover:text-sky-500 dark:hover:text-sky-500"
             }
           >
             About
