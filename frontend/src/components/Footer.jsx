@@ -50,6 +50,7 @@ export default function FooterComponent() {
               target="_blank"
               rel="noopener noreferrer"
               icon={BsLinkedin}
+              className="hover:opacity-90"
             />
             <Footer.Icon
               ariaLabel="Go to GitHub profile"
@@ -57,6 +58,7 @@ export default function FooterComponent() {
               target="_blank"
               rel="noopener noreferrer"
               icon={BsGithub}
+              className="hover:opacity-90"
             />
             <Footer.Icon
               ariaLabel="Go to Medium blog"
@@ -64,6 +66,7 @@ export default function FooterComponent() {
               target="_blank"
               rel="noopener noreferrer"
               icon={BsMedium}
+              className="hover:opacity-90"
             />
             <Footer.Icon
               ariaLabel="Go to Twitter profile"
@@ -71,6 +74,7 @@ export default function FooterComponent() {
               target="_blank"
               rel="noopener noreferrer"
               icon={BsTwitterX}
+              className="hover:opacity-90"
             />
             <Footer.Icon
               ariaLabel="Go to personal profile site"
@@ -78,6 +82,7 @@ export default function FooterComponent() {
               target="_blank"
               rel="noopener noreferrer"
               icon={BsPersonVcardFill}
+              className="hover:opacity-90"
             />
           </aside>
         </article>
