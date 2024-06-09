@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main>
       <section className="flex flex-col gap-6 p-10 px-3 max-w-fit mx-auto">
-        <h1 className="text-3xl font-bold md:text-6xl">
+        <h1 className="text-3xl font-bold md:text-6xl text-gray-600 dark:text-gray-400">
           Hi, I&apos;m Dmitrii.
         </h1>
         <p className="text-gray-500 text-lg dark:text-gray-400 max-w-6xl">
@@ -49,7 +49,9 @@ export default function Home() {
       </section>
       {posts && posts.length > 0 && (
         <section id="home-posts" className="flex flex-col gap-6 px-3 pb-7">
-          <h2 className="text-2xl font-semibold text-center">Posts</h2>
+          <h2 className="text-2xl font-semibold text-center text-gray-600 dark:text-gray-400">
+            Posts
+          </h2>
           <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto mt-3">
             {posts.map((post) => (
               <PostCard key={post._id} post={post} />

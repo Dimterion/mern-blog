@@ -125,7 +125,9 @@ export default function Projects() {
 
   return (
     <main className="min-h-screen mx-auto flex justify-center items-center flex-col gap-6 p-3 mb-6">
-      <h1 className="text-3xl font-semibold my-6">Projects</h1>
+      <h1 className="text-3xl font-semibold my-6 text-gray-600 dark:text-gray-400">
+        Projects
+      </h1>
       <section>
         <article className="relative mb-6">
           <input
