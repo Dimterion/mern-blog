@@ -65,10 +65,10 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
       </section>
       <section className="flex-1">
         <article className="flex items-center mb-1">
-          <span className="font-bold mr-1 text-xs truncate">
+          <span className="font-bold mr-1 text-xs truncate text-gray-600 dark:text-gray-400">
             {user ? `@${user.username}` : "Anonymous user"}
           </span>
-          <span className="text-gray-500 dark:text-gray-300 text-xs">
+          <span className="text-gray-600 dark:text-gray-400 text-xs">
             {moment(comment.createdAt).fromNow()}
           </span>
         </article>

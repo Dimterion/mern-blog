@@ -14,7 +14,7 @@ export default function CallToAction() {
             href="https://github.com/Dimterion"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md uppercase py-3 px-11 bg-gradient-to-l from-cyan-500 via-sky-500 to-blue-500 text-white font-bold hover:bg-gradient-to-r"
+            className="rounded-md uppercase py-3 px-11 bg-gradient-to-l from-cyan-500 via-sky-500 to-blue-500 text-gray-200 font-bold hover:bg-gradient-to-r"
           >
             GitHub
           </a>
@@ -22,7 +22,7 @@ export default function CallToAction() {
             href="https://medium.com/@dimterion"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md uppercase py-3 px-10 bg-gradient-to-l from-blue-500 via-sky-500 to-cyan-500 text-white font-bold hover:bg-gradient-to-r"
+            className="rounded-md uppercase py-3 px-10 bg-gradient-to-l from-blue-500 via-sky-500 to-cyan-500 text-gray-200 font-bold hover:bg-gradient-to-r"
           >
             Medium
           </a>
