@@ -42,13 +42,13 @@ export default function Header() {
         <Link
           aria-label="Go to search page"
           to="/search"
-          className="border rounded-lg p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+          className="border rounded-lg p-2 text-gray-500 dark:text-gray-400 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
         >
           <AiOutlineSearch />
         </Link>
         <button
           aria-label={theme === "light" ? "Dark mode" : "Light mode"}
-          className="border rounded-lg p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+          className="border rounded-lg p-2 text-gray-500 dark:text-gray-400 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
           onClick={() => dispatch(toggleTheme())}
         >
           {theme === "light" ? <FaMoon /> : <FaSun />}
@@ -77,7 +77,8 @@ export default function Header() {
           <Link to="/sign-in">
             <button
               aria-label="Sign-in"
-              className="border rounded-lg p-2 dark:text-gray-500 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+              className="border rounded-lg p-2
+              text-gray-500 dark:text-gray-400 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
             >
               <SlLogin />
             </button>
