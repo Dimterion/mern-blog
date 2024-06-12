@@ -141,14 +141,14 @@ export default function Projects() {
         </article>
       </section>
       <section className="flex flex-col md:flex-row mx-auto container max-w-6xl">
-        <article className="space-y-4 p-2 w-full max-w-[10rem]">
+        <article className="space-y-4 p-2 w-full max-w-[10rem] text-gray-600 dark:text-gray-400">
           <h2 className="text-xl font-semibold">Category</h2>
           <aside className="flex sm:flex-col gap-2">
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
                 id="project"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="project" className="cursor-pointer">
@@ -159,7 +159,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="thoughts"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="thoughts" className="cursor-pointer">
@@ -170,7 +170,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="coding"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="coding" className="cursor-pointer">
