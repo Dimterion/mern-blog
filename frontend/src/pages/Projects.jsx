@@ -148,7 +148,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="project"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-400"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-100 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="project" className="cursor-pointer">
@@ -159,7 +159,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="thoughts"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-400"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-100 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="thoughts" className="cursor-pointer">
@@ -170,7 +170,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="coding"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-400"
+                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-100 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="coding" className="cursor-pointer">
