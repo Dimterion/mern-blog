@@ -2,6 +2,8 @@
 
 Full-stack project (Work In Progress)
 
+Front-End part of the project.
+
 ## Tech-stack
 
 - React
