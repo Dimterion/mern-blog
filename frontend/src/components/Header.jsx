@@ -34,7 +34,7 @@ export default function Header() {
     <Navbar className="border-b-2 px-1">
       <Link
         to="/"
-        className="sm:text-xl px-4 sm:px-6 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-tl-full rounded-br-full text-white font-semibold"
+        className="text-lg sm:text-xl px-4 sm:px-6 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-tl-full rounded-br-full text-white font-semibold"
       >
         Dimterion
       </Link>
@@ -88,7 +88,7 @@ export default function Header() {
       </section>
       <Navbar.Collapse>
         <Navbar.Link
-          className="bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
+          className="text-lg bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/"}
           as={"div"}
         >
@@ -104,7 +104,7 @@ export default function Header() {
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
+          className="text-lg bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/projects"}
           as={"div"}
         >
@@ -120,7 +120,7 @@ export default function Header() {
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
+          className="text-lg bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/about"}
           as={"div"}
         >
