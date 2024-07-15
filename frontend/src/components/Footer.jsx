@@ -10,7 +10,7 @@ import {
 
 export default function FooterComponent() {
   return (
-    <Footer container className="border-t-2 border-sky-500 rounded-none">
+    <Footer container className="border-t-2 border-sky-500 rounded-none p-4">
       <section className="w-full max-w-7xl mx-auto">
         <article className="grid justify-center sm:justify-between sm:flex md:grid-cols-1">
           <Link
