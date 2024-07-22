@@ -3,45 +3,45 @@ import CallToAction from "../components/CallToAction";
 
 export default function About() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-10 pb-10">
-      <h1 className="text-3xl font-bold mt-10 text-gray-600 dark:text-gray-400">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-10 pb-10">
+      <h1 className="mt-10 text-3xl font-bold text-gray-600 dark:text-gray-400">
         About me
       </h1>
-      <h2 className="text-xl text-center text-gray-600 dark:text-gray-400">
+      <h2 className="text-center text-xl text-gray-600 dark:text-gray-400">
         Web Developer | React.js | JavaScript | CSS | HTML | Tailwind CSS | Git
       </h2>
       <div className="flex gap-2 sm:gap-4">
         <Link
           to="/search"
-          className="sm:text-lg text-sky-500 font-bold hover:underline w-fit flex items-center gap-1"
+          className="flex w-fit items-center gap-1 font-bold text-sky-500 hover:underline sm:text-lg"
         >
           View posts
         </Link>
-        <span className="text-sky-500 font-bold">|</span>
+        <span className="font-bold text-sky-500">|</span>
         <Link
           to="/projects"
-          className="sm:text-lg text-sky-500 font-bold hover:underline w-fit flex items-center gap-1"
+          className="flex w-fit items-center gap-1 font-bold text-sky-500 hover:underline sm:text-lg"
         >
           View projects
         </Link>
       </div>
-      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
+      <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
-      <section className="flex flex-col gap-6 md:flex-row p-3 border border-sky-500 rounded-lg text-center items-center max-w-[90vw] bg-sky-50 dark:bg-gray-800">
-        <article className="flex-1 justify-center flex flex-col items-center gap-6">
+      <section className="flex max-w-[90vw] flex-col items-center gap-6 rounded-lg border border-sky-500 bg-sky-50 p-3 text-center md:flex-row dark:bg-gray-800">
+        <article className="flex flex-1 flex-col items-center justify-center gap-6">
           <h2 className="text-2xl font-semibold text-gray-600 dark:text-gray-400">
             Contacts & Links
           </h2>
-          <p className="text-gray-600 mb-2 dark:text-gray-400 max-w-6xl text-lg">
+          <p className="mb-2 max-w-6xl text-lg text-gray-600 dark:text-gray-400">
             Here are some of my other profiles:
           </p>
-          <aside className="flex flex-wrap gap-4 justify-center mb-2">
+          <aside className="mb-2 flex flex-wrap justify-center gap-4">
             <a
               href="https://www.linkedin.com/in/dmitrii-p/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md uppercase py-3 px-11 bg-gradient-to-l from-cyan-500 via-sky-500 to-blue-500 text-white font-bold hover:bg-gradient-to-r"
+              className="rounded-md bg-gradient-to-l from-cyan-500 via-sky-500 to-blue-500 px-11 py-3 font-bold uppercase text-white hover:bg-gradient-to-r"
             >
               LinkedIn
             </a>
@@ -49,7 +49,7 @@ export default function About() {
               href="https://twitter.com/Dimterion"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md uppercase py-3 px-12 bg-gradient-to-l from-blue-500 via-sky-500 to-blue-500 text-white font-bold hover:bg-gradient-to-t"
+              className="rounded-md bg-gradient-to-l from-blue-500 via-sky-500 to-blue-500 px-12 py-3 font-bold uppercase text-white hover:bg-gradient-to-t"
             >
               Twitter
             </a>
@@ -57,7 +57,7 @@ export default function About() {
               href="http://dimterion.github.io/"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md uppercase py-3 px-10 bg-gradient-to-l from-blue-500 via-sky-500 to-cyan-500 text-white font-bold hover:bg-gradient-to-r"
+              className="rounded-md bg-gradient-to-l from-blue-500 via-sky-500 to-cyan-500 px-10 py-3 font-bold uppercase text-white hover:bg-gradient-to-r"
             >
               Portfolio
             </a>
