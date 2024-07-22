@@ -29,7 +29,15 @@ export default function SignUp() {
       });
       const data = await res.json();
 
+      setLoading(false);
+
       if (data.success === false) {
+        if (data.message.includes("duplicate key")) {
+          return setErrorMessage(
+            "Account with this username or email already exists."
+          );
+        }
+
         return setErrorMessage(data.message);
       }
 
