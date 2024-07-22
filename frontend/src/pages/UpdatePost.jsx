@@ -83,7 +83,7 @@ export default function UpdatePost() {
             setImageUploadError(null);
             setFormData({ ...formData, image: downloadURL });
           });
-        }
+        },
       );
     } catch (error) {
       setImageUploadError("Image upload failed.");
@@ -105,7 +105,7 @@ export default function UpdatePost() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
       const data = await res.json();
 
@@ -126,8 +126,8 @@ export default function UpdatePost() {
   };
 
   return (
-    <main className="p-3 max-w-3xl mx-auto min-h-screen mb-10">
-      <h1 className="text-center text-3xl mt-7 mb-10 font-semibold">
+    <main className="mx-auto mb-10 min-h-screen max-w-3xl p-3">
+      <h1 className="mb-10 mt-7 text-center text-3xl font-semibold">
         Update a post
       </h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
@@ -140,7 +140,7 @@ export default function UpdatePost() {
           onChange={(e) => setFormData({ ...formData, title: e.target.value })}
           value={formData.title || ""}
         />
-        <section className="flex flex-col gap-4 sm:flex-row justify-between">
+        <section className="flex flex-col justify-between gap-4 sm:flex-row">
           <Select
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
@@ -161,14 +161,14 @@ export default function UpdatePost() {
             value={formData.link || ""}
           />
         </section>
-        <section className="flex gap-4 items-center justify-between border-2 border-sky-500 border-dotted p-3">
+        <section className="flex items-center justify-between gap-4 border-2 border-dotted border-sky-500 p-3">
           <FileInput
             type="file"
             accept="image/*"
             onChange={(e) => setFile(e.target.files[0])}
           />
           <button
-            className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2 text-sm"
+            className="rounded-lg border-2 border-sky-500 px-4 py-2 text-sm font-semibold text-sky-500 hover:bg-sky-500 hover:text-gray-100"
             onClick={handleUploadImage}
             disabled={imageUploadProgress}
           >
@@ -189,14 +189,14 @@ export default function UpdatePost() {
           <img
             src={formData.image}
             alt="upload"
-            className="w-full h-72 object-cover"
+            className="h-72 w-full object-cover"
           />
         )}
         <ReactQuill
           theme="snow"
           value={formData.content || ""}
           placeholder="Write something..."
-          className="h-72 mb-24 sm:mb-12"
+          className="mb-24 h-72 sm:mb-12"
           required
           onChange={(value) => {
             setFormData({ ...formData, content: value });
@@ -204,7 +204,7 @@ export default function UpdatePost() {
         />
         <button
           type="submit"
-          className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2"
+          className="rounded-lg border-2 border-sky-500 px-4 py-2 font-semibold text-sky-500 hover:bg-sky-500 hover:text-gray-100"
         >
           Update
         </button>

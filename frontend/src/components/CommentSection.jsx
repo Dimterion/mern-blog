@@ -87,8 +87,8 @@ export default function CommentSection({ postId }) {
                   likes: data.likes,
                   numberOfLikes: data.likes.length,
                 }
-              : comment
-          )
+              : comment,
+          ),
         );
       }
     } catch (error) {
@@ -99,8 +99,8 @@ export default function CommentSection({ postId }) {
   const handleEdit = async (comment, editedContent) => {
     setComments(
       comments.map((c) =>
-        c._id === comment._id ? { ...c, content: editedContent } : c
-      )
+        c._id === comment._id ? { ...c, content: editedContent } : c,
+      ),
     );
   };
 
@@ -127,12 +127,12 @@ export default function CommentSection({ postId }) {
   };
 
   return (
-    <section className="max-w-2xl mx-auto w-full p-3">
+    <section className="mx-auto w-full max-w-2xl p-3">
       {currentUser ? (
-        <aside className="flex items-center gap-1 my-5 text-gray-500 text-sm">
+        <aside className="my-5 flex items-center gap-1 text-sm text-gray-500">
           <p>Signed in as:</p>
           <img
-            className="size-5 object-cover rounded-full"
+            className="size-5 rounded-full object-cover"
             src={currentUser.profilePicture}
             alt="Current user profile picture."
           />
@@ -144,10 +144,10 @@ export default function CommentSection({ postId }) {
           </Link>
         </aside>
       ) : (
-        <aside className="text-sm text-sky-500 my-5 flex flex-col gap-2">
+        <aside className="my-5 flex flex-col gap-2 text-sm text-sky-500">
           <p>You must be signed in to comment.</p>
           <Link
-            className="font-bold border-2 border-sky-500 uppercase w-fit px-2 py-1 rounded-md"
+            className="w-fit rounded-md border-2 border-sky-500 px-2 py-1 font-bold uppercase"
             to={"/sign-in"}
           >
             Sign In
@@ -157,7 +157,7 @@ export default function CommentSection({ postId }) {
       {currentUser && (
         <form
           onSubmit={handleSubmit}
-          className="border border-sky-500 rounded-md p-3"
+          className="rounded-md border border-sky-500 p-3"
         >
           <Textarea
             placeholder="Add a comment..."
@@ -166,12 +166,12 @@ export default function CommentSection({ postId }) {
             onChange={(e) => setComment(e.target.value)}
             value={comment}
           />
-          <article className="flex justify-between items-center mt-5">
-            <p className="text-gray-500 text-xs">
+          <article className="mt-5 flex items-center justify-between">
+            <p className="text-xs text-gray-500">
               {200 - comment.length} characters remaining.
             </p>
             <button
-              className="border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-2 uppercase text-sm"
+              className="rounded-lg border-2 border-sky-500 px-4 py-2 text-sm font-semibold uppercase text-sky-500 hover:bg-sky-500 hover:text-gray-100"
               type="submit"
             >
               Submit
@@ -212,22 +212,22 @@ export default function CommentSection({ postId }) {
         popup
         size="md"
       >
-        <Modal.Header className="bg-gray-200 rounded-t-md" />
-        <Modal.Body className="bg-gray-200 rounded-b-md">
+        <Modal.Header className="rounded-t-md bg-gray-200" />
+        <Modal.Body className="rounded-b-md bg-gray-200">
           <section className="text-center">
-            <HiOutlineExclamationCircle className="size-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+            <HiOutlineExclamationCircle className="mx-auto mb-4 size-14 text-gray-400 dark:text-gray-200" />
             <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to delete this comment?
             </h3>
             <section className="flex justify-center gap-4">
               <button
-                className="border p-2 rounded-md w-28 bg-red-500 text-gray-100 hover:opacity-85"
+                className="w-28 rounded-md border bg-red-500 p-2 text-gray-100 hover:opacity-85"
                 onClick={() => handleDelete(commentToDelete)}
               >
                 Yes, I&apos;m sure
               </button>
               <button
-                className="bg-gray-400 px-2 py-1 rounded-md w-28 text-gray-100 hover:opacity-85"
+                className="w-28 rounded-md bg-gray-400 px-2 py-1 text-gray-100 hover:opacity-85"
                 onClick={() => setShowModal(false)}
               >
                 No, cancel

@@ -71,7 +71,7 @@ export const editComment = async (req, res, next) => {
 
     if (comment.userId !== req.user.id && !req.user.isAdmin) {
       return next(
-        errorHandler(403, "You are not allowed to edit this comment.")
+        errorHandler(403, "You are not allowed to edit this comment."),
       );
     }
 
@@ -80,7 +80,7 @@ export const editComment = async (req, res, next) => {
       {
         content: req.body.content,
       },
-      { new: true }
+      { new: true },
     );
 
     res.status(200).json(editedComment);
@@ -99,7 +99,7 @@ export const deleteComment = async (req, res, next) => {
 
     if (comment.userId !== req.user.id && !req.user.isAdmin) {
       return next(
-        errorHandler(403, "You are not allowed to delete this comment.")
+        errorHandler(403, "You are not allowed to delete this comment."),
       );
     }
 
@@ -114,7 +114,7 @@ export const deleteComment = async (req, res, next) => {
 export const getComments = async (req, res, next) => {
   if (!req.user.isAdmin)
     return next(
-      errorHandler(403, "You are not allowed to access all comments.")
+      errorHandler(403, "You are not allowed to access all comments."),
     );
 
   try {
@@ -130,7 +130,7 @@ export const getComments = async (req, res, next) => {
     const oneMonthAgo = new Date(
       now.getFullYear(),
       now.getMonth() - 1,
-      now.getDate()
+      now.getDate(),
     );
     const lastMonthComments = await Comment.countDocuments({
       createdAt: { $gte: oneMonthAgo },

@@ -20,46 +20,46 @@ export default function Home() {
 
   return (
     <main>
-      <section className="flex flex-col gap-6 p-10 px-3 max-w-fit mx-auto">
-        <h1 className="text-3xl font-bold md:text-6xl text-gray-600 dark:text-gray-400">
+      <section className="mx-auto flex max-w-fit flex-col gap-6 p-10 px-3">
+        <h1 className="text-3xl font-bold text-gray-600 md:text-6xl dark:text-gray-400">
           Hi, I&apos;m Dmitrii.
         </h1>
-        <p className="text-gray-500 text-lg dark:text-gray-400 max-w-6xl">
+        <p className="max-w-6xl text-lg text-gray-500 dark:text-gray-400">
           A web developer, aspiringly coding daily and writing about it weekly.
         </p>
         <div className="flex gap-2 sm:gap-4">
           <a
             href="#home-posts"
-            className="sm:text-lg text-sky-500 font-bold hover:underline w-fit flex items-center gap-1"
+            className="flex w-fit items-center gap-1 font-bold text-sky-500 hover:underline sm:text-lg"
           >
             <FaArrowDown />
             View posts
           </a>
-          <span className="text-sky-500 font-bold">|</span>
+          <span className="font-bold text-sky-500">|</span>
           <Link
             to="/projects"
-            className="sm:text-lg text-sky-500 font-bold hover:underline w-fit flex items-center gap-1"
+            className="flex w-fit items-center gap-1 font-bold text-sky-500 hover:underline sm:text-lg"
           >
             View projects <FaArrowRight />
           </Link>
         </div>
       </section>
-      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
+      <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
       {posts && posts.length > 0 && (
         <section id="home-posts" className="flex flex-col gap-6 px-3 pb-7">
-          <h2 className="text-2xl font-semibold text-center text-gray-600 dark:text-gray-400">
+          <h2 className="text-center text-2xl font-semibold text-gray-600 dark:text-gray-400">
             Posts
           </h2>
-          <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mx-auto mt-3">
+          <section className="mx-auto mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
             {posts.map((post) => (
               <PostCard key={post._id} post={post} />
             ))}
           </section>
           <Link
             to={"/search"}
-            className="text-lg text-sky-500 hover:underline text-center w-fit mx-auto mt-1 font-bold"
+            className="mx-auto mt-1 w-fit text-center text-lg font-bold text-sky-500 hover:underline"
           >
             View all posts
           </Link>

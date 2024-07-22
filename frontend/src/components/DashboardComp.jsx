@@ -74,51 +74,51 @@ export default function DashboardComp() {
 
   return (
     <section className="p-3 md:mx-auto">
-      <section className="flex flex-wrap gap-4 justify-center">
-        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 lg:w-60 w-full rounded-md shadow-md mx-2 lg:mx-0">
+      <section className="flex flex-wrap justify-center gap-4">
+        <article className="mx-2 flex w-full flex-col gap-4 rounded-md p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
-              <h3 className="text-gray-500 text-md uppercase">Total Users</h3>
+              <h3 className="text-md uppercase text-gray-500">Total Users</h3>
               <p className="text-2xl">{totalUsers}</p>
             </div>
-            <HiOutlineUserGroup className="bg-teal-600 text-white rounded-full text-5xl p-3 shadow-lg" />
+            <HiOutlineUserGroup className="rounded-full bg-teal-600 p-3 text-5xl text-white shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="text-green-500 flex items-center">
+            <span className="flex items-center text-green-500">
               <HiArrowNarrowUp />
               {lastMonthUsers}
             </span>
             <div className="text-gray-500">Last month</div>
           </div>
         </article>
-        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 lg:w-60 w-full rounded-md shadow-md mx-2 lg:mx-0">
+        <article className="mx-2 flex w-full flex-col gap-4 rounded-md p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
-              <h3 className="text-gray-500 text-md uppercase">
+              <h3 className="text-md uppercase text-gray-500">
                 Total Comments
               </h3>
               <p className="text-2xl">{totalComments}</p>
             </div>
-            <HiAnnotation className="bg-indigo-600 text-white rounded-full text-5xl p-3 shadow-lg" />
+            <HiAnnotation className="rounded-full bg-indigo-600 p-3 text-5xl text-white shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="text-green-500 flex items-center">
+            <span className="flex items-center text-green-500">
               <HiArrowNarrowUp />
               {lastMonthComments}
             </span>
             <div className="text-gray-500">Last month</div>
           </div>
         </article>
-        <article className="flex flex-col p-3 dark:bg-slate-800 gap-4 lg:w-60 w-full rounded-md shadow-md mx-2 lg:mx-0">
+        <article className="mx-2 flex w-full flex-col gap-4 rounded-md p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
-              <h3 className="text-gray-500 text-md uppercase">Total Posts</h3>
+              <h3 className="text-md uppercase text-gray-500">Total Posts</h3>
               <p className="text-2xl">{totalPosts}</p>
             </div>
-            <HiDocumentText className="bg-lime-600 text-white rounded-full text-5xl p-3 shadow-lg" />
+            <HiDocumentText className="rounded-full bg-lime-600 p-3 text-5xl text-white shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="text-green-500 flex items-center">
+            <span className="flex items-center text-green-500">
               <HiArrowNarrowUp />
               {lastMonthPosts}
             </span>
@@ -126,12 +126,12 @@ export default function DashboardComp() {
           </div>
         </article>
       </section>
-      <section className="flex flex-wrap gap-4 py-3 mx-auto justify-center">
-        <article className="flex flex-col w-full lg:max-w-[240px] lg:w-auto shadow-md p-2 rounded-md mx-2 lg:mx-0 dark:bg-gray-800">
+      <section className="mx-auto flex flex-wrap justify-center gap-4 py-3">
+        <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
-            <h1 className="text-center p-2">Recent users</h1>
+            <h1 className="p-2 text-center">Recent users</h1>
             <Link
-              className="border-2 bg-sky-500 border-sky-500 px-2 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=users"}
             >
               See all
@@ -159,11 +159,11 @@ export default function DashboardComp() {
               ))}
           </Table>
         </article>
-        <article className="flex flex-col w-full lg:max-w-[240px] lg:w-auto shadow-md p-2 rounded-md mx-2 lg:mx-0 dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
-            <h1 className="text-center p-2">Recent comments</h1>
+            <h1 className="p-2 text-center">Recent comments</h1>
             <Link
-              className="border-2 bg-sky-500 border-sky-500 px-2 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=comments"}
             >
               See all
@@ -187,11 +187,11 @@ export default function DashboardComp() {
               ))}
           </Table>
         </article>
-        <article className="flex flex-col w-full lg:max-w-[240px] lg:w-auto shadow-md p-2 rounded-md mx-2 lg:mx-0 dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
-            <h1 className="text-center p-2">Recent posts</h1>
+            <h1 className="p-2 text-center">Recent posts</h1>
             <Link
-              className="border-2 bg-sky-500 border-sky-500 px-2 py-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=posts"}
             >
               See all
@@ -211,7 +211,7 @@ export default function DashboardComp() {
                         <img
                           src={post.image}
                           alt="Post image"
-                          className="size-10 rounded-md bg-gray-500 m-auto"
+                          className="m-auto size-10 rounded-md bg-gray-500"
                         />
                       </Link>
                     </Table.Cell>

@@ -9,14 +9,14 @@ export const test = (_req, res) => {
 export const updateUser = async (req, res, next) => {
   if (req.user.id !== req.params.userId) {
     return next(
-      errorHandler(403, "You are not allowed to update this information.")
+      errorHandler(403, "You are not allowed to update this information."),
     );
   }
 
   if (req.body.password) {
     if (req.body.password.length < 6) {
       return next(
-        errorHandler(400, "Password must be at least 6 characters long.")
+        errorHandler(400, "Password must be at least 6 characters long."),
       );
     }
 
@@ -26,7 +26,7 @@ export const updateUser = async (req, res, next) => {
   if (req.body.username) {
     if (req.body.username.length < 3 || req.body.username.length > 20) {
       return next(
-        errorHandler(400, "Username must be between 3 and 20 characters long.")
+        errorHandler(400, "Username must be between 3 and 20 characters long."),
       );
     }
 
@@ -40,7 +40,7 @@ export const updateUser = async (req, res, next) => {
 
     if (!req.body.username.match(/^[a-zA-Z0-9]+$/)) {
       return next(
-        errorHandler(400, "Username can only contain letters and numbers.")
+        errorHandler(400, "Username can only contain letters and numbers."),
       );
     }
   }
@@ -56,7 +56,7 @@ export const updateUser = async (req, res, next) => {
           password: req.body.password,
         },
       },
-      { new: true }
+      { new: true },
     );
 
     const { password, ...rest } = updatedUser._doc;
@@ -70,7 +70,7 @@ export const updateUser = async (req, res, next) => {
 export const deleteUser = async (req, res, next) => {
   if (!req.user.isAdmin && req.user.id !== req.params.userId) {
     return next(
-      errorHandler(403, "You are not allowed to delete this account.")
+      errorHandler(403, "You are not allowed to delete this account."),
     );
   }
 
@@ -98,7 +98,7 @@ export const getUsers = async (req, res, next) => {
   if (!req.user.isAdmin) {
     return next(
       errorHandler,
-      (403, "You are not allowed to access the list of users.")
+      (403, "You are not allowed to access the list of users."),
     );
   }
 
@@ -119,7 +119,7 @@ export const getUsers = async (req, res, next) => {
     const oneMonthAgo = new Date(
       now.getFullYear(),
       now.getMonth() - 1,
-      now.getDate()
+      now.getDate(),
     );
     const lastMonthUsers = await User.countDocuments({
       createdAt: { $gte: oneMonthAgo },

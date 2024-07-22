@@ -61,35 +61,35 @@ export default function Post() {
 
   if (loading)
     return (
-      <main className="flex justify-center items-center min-h-screen">
+      <main className="flex min-h-screen items-center justify-center">
         <Spinner size="xl" />
       </main>
     );
 
   if (error)
     return (
-      <main className="flex justify-center items-center min-h-screen">
+      <main className="flex min-h-screen items-center justify-center">
         Error loading page.
       </main>
     );
 
   return (
-    <main className="p-3 flex flex-col max-w-7xl mx-auto min-h-screen">
-      <h1 className="text-3xl p-3 text-center font-serif max-w-2xl mx-auto lg:text-4xl">
+    <main className="mx-auto flex min-h-screen max-w-7xl flex-col p-3">
+      <h1 className="mx-auto max-w-2xl p-3 text-center font-serif text-3xl lg:text-4xl">
         {post && post.title}
       </h1>
       <Link
         to={`/search?category=${post && post.category}`}
-        className="self-center my-2 px-4 py-1 text-sm border-2 border-gray-400 rounded-2xl uppercase font-semibold text-gray-500 hover:bg-gray-400 hover:text-gray-100 dark:border-gray-500 dark:hover:bg-sky-500 dark:hover:text-gray-100 dark:hover:border-sky-500"
+        className="my-2 self-center rounded-2xl border-2 border-gray-400 px-4 py-1 text-sm font-semibold uppercase text-gray-500 hover:bg-gray-400 hover:text-gray-100 dark:border-gray-500 dark:hover:border-sky-500 dark:hover:bg-sky-500 dark:hover:text-gray-100"
       >
         {post && post.category}
       </Link>
       <img
         src={post && post.image}
         alt={post && post.title}
-        className="my-4 h-[30vh] sm:h-full max-h-[400px] w-full max-w-[1000px] m-auto object-cover rounded-md"
+        className="m-auto my-4 h-[30vh] max-h-[400px] w-full max-w-[1000px] rounded-md object-cover sm:h-full"
       />
-      <aside className="flex justify-between p-3 border-b border-slate-500 mx-auto w-full max-w-2xl text-sm">
+      <aside className="mx-auto flex w-full max-w-2xl justify-between border-b border-slate-500 p-3 text-sm">
         <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
         <span className="italic">
           {post && (post.content.length / 1000).toFixed(0) > 0
@@ -98,22 +98,22 @@ export default function Post() {
           min read
         </span>
       </aside>
-      <section className="p-3 max-w-2xl mx-auto w-full post-content mb-6">
+      <section className="post-content mx-auto mb-6 w-full max-w-2xl p-3">
         <Interweave content={post && post.content} noWrap={true} />
       </section>
-      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
+      <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
       <CommentSection postId={post._id} />
-      <section className="flex flex-col justify-center items-center mb-5">
-        <h1 className="text-xl font-semibold mt-1">Recent articles</h1>
-        <aside className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-5 justify-center">
+      <section className="mb-5 flex flex-col items-center justify-center">
+        <h1 className="mt-1 text-xl font-semibold">Recent articles</h1>
+        <aside className="mt-5 grid grid-cols-1 justify-center gap-5 md:grid-cols-2 xl:grid-cols-3">
           {recentPosts &&
             recentPosts.map(
               (recentPost) =>
                 post._id !== recentPost._id && (
                   <PostCard key={recentPost._id} post={recentPost} />
-                )
+                ),
             )}
         </aside>
       </section>

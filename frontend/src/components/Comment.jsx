@@ -55,8 +55,8 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
   };
 
   return (
-    <section className="flex p-1 border-b dark:border-gray-600 text-sm">
-      <section className="flex-shrink-0 mr-1">
+    <section className="flex border-b p-1 text-sm dark:border-gray-600">
+      <section className="mr-1 flex-shrink-0">
         <img
           className="size-10 rounded-full bg-gray-200"
           src={user.profilePicture}
@@ -64,11 +64,11 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
         />
       </section>
       <section className="flex-1">
-        <article className="flex items-center mb-1">
-          <span className="font-bold mr-1 text-xs truncate text-gray-600 dark:text-gray-400">
+        <article className="mb-1 flex items-center">
+          <span className="mr-1 truncate text-xs font-bold text-gray-600 dark:text-gray-400">
             {user ? `@${user.username}` : "Anonymous user"}
           </span>
-          <span className="text-gray-600 dark:text-gray-400 text-xs">
+          <span className="text-xs text-gray-600 dark:text-gray-400">
             {moment(comment.createdAt).fromNow()}
           </span>
         </article>
@@ -79,15 +79,15 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
               value={editedContent}
               onChange={(e) => setEditedContent(e.target.value)}
             />
-            <article className="flex justify-end gap-2 text-xs mb-4">
+            <article className="mb-4 flex justify-end gap-2 text-xs">
               <button
-                className="w-24 border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-1 uppercase text-sm"
+                className="w-24 rounded-lg border-2 border-sky-500 px-4 py-1 text-sm font-semibold uppercase text-sky-500 hover:bg-sky-500 hover:text-gray-100"
                 onClick={handleSave}
               >
                 Save
               </button>
               <button
-                className="w-24 border-2 border-sky-500 font-semibold text-sky-500 hover:text-gray-100 hover:bg-sky-500 rounded-lg px-4 py-1 uppercase text-sm"
+                className="w-24 rounded-lg border-2 border-sky-500 px-4 py-1 text-sm font-semibold uppercase text-sky-500 hover:bg-sky-500 hover:text-gray-100"
                 onClick={() => setIsEditing(false)}
               >
                 Cancel
@@ -96,10 +96,10 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
           </>
         ) : (
           <>
-            <p className="text-gray-600 dark:text-gray-400 pb-2 break-all">
+            <p className="break-all pb-2 text-gray-600 dark:text-gray-400">
               {comment.content}
             </p>
-            <article className="flex items-center pt-2 text-xs border-t mb-2 dark:border-gray-700 max-w-fit gap-2">
+            <article className="mb-2 flex max-w-fit items-center gap-2 border-t pt-2 text-xs dark:border-gray-700">
               <button
                 type="button"
                 onClick={() => onLike(comment._id)}

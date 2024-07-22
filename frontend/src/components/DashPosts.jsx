@@ -39,7 +39,7 @@ export default function DashPosts() {
 
     try {
       const res = await fetch(
-        `/api/post/getposts/?userId=${currentUser._id}&startIndex=${startIndex}`
+        `/api/post/getposts/?userId=${currentUser._id}&startIndex=${startIndex}`,
       );
       const data = await res.json();
 
@@ -63,7 +63,7 @@ export default function DashPosts() {
         `/api/post/deletepost/${postIdToDelete}/${currentUser._id}`,
         {
           method: "DELETE",
-        }
+        },
       );
 
       const data = await res.json();
@@ -72,7 +72,7 @@ export default function DashPosts() {
         console.log(data.message);
       } else {
         setUserPosts((prev) =>
-          prev.filter((post) => post._id !== postIdToDelete)
+          prev.filter((post) => post._id !== postIdToDelete),
         );
       }
     } catch (error) {
@@ -81,7 +81,7 @@ export default function DashPosts() {
   };
 
   return (
-    <section className="table-auto overflow-x-scroll md:overflow-x-auto md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300 text-center">
+    <section className="scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300 table-auto overflow-x-scroll p-3 text-center md:mx-auto md:overflow-x-auto">
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
           <Table hoverable className="shadow-md">
@@ -106,7 +106,7 @@ export default function DashPosts() {
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-20 h-10 object-cover bg-gray-500"
+                        className="h-10 w-20 bg-gray-500 object-cover"
                       />
                     </Link>
                   </Table.Cell>
@@ -125,7 +125,7 @@ export default function DashPosts() {
                         setShowModal(true);
                         setPostIdToDelete(post._id);
                       }}
-                      className="font-medium text-red-500 hover:underline cursor-pointer"
+                      className="cursor-pointer font-medium text-red-500 hover:underline"
                     >
                       Delete
                     </span>
@@ -145,7 +145,7 @@ export default function DashPosts() {
           {showMore && (
             <button
               onClick={handleShowMore}
-              className="text-sky-500 hover:underline p-7 w-fit font-bold"
+              className="w-fit p-7 font-bold text-sky-500 hover:underline"
             >
               Show More
             </button>
@@ -160,22 +160,22 @@ export default function DashPosts() {
         popup
         size="md"
       >
-        <Modal.Header className="bg-gray-200 rounded-t-md" />
-        <Modal.Body className="bg-gray-200 rounded-b-md">
+        <Modal.Header className="rounded-t-md bg-gray-200" />
+        <Modal.Body className="rounded-b-md bg-gray-200">
           <section className="text-center">
-            <HiOutlineExclamationCircle className="size-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+            <HiOutlineExclamationCircle className="mx-auto mb-4 size-14 text-gray-400 dark:text-gray-200" />
             <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to delete this post?
             </h3>
             <aside className="flex justify-center gap-4">
               <button
-                className="border p-2 rounded-md w-28 bg-red-500 text-gray-100 hover:opacity-85"
+                className="w-28 rounded-md border bg-red-500 p-2 text-gray-100 hover:opacity-85"
                 onClick={handleDeletePost}
               >
                 Yes, I&apos;m sure
               </button>
               <button
-                className="bg-gray-400 px-2 py-1 rounded-md w-28 text-gray-100 hover:opacity-85"
+                className="w-28 rounded-md bg-gray-400 px-2 py-1 text-gray-100 hover:opacity-85"
                 onClick={() => setShowModal(false)}
               >
                 No, cancel

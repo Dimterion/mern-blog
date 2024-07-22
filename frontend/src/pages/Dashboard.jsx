@@ -21,7 +21,7 @@ export default function Dashboard() {
   }, [location.search]);
 
   return (
-    <main className="min-h-screen flex flex-col md:flex-row">
+    <main className="flex min-h-screen flex-col md:flex-row">
       <section className="md:w-56">
         <DashSidebar />
       </section>

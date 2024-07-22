@@ -34,21 +34,21 @@ export default function Header() {
     <Navbar className="border-b-2 px-1">
       <Link
         to="/"
-        className="text-lg sm:text-xl px-4 sm:px-6 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-tl-full rounded-br-full text-white font-semibold"
+        className="rounded-br-full rounded-tl-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-4 py-1 text-lg font-semibold text-white sm:px-6 sm:text-xl"
       >
         Dimterion
       </Link>
-      <section className="flex gap-1 md:order-2 items-center">
+      <section className="flex items-center gap-1 md:order-2">
         <Link
           aria-label="Go to search page"
           to="/search"
-          className="border rounded-lg p-2 text-gray-500 dark:text-gray-400 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+          className="rounded-lg border p-2 text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
         >
           <AiOutlineSearch />
         </Link>
         <button
           aria-label={theme === "light" ? "Dark mode" : "Light mode"}
-          className="border rounded-lg p-2 text-gray-500 dark:text-gray-400 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+          className="rounded-lg border p-2 text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
           onClick={() => dispatch(toggleTheme())}
         >
           {theme === "light" ? <FaMoon /> : <FaSun />}
@@ -63,7 +63,7 @@ export default function Header() {
           >
             <Dropdown.Header>
               <span className="block text-sm">@{currentUser.username}</span>
-              <span className="block text-sm font-medium truncate">
+              <span className="block truncate text-sm font-medium">
                 {currentUser.email}
               </span>
             </Dropdown.Header>
@@ -77,8 +77,7 @@ export default function Header() {
           <Link to="/sign-in">
             <button
               aria-label="Sign-in"
-              className="border rounded-lg p-2
-              text-gray-500 dark:text-gray-400 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+              className="rounded-lg border p-2 text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
             >
               <SlLogin />
             </button>
@@ -88,7 +87,7 @@ export default function Header() {
       </section>
       <Navbar.Collapse>
         <Navbar.Link
-          className="text-lg bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
+          className="w-fit border-none bg-transparent text-lg hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/"}
           as={"div"}
         >
@@ -96,15 +95,15 @@ export default function Header() {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "text-sky-500 font-bold"
-                : "text-gray-500 dark:text-gray-400 hover:text-sky-500 dark:hover:text-sky-500"
+                ? "font-bold text-sky-500"
+                : "text-gray-500 hover:text-sky-500 dark:text-gray-400 dark:hover:text-sky-500"
             }
           >
             Home
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="text-lg bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
+          className="w-fit border-none bg-transparent text-lg hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/projects"}
           as={"div"}
         >
@@ -112,15 +111,15 @@ export default function Header() {
             to="/projects"
             className={({ isActive }) =>
               isActive
-                ? "text-sky-500 font-bold"
-                : "text-gray-500 dark:text-gray-400 hover:text-sky-500 dark:hover:text-sky-500"
+                ? "font-bold text-sky-500"
+                : "text-gray-500 hover:text-sky-500 dark:text-gray-400 dark:hover:text-sky-500"
             }
           >
             Projects
           </NavLink>
         </Navbar.Link>
         <Navbar.Link
-          className="text-lg bg-transparent border-none w-fit hover:bg-transparent dark:hover:bg-transparent"
+          className="w-fit border-none bg-transparent text-lg hover:bg-transparent dark:hover:bg-transparent"
           active={path === "/about"}
           as={"div"}
         >
@@ -128,8 +127,8 @@ export default function Header() {
             to="/about"
             className={({ isActive }) =>
               isActive
-                ? "text-sky-500 font-bold"
-                : "text-gray-500 dark:text-gray-400 hover:text-sky-500 dark:hover:text-sky-500"
+                ? "font-bold text-sky-500"
+                : "text-gray-500 hover:text-sky-500 dark:text-gray-400 dark:hover:text-sky-500"
             }
           >
             About

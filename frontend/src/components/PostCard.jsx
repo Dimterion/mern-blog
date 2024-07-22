@@ -3,20 +3,20 @@ import PropTypes from "prop-types";
 
 export default function PostCard({ post }) {
   return (
-    <article className="group relative w-[90vw] border border-sky-500 hover:border-2 max-w-[350px] h-[325px] overflow-hidden rounded-lg transition-all sm:w-[350px]">
+    <article className="group relative h-[325px] w-[90vw] max-w-[350px] overflow-hidden rounded-lg border border-sky-500 transition-all hover:border-2 sm:w-[350px]">
       <Link to={`/post/${post.slug}`}>
         <img
           src={post.image}
           alt="Post cover."
-          className="h-[230px] w-full object-cover group-hover:h-[190px] transition-all duration-500 z-20"
+          className="z-20 h-[230px] w-full object-cover transition-all duration-500 group-hover:h-[190px]"
         />
       </Link>
-      <aside className="p-3 flex flex-col gap-2">
-        <p className="text-xl font-semibold line-clamp-2">{post.title}</p>
-        <span className="italic text-md">{post.category}</span>
+      <aside className="flex flex-col gap-2 p-3">
+        <p className="line-clamp-2 text-xl font-semibold">{post.title}</p>
+        <span className="text-md italic">{post.category}</span>
         <Link
           to={`/post/${post.slug}`}
-          className="z-10 group-hover:bottom-0 absolute bottom-[-200px] left-0 right-0 border-2 border-sky-500 text-sky-500 hover:bg-sky-500 hover:text-white transition-all duration-500 text-center py-2 rounded-md m-2 font-bold"
+          className="absolute bottom-[-200px] left-0 right-0 z-10 m-2 rounded-md border-2 border-sky-500 py-2 text-center font-bold text-sky-500 transition-all duration-500 hover:bg-sky-500 hover:text-white group-hover:bottom-0"
         >
           Read post
         </Link>

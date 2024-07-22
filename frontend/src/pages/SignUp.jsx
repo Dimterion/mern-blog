@@ -34,7 +34,7 @@ export default function SignUp() {
       if (data.success === false) {
         if (data.message.includes("duplicate key")) {
           return setErrorMessage(
-            "Account with this username or email already exists."
+            "Account with this username or email already exists.",
           );
         }
 
@@ -53,16 +53,16 @@ export default function SignUp() {
   };
 
   return (
-    <main className="min-h-screen mt-20">
-      <section className="flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-5">
+    <main className="mt-20 min-h-screen">
+      <section className="mx-auto flex max-w-3xl flex-col gap-5 p-3 md:flex-row md:items-center">
         <article className="flex-1">
-          <Link to="/" className="font-bold dark:text-white text-3xl">
-            <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-lg text-white">
+          <Link to="/" className="text-3xl font-bold dark:text-white">
+            <span className="rounded-lg bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-2 py-1 text-white">
               Dimterion&apos;s
             </span>
             <span>site</span>
           </Link>
-          <p className="text-sm mt-5">
+          <p className="mt-5 text-sm">
             Sign up with your email and password or your Google account.
           </p>
         </article>
@@ -75,7 +75,7 @@ export default function SignUp() {
               type="text"
               placeholder="Name"
               id="username"
-              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
               onChange={handleChange}
             />
             <label className="mb-1 whitespace-normal font-semibold">
@@ -85,7 +85,7 @@ export default function SignUp() {
               type="email"
               placeholder="emailname@email.com"
               id="email"
-              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
               onChange={handleChange}
             />
             <label className="mb-1 whitespace-normal font-semibold">
@@ -95,11 +95,11 @@ export default function SignUp() {
               type="password"
               placeholder="**********"
               id="password"
-              className="mb-4 p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
               onChange={handleChange}
             />
             <button
-              className="flex justify-center font-bold border-2 border-sky-500 rounded-lg w-full text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white my-4"
+              className="mx-auto my-4 flex w-full justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 hover:bg-sky-500 hover:text-white"
               type="submit"
               disabled={loading}
             >
@@ -114,7 +114,7 @@ export default function SignUp() {
             </button>
           </form>
           <OAuth />
-          <aside className="flex gap-2 text-sm mt-5">
+          <aside className="mt-5 flex gap-2 text-sm">
             <span>Have an account?</span>
             <Link to="/sign-in" className="text-sky-500 hover:underline">
               Sign In

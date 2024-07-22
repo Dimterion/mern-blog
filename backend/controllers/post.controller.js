@@ -55,7 +55,7 @@ export const getPosts = async (req, res, next) => {
     const oneMonthAgo = new Date(
       now.getFullYear(),
       now.getMonth() - 1,
-      now.getDate()
+      now.getDate(),
     );
     const lastMonthPosts = await Post.countDocuments({
       createdAt: { $gte: oneMonthAgo },
@@ -102,7 +102,7 @@ export const updatePost = async (req, res, next) => {
           link: req.body.link,
         },
       },
-      { new: true }
+      { new: true },
     );
 
     res.status(200).json(updatedPost);

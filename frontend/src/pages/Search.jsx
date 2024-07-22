@@ -119,9 +119,9 @@ export default function Search() {
 
   return (
     <main className="flex flex-col md:flex-row">
-      <section className="flex flex-col items-center gap-6 px-12 py-4 border-b md:border-b-0 md:border-r md:min-h-screen border-gray-300 dark:border-gray-600">
+      <section className="flex flex-col items-center gap-6 border-b border-gray-300 px-12 py-4 md:min-h-screen md:border-b-0 md:border-r dark:border-gray-600">
         <form
-          className="flex flex-col gap-2 max-w-[200px] mx-auto"
+          className="mx-auto flex max-w-[200px] flex-col gap-2"
           onSubmit={handleSubmit}
         >
           <aside className="mx-2 flex flex-col gap-2">
@@ -134,7 +134,7 @@ export default function Search() {
               type="text"
               value={sidebarData.searchTerm || ""}
               onChange={handleChange}
-              className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+              className="rounded-md border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             />
           </aside>
           <aside className="mx-2 flex flex-col gap-2">
@@ -143,11 +143,11 @@ export default function Search() {
               onChange={handleChange}
               value={sidebarData.sort || ""}
               id="sort"
-              className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600 cursor-pointer"
+              className="cursor-pointer rounded-md border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             >
               <option
                 value="desc"
-                className="bg-gray-50 dark:bg-gray-700 cursor-pointer"
+                className="cursor-pointer bg-gray-50 dark:bg-gray-700"
               >
                 Latest
               </option>
@@ -157,12 +157,12 @@ export default function Search() {
             </select>
           </aside>
           <aside className="mx-2 flex flex-col gap-2">
-            <label className="font-semibold min-w-[10rem]">Category:</label>
+            <label className="min-w-[10rem] font-semibold">Category:</label>
             <select
               onChange={handleChange}
               value={sidebarData.category || ""}
               id="category"
-              className="p-2 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600 cursor-pointer"
+              className="cursor-pointer rounded-md border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             >
               <option
                 value="uncategorized"
@@ -183,14 +183,14 @@ export default function Search() {
           </aside>
           <button
             type="submit"
-            className="font-bold mt-6 border-2 border-sky-500 rounded-lg w-56 max-w-[200px] text-center py-2 text-sm bg-sky-500 text-white mx-auto hover:text-sky-500 hover:bg-white dark:hover:bg-transparent"
+            className="mx-auto mt-6 w-56 max-w-[200px] rounded-lg border-2 border-sky-500 bg-sky-500 py-2 text-center text-sm font-bold text-white hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
           >
             Search
           </button>
         </form>
         <Link
           to="/search"
-          className="font-bold border-2 border-sky-500 rounded-lg w-56 max-w-[200px] text-center py-2 text-sm text-sky-500 hover:bg-sky-500 mx-auto hover:text-white"
+          className="mx-auto w-56 max-w-[200px] rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 hover:bg-sky-500 hover:text-white"
           onClick={() =>
             setSidebarData({
               searchTerm: "",
@@ -202,8 +202,8 @@ export default function Search() {
           All posts
         </Link>
       </section>
-      <section className="w-full flex flex-col">
-        <article className="p-4 sm:px-16 sm:pt-16 flex flex-wrap gap-4 justify-center lg:justify-start">
+      <section className="flex w-full flex-col">
+        <article className="flex flex-wrap justify-center gap-4 p-4 sm:px-16 sm:pt-16 lg:justify-start">
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
           )}
@@ -215,7 +215,7 @@ export default function Search() {
         {showMore && (
           <button
             onClick={handleShowMore}
-            className="text-sky-500 text-lg hover:underline p-7 w-fit mx-auto font-bold"
+            className="mx-auto w-fit p-7 text-lg font-bold text-sky-500 hover:underline"
           >
             Show More
           </button>

@@ -51,7 +51,7 @@ export default function Projects() {
       setSelectedCategories((prevCategories) => [...prevCategories, category]);
     } else {
       setSelectedCategories((prevCategories) =>
-        prevCategories.filter((prevCategory) => prevCategory !== category)
+        prevCategories.filter((prevCategory) => prevCategory !== category),
       );
     }
   }
@@ -65,7 +65,7 @@ export default function Projects() {
 
     const searchQuery = urlParams.toString();
     const res = await fetch(
-      `/api/post/getposts?${searchQuery}&category=project`
+      `/api/post/getposts?${searchQuery}&category=project`,
     );
 
     if (!res.ok) {
@@ -89,7 +89,7 @@ export default function Projects() {
     .filter(
       (project) =>
         selectedCategories.length === 0 ||
-        selectedCategories.includes(project.category)
+        selectedCategories.includes(project.category),
     )
     .filter(
       (project) =>
@@ -98,22 +98,22 @@ export default function Projects() {
           .includes(searchQuery.trim().toLowerCase()) ||
         project.category
           .toLowerCase()
-          .includes(searchQuery.trim().toLowerCase())
+          .includes(searchQuery.trim().toLowerCase()),
     )
     .map((project) => (
       <section
         key={project._id}
-        className="project space-y-2 mt-2 max-w-[300px]"
+        className="project mt-2 max-w-[300px] space-y-2"
       >
-        <article className="flex justify-center relative overflow-hidden group cursor-pointer border border-gray-300 dark:border-gray-600 rounded-xl">
+        <article className="group relative flex cursor-pointer justify-center overflow-hidden rounded-xl border border-gray-300 dark:border-gray-600">
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-[200px] max-h-[40vh] object-cover"
+            className="h-[200px] max-h-[40vh] w-full object-cover"
           />
           <Link
             to={`/post/${project.slug}`}
-            className="bg-sky-500 text-white absolute bottom-0 left-0 right-0 text-center py-1 translate-y-full transition group-hover:translate-y-0 duration-500"
+            className="absolute bottom-0 left-0 right-0 translate-y-full bg-sky-500 py-1 text-center text-white transition duration-500 group-hover:translate-y-0"
           >
             {project.link || "Link"}
           </Link>
@@ -124,8 +124,8 @@ export default function Projects() {
     ));
 
   return (
-    <main className="min-h-screen mx-auto flex justify-center items-center flex-col gap-6 p-3 mb-6">
-      <h1 className="text-3xl font-semibold my-6 text-gray-600 dark:text-gray-400">
+    <main className="mx-auto mb-6 flex min-h-screen flex-col items-center justify-center gap-6 p-3">
+      <h1 className="my-6 text-3xl font-semibold text-gray-600 dark:text-gray-400">
         Projects
       </h1>
       <section>
@@ -133,22 +133,22 @@ export default function Projects() {
           <input
             type="text"
             id="search"
-            className="p-2 pl-9 bg-gray-50 border-gray-300 rounded-md focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+            className="rounded-md border-gray-300 bg-gray-50 p-2 pl-9 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             placeholder="Search projects..."
             onChange={handleSearch}
           />
-          <AiOutlineSearch className="absolute left-3 bottom-1 -translate-y-1/2" />
+          <AiOutlineSearch className="absolute bottom-1 left-3 -translate-y-1/2" />
         </article>
       </section>
-      <section className="flex flex-col md:flex-row mx-auto container max-w-6xl">
-        <article className="space-y-4 p-2 w-full max-w-[10rem] text-gray-600 dark:text-gray-400">
+      <section className="container mx-auto flex max-w-6xl flex-col md:flex-row">
+        <article className="w-full max-w-[10rem] space-y-4 p-2 text-gray-600 dark:text-gray-400">
           <h2 className="text-xl font-semibold">Category</h2>
-          <aside className="flex sm:flex-col gap-2">
+          <aside className="flex gap-2 sm:flex-col">
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
                 id="project"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-100 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="project" className="cursor-pointer">
@@ -159,7 +159,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="thoughts"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-100 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="thoughts" className="cursor-pointer">
@@ -170,7 +170,7 @@ export default function Projects() {
               <input
                 type="checkbox"
                 id="coding"
-                className="mr-1 sm:mr-2 rounded p-2 cursor-pointer bg-gray-100 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="coding" className="cursor-pointer">
@@ -184,11 +184,11 @@ export default function Projects() {
             <Spinner size="xl" />
           </article>
         ) : (
-          <article className="mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-content-center p-2">
+          <article className="mx-auto grid grid-cols-1 place-content-center gap-6 p-2 sm:grid-cols-2 md:grid-cols-3">
             {displayedProjects.length > 0 ? (
               displayedProjects
             ) : (
-              <p className="mx-auto font-semibold text-center">
+              <p className="mx-auto text-center font-semibold">
                 No projects found at the moment.
               </p>
             )}
@@ -198,12 +198,12 @@ export default function Projects() {
       {showMore && displayedProjects.length > 0 && (
         <button
           onClick={handleShowMore}
-          className="text-sky-500 text-lg hover:underline mb-4 w-fit mx-auto font-bold"
+          className="mx-auto mb-4 w-fit text-lg font-bold text-sky-500 hover:underline"
         >
           Show More
         </button>
       )}
-      <section className="p-3 bg-sky-100 dark:bg-slate-700 mb-7 max-w-[1000px] mx-auto rounded-md">
+      <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
     </main>

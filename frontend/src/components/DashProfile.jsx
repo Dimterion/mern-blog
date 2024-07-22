@@ -65,7 +65,7 @@ export default function DashProfile() {
           },
           (error) => {
             setImageFileUploadError(
-              "Could not upload image. File must be less than 2MB."
+              "Could not upload image. File must be less than 2MB.",
             );
             setImageFileUploadProgress(null);
             setImageFile(null);
@@ -83,7 +83,7 @@ export default function DashProfile() {
               }));
               setImageFileUploading(false);
             });
-          }
+          },
         );
       };
 
@@ -176,8 +176,8 @@ export default function DashProfile() {
   };
 
   return (
-    <section className="max-w-lg mx-auto p-3 w-full">
-      <h1 className="my-7 text-center font-semibold text-3xl">Profile</h1>
+    <section className="mx-auto w-full max-w-lg p-3">
+      <h1 className="my-7 text-center text-3xl font-semibold">Profile</h1>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
           type="file"
@@ -187,7 +187,7 @@ export default function DashProfile() {
           hidden
         />
         <article
-          className="relative size-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full hover:opacity-90"
+          className="relative size-32 cursor-pointer self-center overflow-hidden rounded-full shadow-md hover:opacity-90"
           onClick={() => filePickerRef.current.click()}
         >
           {imageFileUploadProgress && (
@@ -214,7 +214,7 @@ export default function DashProfile() {
           <img
             src={imageFileUrl || currentUser.profilePicture}
             alt="User"
-            className={`rounded-full size-full object-cover border-4 border-sky-500 ${
+            className={`size-full rounded-full border-4 border-sky-500 object-cover ${
               imageFileUploadProgress &&
               imageFileUploadProgress < 100 &&
               "opacity-60"
@@ -228,7 +228,7 @@ export default function DashProfile() {
           type="text"
           id="username"
           placeholder="Name"
-          className="p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+          className="rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
           defaultValue={currentUser.username}
           onChange={handleChange}
         />
@@ -236,7 +236,7 @@ export default function DashProfile() {
           type="email"
           id="email"
           placeholder="email"
-          className="p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+          className="rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
           defaultValue={currentUser.email}
           onChange={handleChange}
         />
@@ -244,26 +244,26 @@ export default function DashProfile() {
           type="password"
           id="password"
           placeholder="Password"
-          className="p-2 bg-gray-50 border-gray-300 rounded-lg focus:border-sky-500 dark:focus:border-sky-500 focus:ring-0 dark:bg-gray-700 dark:border-gray-600"
+          className="rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
           onChange={handleChange}
         />
         <button
           type="submit"
-          className="border-2 border-sky-500 p-2 rounded-lg text-sky-500 font-semibold hover:bg-sky-500 hover:text-gray-100"
+          className="rounded-lg border-2 border-sky-500 p-2 font-semibold text-sky-500 hover:bg-sky-500 hover:text-gray-100"
           disabled={loading || imageFileUploading}
         >
           {loading ? "Loading..." : "Update"}
         </button>
         {currentUser.isAdmin && (
           <Link
-            className="text-center w-full border-2 bg-sky-500 border-sky-500 p-2 rounded-lg text-gray-100 font-semibold hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+            className="w-full rounded-lg border-2 border-sky-500 bg-sky-500 p-2 text-center font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
             to="/create-post"
           >
             Create a post
           </Link>
         )}
       </form>
-      <article className="text-red-500 flex justify-between mt-5">
+      <article className="mt-5 flex justify-between text-red-500">
         <span
           onClick={() => setShowModal(true)}
           className="cursor-pointer hover:opacity-80"
@@ -298,22 +298,22 @@ export default function DashProfile() {
         popup
         size="md"
       >
-        <Modal.Header className="bg-gray-200 rounded-t-md" />
-        <Modal.Body className="bg-gray-200 rounded-b-md">
+        <Modal.Header className="rounded-t-md bg-gray-200" />
+        <Modal.Body className="rounded-b-md bg-gray-200">
           <section className="text-center">
-            <HiOutlineExclamationCircle className="size-14 text-gray-400 dark:text-gray-200 mb-4 mx-auto" />
+            <HiOutlineExclamationCircle className="mx-auto mb-4 size-14 text-gray-400 dark:text-gray-200" />
             <h3 className="mb-5 text-lg text-gray-500 dark:text-gray-400">
               Are you sure you want to delete your account?
             </h3>
             <aside className="flex justify-center gap-4">
               <button
-                className="p-2 rounded-lg w-28 bg-red-500 text-gray-100 hover:opacity-85"
+                className="w-28 rounded-lg bg-red-500 p-2 text-gray-100 hover:opacity-85"
                 onClick={handleDeleteUser}
               >
                 Yes, I&apos;m sure
               </button>
               <button
-                className="p-2 rounded-lg w-28 bg-gray-400 text-gray-100 hover:opacity-85"
+                className="w-28 rounded-lg bg-gray-400 p-2 text-gray-100 hover:opacity-85"
                 onClick={() => setShowModal(false)}
               >
                 No, cancel

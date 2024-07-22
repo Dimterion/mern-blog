@@ -10,16 +10,16 @@ import {
 
 export default function FooterComponent() {
   return (
-    <Footer container className="border-t-2 border-sky-500 rounded-none p-4">
-      <section className="w-full max-w-7xl mx-auto">
-        <article className="grid justify-center sm:justify-between sm:flex md:grid-cols-1">
+    <Footer container className="rounded-none border-t-2 border-sky-500 p-4">
+      <section className="mx-auto w-full max-w-7xl">
+        <article className="grid justify-center sm:flex sm:justify-between md:grid-cols-1">
           <Link
             to="/"
-            className="self-center text-lg sm:text-xl font-semibold mx-auto sm:mx-0 px-4 sm:px-6 py-1 bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 rounded-tl-full rounded-br-full text-white"
+            className="mx-auto self-center rounded-br-full rounded-tl-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-4 py-1 text-lg font-semibold text-white sm:mx-0 sm:px-6 sm:text-xl"
           >
             Dimterion
           </Link>
-          <aside className="grid grid-cols-2 mt-6 sm:mt-0 gap-16">
+          <aside className="mt-6 grid grid-cols-2 gap-16 sm:mt-0">
             <aside>
               <Footer.Title className="mb-4" title="Blog" />
               <Footer.LinkGroup col>
@@ -37,7 +37,7 @@ export default function FooterComponent() {
           </aside>
         </article>
         <hr className="my-4 dark:border-gray-500" />
-        <article className="w-full flex flex-col-reverse sm:flex-row items-center sm:justify-between gap-4">
+        <article className="flex w-full flex-col-reverse items-center gap-4 sm:flex-row sm:justify-between">
           <Footer.Copyright
             href="https://github.com/Dimterion/mern-blog"
             by="Dimterion"
