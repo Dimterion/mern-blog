@@ -91,7 +91,7 @@ export default function SignIn() {
             >
               {loading ? (
                 <>
-                  <Spinner size="sm" />
+                  <Spinner size="sm" className="fill-sky-500 text-gray-300" />
                   <span className="pl-3">Loading...</span>
                 </>
               ) : (

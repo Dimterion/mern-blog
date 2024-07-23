@@ -181,7 +181,7 @@ export default function Projects() {
         </article>
         {loading ? (
           <article className="mx-auto my-16">
-            <Spinner size="xl" />
+            <Spinner size="xl" className="fill-sky-500 text-gray-300" />
           </article>
         ) : (
           <article className="mx-auto grid grid-cols-1 place-content-center gap-6 p-2 sm:grid-cols-2 md:grid-cols-3">

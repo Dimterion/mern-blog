@@ -62,7 +62,7 @@ export default function Post() {
   if (loading)
     return (
       <main className="flex min-h-screen items-center justify-center">
-        <Spinner size="xl" />
+        <Spinner size="xl" className="fill-sky-500 text-gray-300" />
       </main>
     );
 
