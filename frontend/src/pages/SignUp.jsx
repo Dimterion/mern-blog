@@ -66,7 +66,7 @@ export default function SignUp() {
             Sign up with your email and password or your Google account.
           </p>
         </article>
-        <article className="flex-1">
+        <article className="relative flex-1">
           <form className="flex flex-col" onSubmit={handleSubmit}>
             <label className="mb-1 whitespace-normal font-semibold">
               Username
@@ -121,7 +121,10 @@ export default function SignUp() {
             </Link>
           </aside>
           {errorMessage && (
-            <Alert className="mt-5" color="failure">
+            <Alert
+              className="absolute left-1/2 mt-5 w-[370px] max-w-[95vw] -translate-x-1/2 p-3"
+              color="failure"
+            >
               {errorMessage}
             </Alert>
           )}
