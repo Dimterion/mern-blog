@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Spinner } from "flowbite-react";
 import PostCard from "../components/PostCard";
 
 export default function Search() {
@@ -207,7 +208,9 @@ export default function Search() {
           {!loading && posts.length === 0 && (
             <p className="text-xl text-gray-500">No posts found.</p>
           )}
-          {loading && <p className="text-xl text-gray-500">Loading...</p>}
+          {loading && (
+            <Spinner size="xl" className="fill-sky-500 text-gray-300" />
+          )}
           {!loading &&
             posts &&
             posts.map((post) => <PostCard key={post._id} post={post} />)}
