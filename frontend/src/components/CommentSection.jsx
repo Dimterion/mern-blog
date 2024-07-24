@@ -145,9 +145,11 @@ export default function CommentSection({ postId }) {
         </aside>
       ) : (
         <aside className="my-5 flex flex-col gap-2 text-sm text-sky-500">
-          <p>You must be signed in to comment.</p>
+          <p className="mb-2 w-fit border-b-2 border-sky-500 p-2">
+            You must be signed in to comment.
+          </p>
           <Link
-            className="w-fit rounded-md border-2 border-sky-500 px-2 py-1 font-bold uppercase"
+            className="w-fit rounded-md border-2 border-sky-500 px-2 py-1 font-bold uppercase hover:bg-sky-500 hover:text-gray-100"
             to={"/sign-in"}
           >
             Sign In
