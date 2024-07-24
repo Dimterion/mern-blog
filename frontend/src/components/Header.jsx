@@ -38,7 +38,7 @@ export default function Header() {
       >
         Dimterion
       </Link>
-      <section className="flex items-center gap-1 md:order-2">
+      <section className="header-section flex items-center gap-1 md:order-2">
         <Link
           aria-label="Go to search page"
           to="/search"
