@@ -1,5 +1,6 @@
 import { forwardRef, useEffect, useLayoutEffect, useRef } from "react";
 import Quill from "quill";
+import PropTypes from "prop-types";
 
 const QuillEditor = forwardRef(
   ({ readOnly, defaultValue, onTextChange, onSelectionChange }, ref) => {
@@ -53,3 +54,10 @@ const QuillEditor = forwardRef(
 QuillEditor.displayName = "Editor";
 
 export default QuillEditor;
+
+QuillEditor.propTypes = {
+  readOnly: PropTypes.bool,
+  defaultValue: PropTypes.object,
+  onTextChange: PropTypes.func,
+  onSelectionChange: PropTypes.func,
+};
