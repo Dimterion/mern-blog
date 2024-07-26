@@ -12,11 +12,13 @@ export default function PostCard({ post }) {
         />
       </Link>
       <aside className="flex flex-col gap-2 p-3">
-        <p className="line-clamp-2 text-xl font-semibold">{post.title}</p>
+        <p className="text-md line-clamp-2 font-semibold sm:text-xl">
+          {post.title}
+        </p>
         <span className="text-md italic">{post.category}</span>
         <Link
           to={`/post/${post.slug}`}
-          className="absolute bottom-[-200px] left-0 right-0 z-10 m-2 rounded-md border-2 border-sky-500 py-2 text-center font-bold text-sky-500 transition-all duration-500 hover:bg-sky-500 hover:text-white group-hover:bottom-0"
+          className="absolute bottom-[-200px] left-0 right-0 z-10 m-2 rounded-md border-2 border-sky-500 py-1 text-center font-bold text-sky-500 transition-all duration-500 hover:bg-sky-500 hover:text-white group-hover:bottom-0 sm:py-2"
         >
           Read post
         </Link>
