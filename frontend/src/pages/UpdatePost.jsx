@@ -164,7 +164,7 @@ export default function UpdatePost() {
             value={formData.link || ""}
           />
         </section>
-        <section className="flex items-center justify-between gap-4 border-2 border-dotted border-sky-500 p-3">
+        <section className="flex items-center justify-between gap-4 rounded-lg border-2 border-dotted border-sky-500 p-3">
           <FileInput
             type="file"
             accept="image/*"
@@ -192,7 +192,7 @@ export default function UpdatePost() {
           <img
             src={formData.image}
             alt="upload"
-            className="h-72 w-full object-cover"
+            className="h-72 w-full rounded-lg object-cover"
           />
         )}
         <ReactQuill
