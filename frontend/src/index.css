@@ -48,6 +48,21 @@ body {
   padding: 0.25rem;
 }
 
+.ql-toolbar,
+.ql-container {
+  background-color: rgb(249 250 251);
+}
+
+.dark .ql-toolbar,
+.dark .ql-container {
+  color: #000;
+}
+
+.ql-toolbar {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
 .ql-container {
   min-height: 15rem;
+  border-radius: 0 0 0.5rem 0.5rem;
 }
