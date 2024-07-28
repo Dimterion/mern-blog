@@ -48,6 +48,8 @@ body {
   padding: 0.25rem;
 }
 
+/* Quill Editor custom styles */
+
 .ql-toolbar,
 .ql-container {
   background-color: rgb(249 250 251);
@@ -62,7 +64,34 @@ body {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
+.dark .ql-toolbar {
+  background-color: rgb(55 65 81);
+}
+
 .ql-container {
   min-height: 15rem;
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.dark .ql-container {
+  background-color: rgb(55 65 81);
+  color: rgb(255 255 255);
+}
+
+.dark .ql-toolbar .ql-stroke {
+  fill: none;
+  stroke: rgb(255 255 255);
+}
+
+.dark .ql-toolbar .ql-fill {
+  fill: rgb(255 255 255);
+  stroke: none;
+}
+
+.dark .ql-toolbar .ql-picker {
+  color: rgb(255 255 255);
+}
+
+.dark .ql-editor.ql-blank::before {
+  color: rgb(204, 204, 204);
 }
