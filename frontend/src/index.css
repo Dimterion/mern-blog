@@ -96,6 +96,14 @@ body {
   color: rgb(204, 204, 204);
 }
 
+.ql-toolbar .ql-picker .ql-picker-item:hover {
+  color: rgb(14 165 233);
+}
+
+.dark .ql-toolbar .ql-picker .ql-picker-item:hover {
+  color: rgb(204, 204, 204);
+}
+
 .dark .ql-picker-options {
   background-color: rgb(55 65 81);
   color: rgb(14 165 233);
