@@ -95,3 +95,27 @@ body {
 .dark .ql-editor.ql-blank::before {
   color: rgb(204, 204, 204);
 }
+
+.dark .ql-picker-options {
+  background-color: rgb(55 65 81);
+  color: rgb(14 165 233);
+}
+
+button:hover .ql-stroke,
+.ql-picker-label:hover .ql-stroke {
+  fill: none;
+  stroke: rgb(14 165 233) !important;
+}
+.ql-active .ql-stroke {
+  fill: none;
+  stroke: rgb(14 165 233) !important;
+}
+button:hover .ql-fill,
+.ql-picker-label:hover .ql-fill {
+  fill: rgb(14 165 233) !important;
+  stroke: none;
+}
+.ql-active .ql-fill {
+  fill: rgb(14 165 233) !important;
+  stroke: none;
+}
