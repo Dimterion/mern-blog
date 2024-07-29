@@ -104,6 +104,18 @@ body {
   color: rgb(14 165 233);
 }
 
+.ql-picker-label::before {
+  color: #000;
+}
+
+.dark .ql-picker-label::before {
+  color: rgb(255 255 255);
+}
+
+.ql-picker-label:hover::before {
+  color: rgb(14 165 233);
+}
+
 .dark .ql-toolbar .ql-picker .ql-picker-item:hover {
   color: rgb(204, 204, 204);
 }
