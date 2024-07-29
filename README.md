@@ -17,7 +17,7 @@ Functionality to monitor various statistics for the site.
 - Redux
 - Tailwind CSS
 - Flowbite React
-- React Quill
+- Quill (initially used ReactQuill)
 - Mongo DB
 - Express
 - Node.js

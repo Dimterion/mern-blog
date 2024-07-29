@@ -1,8 +1,7 @@
-// import { useRef } from "react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Alert, FileInput, Select, TextInput } from "flowbite-react";
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -13,10 +12,10 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-// import QuillEditor from "../components/QuillEditor";
+import QuillEditor from "../components/QuillEditor";
 
 export default function CreatePost() {
-  // const quillRef = useRef();
+  const quillRef = useRef();
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
@@ -161,7 +160,7 @@ export default function CreatePost() {
             className="h-72 w-full rounded-lg object-cover"
           />
         )}
-        <ReactQuill
+        {/* <ReactQuill
           theme="snow"
           placeholder="Write something..."
           className="mb-24 h-72 sm:mb-12"
@@ -169,14 +168,14 @@ export default function CreatePost() {
           onChange={(value) => {
             setFormData({ ...formData, content: value });
           }}
-        />
-        {/* <QuillEditor
+        /> */}
+        <QuillEditor
           ref={quillRef}
           onTextChange={() => {
             const htmlContent = quillRef.current.root.innerHTML;
             setFormData({ ...formData, content: htmlContent });
           }}
-        /> */}
+        />
         <button
           type="submit"
           className="rounded-lg border-2 border-sky-500 px-4 py-2 font-semibold text-sky-500 hover:bg-sky-500 hover:text-gray-100"

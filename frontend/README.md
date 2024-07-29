@@ -11,4 +11,4 @@ Front-End part of the project.
 - Redux
 - Tailwind CSS
 - Flowbite React
-- React Quill
+- Quill (initially used ReactQuill)
