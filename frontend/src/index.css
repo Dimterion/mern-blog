@@ -78,18 +78,22 @@ body {
   color: rgb(255 255 255);
 }
 
-.dark .ql-toolbar .ql-stroke {
-  fill: none;
-  stroke: rgb(255 255 255);
-}
-
 .dark .ql-toolbar .ql-fill {
   fill: rgb(255 255 255);
   stroke: none;
 }
 
+.dark .ql-toolbar .ql-stroke {
+  fill: none;
+  stroke: rgb(255 255 255);
+}
+
 .dark .ql-toolbar .ql-picker {
   color: rgb(255 255 255);
+}
+
+.ql-editor a {
+  color: rgb(14 165 233);
 }
 
 .dark .ql-editor.ql-blank::before {
@@ -114,16 +118,19 @@ button:hover .ql-stroke,
   fill: none;
   stroke: rgb(14 165 233) !important;
 }
-.ql-active .ql-stroke {
-  fill: none;
-  stroke: rgb(14 165 233) !important;
-}
+
 button:hover .ql-fill,
 .ql-picker-label:hover .ql-fill {
   fill: rgb(14 165 233) !important;
   stroke: none;
 }
+
 .ql-active .ql-fill {
   fill: rgb(14 165 233) !important;
   stroke: none;
+}
+
+.ql-active .ql-stroke {
+  fill: none;
+  stroke: rgb(14 165 233) !important;
 }
