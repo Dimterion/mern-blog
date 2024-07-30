@@ -120,7 +120,7 @@ export default function Search() {
 
   return (
     <main className="flex flex-col md:flex-row">
-      <section className="flex flex-col items-center gap-6 border-b border-gray-300 px-12 py-4 md:min-h-screen md:border-b-0 md:border-r dark:border-gray-600">
+      <section className="flex flex-col items-center gap-6 border-b px-12 py-4 md:min-h-screen md:border-b-0 md:border-r-2 dark:border-gray-600">
         <form
           className="mx-auto flex max-w-[200px] flex-col gap-2"
           onSubmit={handleSubmit}

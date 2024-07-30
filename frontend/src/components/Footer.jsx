@@ -10,7 +10,10 @@ import {
 
 export default function FooterComponent() {
   return (
-    <Footer container className="rounded-none border-t-2 border-sky-500 p-4">
+    <Footer
+      container
+      className="rounded-none border-t-2 p-4 dark:border-gray-600"
+    >
       <section className="mx-auto w-full max-w-7xl">
         <article className="grid justify-center sm:flex sm:justify-between md:grid-cols-1">
           <Link
@@ -36,7 +39,7 @@ export default function FooterComponent() {
             </aside>
           </aside>
         </article>
-        <hr className="my-4 dark:border-gray-500" />
+        <hr className="my-4 border dark:border-gray-600" />
         <article className="flex w-full flex-col-reverse items-center gap-4 sm:flex-row sm:justify-between">
           <Footer.Copyright
             href="https://github.com/Dimterion/mern-blog"

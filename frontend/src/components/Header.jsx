@@ -31,7 +31,7 @@ export default function Header() {
   };
 
   return (
-    <Navbar className="border-b-2 px-1">
+    <Navbar className="border-b-2 px-1 dark:border-gray-600">
       <Link
         to="/"
         className="rounded-br-full rounded-tl-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-4 py-1 text-lg font-semibold text-white sm:px-6 sm:text-xl"
