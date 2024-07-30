@@ -24,17 +24,25 @@ export default function FooterComponent() {
           </Link>
           <aside className="mt-6 grid grid-cols-2 gap-16 sm:mt-0">
             <aside>
-              <Footer.Title className="mb-4" title="Blog" />
+              <Footer.Title className="mb-4 dark:text-gray-400" title="Blog" />
               <Footer.LinkGroup col>
-                <Footer.Link href="/">Home</Footer.Link>
-                <Footer.Link href="/search">Posts</Footer.Link>
+                <Footer.Link href="/" className="dark:text-gray-400">
+                  Home
+                </Footer.Link>
+                <Footer.Link href="/search" className="dark:text-gray-400">
+                  Posts
+                </Footer.Link>
               </Footer.LinkGroup>
             </aside>
             <aside>
-              <Footer.Title className="mb-4" title="Info" />
+              <Footer.Title className="mb-4 dark:text-gray-400" title="Info" />
               <Footer.LinkGroup col>
-                <Footer.Link href="/about">About</Footer.Link>
-                <Footer.Link href="/projects">Projects</Footer.Link>
+                <Footer.Link href="/about" className="dark:text-gray-400">
+                  About
+                </Footer.Link>
+                <Footer.Link href="/projects" className="dark:text-gray-400">
+                  Projects
+                </Footer.Link>
               </Footer.LinkGroup>
             </aside>
           </aside>
