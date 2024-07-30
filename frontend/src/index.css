@@ -105,7 +105,7 @@ body {
 }
 
 .ql-picker-label::before {
-  color: #000;
+  color: #444;
 }
 
 .dark .ql-picker-label::before {
@@ -117,12 +117,24 @@ body {
 }
 
 .dark .ql-toolbar .ql-picker .ql-picker-item:hover {
+  color: rgb(14 165 233);
+}
+
+.ql-selected::before {
+  color: #444;
+}
+
+.dark .ql-selected::before {
   color: rgb(204, 204, 204);
+}
+
+.ql-selected:hover::before {
+  color: rgb(14 165 233);
 }
 
 .dark .ql-picker-options {
   background-color: rgb(55 65 81);
-  color: rgb(14 165 233);
+  color: rgb(204, 204, 204);
 }
 
 button:hover .ql-stroke,
@@ -144,5 +156,10 @@ button:hover .ql-fill,
 
 .ql-active .ql-stroke {
   fill: none;
-  stroke: rgb(14 165 233) !important;
+  stroke: #444 !important;
+}
+
+.dark .ql-active .ql-stroke {
+  fill: none;
+  stroke: rgb(255 255 255) !important;
 }
