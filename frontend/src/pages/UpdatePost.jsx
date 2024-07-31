@@ -172,6 +172,7 @@ export default function UpdatePost() {
         </section>
         <section className="flex items-center justify-between gap-4 rounded-lg border-2 border-dotted border-sky-500 p-3">
           <FileInput
+            className="fileInput"
             type="file"
             accept="image/*"
             onChange={(e) => setFile(e.target.files[0])}

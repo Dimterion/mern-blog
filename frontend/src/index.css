@@ -48,6 +48,10 @@ body {
   padding: 0.25rem;
 }
 
+.fileInput div input:focus {
+  border: 2px solid rgb(14 165 233);
+}
+
 /* Quill Editor custom styles */
 
 .ql-toolbar,
