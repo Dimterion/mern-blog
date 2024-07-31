@@ -115,7 +115,11 @@ export default function UpdatePost() {
       const data = await res.json();
 
       if (!res.ok) {
-        setPublishError(data.message);
+        setPublishError(
+          data.message.includes("duplicate key")
+            ? "Post with the same title already exists."
+            : data.message,
+        );
 
         return;
       }
