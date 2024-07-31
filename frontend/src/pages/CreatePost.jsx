@@ -22,7 +22,9 @@ export default function CreatePost() {
   const [formData, setFormData] = useState({});
   const [publishError, setPublishError] = useState(null);
   const navigate = useNavigate();
-  const handleUploadImage = async () => {
+  const handleUploadImage = async (e) => {
+    e.preventDefault();
+
     try {
       if (!file) {
         setImageUploadError("Please select an image.");
