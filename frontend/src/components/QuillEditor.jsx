@@ -3,7 +3,7 @@ import Quill from "quill";
 import PropTypes from "prop-types";
 
 const QuillEditor = forwardRef(
-  ({ readOnly, defaultValue, onTextChange, onSelectionChange }, ref) => {
+  ({ readOnly, defaultValue, onTextChange, onSelectionChange, postContent }, ref) => {
     const containerRef = useRef(null);
     const defaultValueRef = useRef(defaultValue);
     const onTextChangeRef = useRef(onTextChange);
@@ -30,6 +30,8 @@ const QuillEditor = forwardRef(
 
       ref.current = quill;
 
+      quill.root.innerHTML = postContent || "";
+
       if (defaultValueRef.current) {
         quill.setContents(defaultValueRef.current);
       }
@@ -46,7 +48,7 @@ const QuillEditor = forwardRef(
         ref.current = null;
         container.innerHTML = "";
       };
-    }, [ref]);
+    }, [ref, postContent]);
 
     return <section ref={containerRef}></section>;
   },
@@ -61,4 +63,5 @@ QuillEditor.propTypes = {
   defaultValue: PropTypes.object,
   onTextChange: PropTypes.func,
   onSelectionChange: PropTypes.func,
+  postContent: PropTypes.string,
 };
