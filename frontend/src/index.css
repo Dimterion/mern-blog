@@ -175,3 +175,7 @@ button:hover .ql-stroke,
   fill: none;
   stroke: rgb(255 255 255) !important;
 }
+
+.table-head tr th {
+  background-color: rgb(209 213 219);
+}
