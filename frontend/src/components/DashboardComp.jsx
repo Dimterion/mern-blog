@@ -129,9 +129,9 @@ export default function DashboardComp() {
       <section className="mx-auto flex flex-wrap justify-center gap-4 py-3">
         <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
-            <h1 className="p-2 text-center">Recent users</h1>
+            <h1 className="p-2 text-center uppercase">Recent users</h1>
             <Link
-              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold uppercase text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=users"}
             >
               See all
@@ -161,9 +161,9 @@ export default function DashboardComp() {
         </article>
         <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
-            <h1 className="p-2 text-center">Recent comments</h1>
+            <h1 className="p-2 text-center uppercase">Recent comments</h1>
             <Link
-              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold uppercase text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=comments"}
             >
               See all
@@ -189,9 +189,9 @@ export default function DashboardComp() {
         </article>
         <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
-            <h1 className="p-2 text-center">Recent posts</h1>
+            <h1 className="p-2 text-center uppercase">Recent posts</h1>
             <Link
-              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+              className="rounded-lg border-2 border-sky-500 bg-sky-500 px-2 py-2 font-semibold uppercase text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
               to={"/dashboard?tab=posts"}
             >
               See all
