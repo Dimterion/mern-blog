@@ -52,6 +52,12 @@ body {
   border: 2px solid rgb(14 165 233);
 }
 
+/* Tables custom styles */
+
+.table-head tr th {
+  background-color: rgb(209 213 219);
+}
+
 /* Quill Editor custom styles */
 
 .ql-toolbar,
@@ -174,8 +180,4 @@ button:hover .ql-stroke,
 .dark .ql-active .ql-stroke {
   fill: none;
   stroke: rgb(255 255 255) !important;
-}
-
-.table-head tr th {
-  background-color: rgb(209 213 219);
 }

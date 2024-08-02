@@ -138,7 +138,7 @@ export default function DashboardComp() {
             </Link>
           </div>
           <Table hoverable>
-            <Table.Head>
+            <Table.Head className="table-head">
               <Table.HeadCell>User image</Table.HeadCell>
               <Table.HeadCell>User name</Table.HeadCell>
             </Table.Head>
@@ -170,7 +170,7 @@ export default function DashboardComp() {
             </Link>
           </div>
           <Table hoverable>
-            <Table.Head>
+            <Table.Head className="table-head">
               <Table.HeadCell>Comment content</Table.HeadCell>
               <Table.HeadCell>Likes</Table.HeadCell>
             </Table.Head>
@@ -198,7 +198,7 @@ export default function DashboardComp() {
             </Link>
           </div>
           <Table hoverable className="text-center">
-            <Table.Head>
+            <Table.Head className="table-head">
               <Table.HeadCell>Post image</Table.HeadCell>
               <Table.HeadCell>Post title</Table.HeadCell>
             </Table.Head>
