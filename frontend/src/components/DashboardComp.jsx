@@ -75,7 +75,7 @@ export default function DashboardComp() {
   return (
     <section className="p-3 md:mx-auto">
       <section className="flex flex-wrap justify-center gap-4">
-        <article className="mx-2 flex w-full flex-col gap-4 rounded-md p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
+        <article className="mx-2 flex w-full flex-col gap-4 rounded-md bg-gray-100 p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
               <h3 className="text-md uppercase text-gray-500">Total Users</h3>
@@ -91,7 +91,7 @@ export default function DashboardComp() {
             <div className="text-gray-500">Last month</div>
           </div>
         </article>
-        <article className="mx-2 flex w-full flex-col gap-4 rounded-md p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
+        <article className="mx-2 flex w-full flex-col gap-4 rounded-md bg-gray-100 p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
               <h3 className="text-md uppercase text-gray-500">
@@ -109,7 +109,7 @@ export default function DashboardComp() {
             <div className="text-gray-500">Last month</div>
           </div>
         </article>
-        <article className="mx-2 flex w-full flex-col gap-4 rounded-md p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
+        <article className="mx-2 flex w-full flex-col gap-4 rounded-md bg-gray-100 p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
               <h3 className="text-md uppercase text-gray-500">Total Posts</h3>
@@ -127,7 +127,7 @@ export default function DashboardComp() {
         </article>
       </section>
       <section className="mx-auto flex flex-wrap justify-center gap-4 py-3">
-        <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="p-2 text-center uppercase">Recent users</h1>
             <Link
@@ -159,7 +159,7 @@ export default function DashboardComp() {
               ))}
           </Table>
         </article>
-        <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="p-2 text-center uppercase">Recent comments</h1>
             <Link
@@ -187,7 +187,7 @@ export default function DashboardComp() {
               ))}
           </Table>
         </article>
-        <article className="mx-2 flex w-full flex-col rounded-md p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[240px] dark:bg-gray-800">
           <div className="flex justify-between p-3 text-sm font-semibold">
             <h1 className="p-2 text-center uppercase">Recent posts</h1>
             <Link
