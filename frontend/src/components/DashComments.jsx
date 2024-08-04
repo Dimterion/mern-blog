@@ -96,7 +96,7 @@ export default function DashComments() {
               <Table.Body key={comment._id} className="divide-y">
                 <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                   <Table.Cell>
-                    {new Date(comment.updatedAt).toLocaleDateString()}
+                    {new Date(comment.updatedAt).toLocaleDateString("en-GB")}
                   </Table.Cell>
                   <Table.Cell className="max-w-[300px] break-all">
                     {comment.content}

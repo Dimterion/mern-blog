@@ -90,7 +90,9 @@ export default function Post() {
         className="m-auto my-4 h-[30vh] max-h-[400px] w-full max-w-[1000px] rounded-md object-cover sm:h-full"
       />
       <aside className="mx-auto flex w-full max-w-2xl justify-between border-b border-slate-500 p-3 text-sm">
-        <span>{post && new Date(post.createdAt).toLocaleDateString()}</span>
+        <span>
+          {post && new Date(post.createdAt).toLocaleDateString("en-GB")}
+        </span>
         <span className="italic">
           {post && (post.content.length / 1000).toFixed(0) > 0
             ? (post.content.length / 1000).toFixed(0)
