@@ -42,13 +42,13 @@ export default function Header() {
         <Link
           aria-label="Go to search page"
           to="/search"
-          className="rounded-lg border p-2 text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+          className="rounded-lg border p-2 text-gray-500 shadow-lg hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
         >
           <AiOutlineSearch />
         </Link>
         <button
           aria-label={theme === "light" ? "Dark mode" : "Light mode"}
-          className="rounded-lg border p-2 text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+          className="rounded-lg border p-2 text-gray-500 shadow-lg hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
           onClick={() => dispatch(toggleTheme())}
         >
           {theme === "light" ? <FaMoon /> : <FaSun />}
@@ -58,7 +58,12 @@ export default function Header() {
             arrowIcon={false}
             inline
             label={
-              <Avatar alt="User" img={currentUser.profilePicture} size="sm" />
+              <Avatar
+                className="shadow-lg hover:opacity-95"
+                alt="User"
+                img={currentUser.profilePicture}
+                size="sm"
+              />
             }
           >
             <Dropdown.Header>
@@ -77,7 +82,7 @@ export default function Header() {
           <Link to="/sign-in">
             <button
               aria-label="Sign-in"
-              className="rounded-lg border p-2 text-gray-500 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
+              className="rounded-lg border p-2 text-gray-500 shadow-lg hover:bg-gray-100 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-100"
             >
               <SlLogin />
             </button>
