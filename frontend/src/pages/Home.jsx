@@ -20,14 +20,14 @@ export default function Home() {
 
   return (
     <main>
-      <section className="mx-auto flex max-w-fit flex-col gap-6 p-10 px-3">
+      <section className="mx-auto flex max-w-fit flex-col gap-6 p-10 px-3 pb-8">
         <h1 className="text-3xl font-bold text-gray-600 md:text-6xl dark:text-gray-400">
           Hi, I&apos;m Dmitrii.
         </h1>
-        <p className="max-w-6xl text-lg text-gray-500 dark:text-gray-400">
+        <p className="max-w-6xl text-xl text-gray-500 dark:text-gray-400">
           A web developer, aspiringly coding daily and writing about it weekly.
         </p>
-        <div className="flex gap-2 sm:gap-4">
+        <article className="flex gap-2 sm:gap-4">
           <a
             href="#home-posts"
             className="flex w-fit items-center gap-1 font-bold text-sky-500 hover:underline sm:text-lg"
@@ -42,7 +42,7 @@ export default function Home() {
           >
             View projects <FaArrowRight />
           </Link>
-        </div>
+        </article>
       </section>
       <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />

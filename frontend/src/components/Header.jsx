@@ -34,7 +34,7 @@ export default function Header() {
     <Navbar className="border-b-2 px-1 dark:border-gray-600">
       <Link
         to="/"
-        className="rounded-br-full rounded-tl-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-4 py-1 text-lg font-semibold text-white sm:px-6 sm:text-xl"
+        className="rounded-br-full rounded-tl-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-4 py-1 text-lg font-semibold text-white shadow-lg hover:opacity-95 sm:px-6 sm:text-xl"
       >
         Dimterion
       </Link>
