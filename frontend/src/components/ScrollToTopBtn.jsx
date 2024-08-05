@@ -22,7 +22,7 @@ function ScrollToTopBtn() {
 
   return (
     <button
-      className={`fixed bottom-10 right-2 z-10 flex size-6 items-center justify-center rounded-lg bg-sky-500 font-bold text-gray-200 opacity-50 hover:opacity-100 lg:bottom-2 ${
+      className={`fixed bottom-10 right-2 z-10 flex size-6 items-center justify-center rounded-lg bg-sky-500 font-bold text-gray-200 opacity-50 shadow-lg hover:opacity-100 lg:bottom-2 ${
         showScrollBtn ? "block" : "hidden"
       }`}
       aria-label="Scroll to top"
