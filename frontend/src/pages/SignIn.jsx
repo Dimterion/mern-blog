@@ -85,7 +85,7 @@ export default function SignIn() {
               onChange={handleChange}
             />
             <button
-              className="mx-auto my-4 flex w-full justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-white"
+              className="mx-auto my-4 flex w-full items-center justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-white"
               type="submit"
               disabled={loading}
             >
@@ -108,7 +108,7 @@ export default function SignIn() {
           </aside>
           {errorMessage && (
             <Alert
-              className="absolute left-1/2 mt-5 w-[300px] max-w-[95vw] -translate-x-1/2 p-3"
+              className="absolute left-1/2 mt-5 w-[370px] max-w-[95vw] -translate-x-1/2 p-3"
               color="failure"
             >
               {errorMessage}
