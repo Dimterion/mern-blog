@@ -53,7 +53,7 @@ export default function SignUp() {
   };
 
   return (
-    <main className="mt-20 min-h-screen">
+    <main className="my-20 min-h-screen">
       <section className="mx-auto flex max-w-3xl flex-col gap-5 p-3 md:flex-row md:items-center">
         <article className="flex-1">
           <Link to="/" className="text-3xl font-bold dark:text-white">
@@ -75,7 +75,7 @@ export default function SignUp() {
               type="text"
               placeholder="Name"
               id="username"
-              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
               onChange={handleChange}
             />
             <label className="mb-1 whitespace-normal font-semibold">
@@ -85,7 +85,7 @@ export default function SignUp() {
               type="email"
               placeholder="emailname@email.com"
               id="email"
-              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
               onChange={handleChange}
             />
             <label className="mb-1 whitespace-normal font-semibold">
@@ -95,11 +95,11 @@ export default function SignUp() {
               type="password"
               placeholder="**********"
               id="password"
-              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+              className="mb-4 rounded-lg border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
               onChange={handleChange}
             />
             <button
-              className="mx-auto my-4 flex w-full justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 hover:bg-sky-500 hover:text-white"
+              className="mx-auto my-4 flex w-full justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-white"
               type="submit"
               disabled={loading}
             >

@@ -38,7 +38,7 @@ export default function OAuth() {
 
   return (
     <button
-      className="mx-auto flex w-full items-center justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 hover:bg-sky-500 hover:text-white"
+      className="mx-auto flex w-full items-center justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-white"
       onClick={handleGoogleClick}
     >
       <AiFillGoogleCircle className="mr-2 size-5" /> Continue with Google
