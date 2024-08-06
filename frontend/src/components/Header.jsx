@@ -55,11 +55,12 @@ export default function Header() {
         </button>
         {currentUser ? (
           <Dropdown
+            className="rounded-lg"
             arrowIcon={false}
             inline
             label={
               <Avatar
-                className="shadow-lg hover:opacity-95"
+                className="rounded-lg border shadow-lg hover:bg-gray-100 hover:opacity-90 dark:border-gray-600 dark:hover:bg-gray-700"
                 alt="User"
                 img={currentUser.profilePicture}
                 size="sm"
