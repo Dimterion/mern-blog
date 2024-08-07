@@ -38,7 +38,7 @@ export default function Header() {
       >
         Dimterion
       </Link>
-      <section className="header-section flex items-center gap-1 md:order-2">
+      <section className="flex items-center gap-1 md:order-2">
         <Link
           aria-label="Go to search page"
           to="/search"
@@ -55,7 +55,7 @@ export default function Header() {
         </button>
         {currentUser ? (
           <Dropdown
-            className="rounded-lg"
+            className="rounded-lg pb-1"
             arrowIcon={false}
             inline
             label={
@@ -89,7 +89,7 @@ export default function Header() {
             </button>
           </Link>
         )}
-        <Navbar.Toggle />
+        <Navbar.Toggle className="p-[0.25rem]" />
       </section>
       <Navbar.Collapse>
         <Navbar.Link
