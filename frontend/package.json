@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
-    "firebase": "^10.6.0",
+    "firebase": "^10.12.5",
     "flowbite-react": "^0.7.2",
     "interweave": "^13.1.0",
     "moment": "^2.30.1",

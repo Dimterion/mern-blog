@@ -99,7 +99,7 @@ export default function SignUp() {
               onChange={handleChange}
             />
             <button
-              className="mx-auto my-4 flex w-full items-center justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-white"
+              className="mx-auto my-4 flex w-full items-center justify-center rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-gray-200"
               type="submit"
               disabled={loading}
             >
