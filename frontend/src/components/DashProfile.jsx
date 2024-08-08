@@ -187,7 +187,7 @@ export default function DashProfile() {
           hidden
         />
         <article
-          className="relative size-32 cursor-pointer self-center overflow-hidden rounded-full shadow-md hover:opacity-90"
+          className="relative size-32 cursor-pointer self-center overflow-hidden rounded-full shadow-lg hover:opacity-90"
           onClick={() => filePickerRef.current.click()}
         >
           {imageFileUploadProgress && (
@@ -214,7 +214,7 @@ export default function DashProfile() {
           <img
             src={imageFileUrl || currentUser.profilePicture}
             alt="User"
-            className={`size-full rounded-full border-4 border-sky-500 object-cover ${
+            className={`size-full rounded-full border-4 border-sky-500 bg-gray-300 object-cover dark:bg-gray-700 ${
               imageFileUploadProgress &&
               imageFileUploadProgress < 100 &&
               "opacity-60"
@@ -228,7 +228,7 @@ export default function DashProfile() {
           type="text"
           id="username"
           placeholder="Name"
-          className="rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+          className="rounded-lg border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
           defaultValue={currentUser.username}
           onChange={handleChange}
         />
@@ -236,7 +236,7 @@ export default function DashProfile() {
           type="email"
           id="email"
           placeholder="email"
-          className="rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+          className="rounded-lg border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
           defaultValue={currentUser.email}
           onChange={handleChange}
         />
@@ -244,12 +244,12 @@ export default function DashProfile() {
           type="password"
           id="password"
           placeholder="Password"
-          className="rounded-lg border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+          className="rounded-lg border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
           onChange={handleChange}
         />
         <button
           type="submit"
-          className="rounded-lg border-2 border-sky-500 p-2 font-semibold text-sky-500 hover:bg-sky-500 hover:text-gray-100"
+          className="rounded-lg border-2 border-sky-500 p-2 font-semibold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-gray-100"
           disabled={loading || imageFileUploading}
         >
           {loading ? "Loading..." : "Update"}
