@@ -10,7 +10,7 @@ import {
   HiOutlineUserGroup,
   HiUser,
 } from "react-icons/hi";
-import { signoutSuccess } from "../redux/user/userSlice";
+import { signOutSuccess } from "../redux/user/userSlice";
 
 export default function DashSidebar() {
   const location = useLocation();
@@ -37,7 +37,7 @@ export default function DashSidebar() {
       if (!res.ok) {
         console.log(data.message);
       } else {
-        dispatch(signoutSuccess());
+        dispatch(signOutSuccess());
       }
     } catch (error) {
       console.log(error.message);

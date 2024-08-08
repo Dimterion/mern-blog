@@ -19,7 +19,7 @@ import {
   deleteUserStart,
   deleteUserSuccess,
   deleteUserFailure,
-  signoutSuccess,
+  signOutSuccess,
 } from "../redux/user/userSlice";
 
 export default function DashProfile() {
@@ -168,7 +168,7 @@ export default function DashProfile() {
       if (!res.ok) {
         console.log(data.message);
       } else {
-        dispatch(signoutSuccess());
+        dispatch(signOutSuccess());
       }
     } catch (error) {
       console.log(error.message);
