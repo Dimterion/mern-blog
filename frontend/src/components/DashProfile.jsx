@@ -129,7 +129,15 @@ export default function DashProfile() {
       const data = await res.json();
 
       if (!res.ok) {
-        dispatch(updateFailure(data.message));
+        if (data.message.includes("duplicate key")) {
+          dispatch(
+            updateFailure(
+              "Account with this username or email already exists.",
+            ),
+          );
+        } else {
+          dispatch(updateFailure(data.message));
+        }
       } else {
         dispatch(updateSuccess(data));
         setUpdateUserSuccess("User's profile updated successfully.");
