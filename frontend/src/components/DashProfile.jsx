@@ -189,7 +189,7 @@ export default function DashProfile() {
   return (
     <section className="mx-auto w-full max-w-lg p-3">
       <h1 className="my-7 text-center text-3xl font-semibold">Profile</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="flex flex-col">
         <input
           type="file"
           accept="image/*"
@@ -235,6 +235,9 @@ export default function DashProfile() {
         {imageFileUploadError && (
           <Alert color="failure">{imageFileUploadError}</Alert>
         )}
+        <label className="mb-1 mt-4 whitespace-normal font-semibold">
+          Username
+        </label>
         <input
           type="text"
           id="username"
@@ -243,6 +246,9 @@ export default function DashProfile() {
           defaultValue={currentUser.username}
           onChange={handleChange}
         />
+        <label className="mb-1 mt-4 whitespace-normal font-semibold">
+          Email
+        </label>
         <input
           type="email"
           id="email"
@@ -251,6 +257,9 @@ export default function DashProfile() {
           defaultValue={currentUser.email}
           onChange={handleChange}
         />
+        <label className="mb-1 mt-4 whitespace-normal font-semibold">
+          Password
+        </label>
         <input
           type="password"
           id="password"
@@ -260,7 +269,7 @@ export default function DashProfile() {
         />
         <button
           type="submit"
-          className="rounded-lg border-2 border-sky-500 p-2 font-semibold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-gray-100"
+          className="mt-8 rounded-lg border-2 border-sky-500 p-2 font-semibold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-gray-100"
           disabled={loading || imageFileUploading}
         >
           {loading ? "Loading..." : "Update"}
