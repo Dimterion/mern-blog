@@ -13,6 +13,7 @@ import {
 } from "firebase/storage";
 import { app } from "../firebase";
 import {
+  updateDefault,
   updateStart,
   updateSuccess,
   updateFailure,
@@ -43,6 +44,10 @@ export default function DashProfile() {
       setImageFileUrl(URL.createObjectURL(file));
     }
   };
+
+  useEffect(() => {
+    dispatch(updateDefault());
+  }, [dispatch]);
 
   useEffect(() => {
     if (imageFile) {
@@ -125,14 +130,12 @@ export default function DashProfile() {
 
       if (!res.ok) {
         dispatch(updateFailure(data.message));
-        setUpdateUserError(data.message);
       } else {
         dispatch(updateSuccess(data));
         setUpdateUserSuccess("User's profile updated successfully.");
       }
     } catch (error) {
       dispatch(updateFailure(error.message));
-      setUpdateUserError(error.message);
     }
   };
 
