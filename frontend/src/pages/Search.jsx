@@ -135,7 +135,7 @@ export default function Search() {
               type="text"
               value={sidebarData.searchTerm || ""}
               onChange={handleChange}
-              className="rounded-md border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+              className="rounded-md border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             />
           </aside>
           <aside className="mx-2 flex flex-col gap-2">
@@ -144,7 +144,7 @@ export default function Search() {
               onChange={handleChange}
               value={sidebarData.sort || ""}
               id="sort"
-              className="cursor-pointer rounded-md border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+              className="cursor-pointer rounded-md border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             >
               <option
                 value="desc"
@@ -163,7 +163,7 @@ export default function Search() {
               onChange={handleChange}
               value={sidebarData.category || ""}
               id="category"
-              className="cursor-pointer rounded-md border-gray-300 bg-gray-50 p-2 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+              className="cursor-pointer rounded-md border-gray-300 bg-gray-50 p-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             >
               <option
                 value="uncategorized"
@@ -184,14 +184,14 @@ export default function Search() {
           </aside>
           <button
             type="submit"
-            className="mx-auto mt-6 w-56 max-w-[200px] rounded-lg border-2 border-sky-500 bg-sky-500 py-2 text-center text-sm font-bold text-white hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
+            className="mx-auto mt-6 w-56 max-w-[200px] rounded-lg border-2 border-sky-500 bg-sky-500 py-2 text-center text-sm font-bold text-white shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
           >
             Search
           </button>
         </form>
         <Link
           to="/search"
-          className="mx-auto w-56 max-w-[200px] rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 hover:bg-sky-500 hover:text-white"
+          className="mx-auto w-56 max-w-[200px] rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-white"
           onClick={() =>
             setSidebarData({
               searchTerm: "",
