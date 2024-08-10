@@ -103,9 +103,9 @@ export default function Projects() {
     .map((project) => (
       <section
         key={project._id}
-        className="project mt-2 max-w-[300px] space-y-2"
+        className="project mt-2 max-w-[300px] space-y-1"
       >
-        <article className="group relative flex cursor-pointer justify-center overflow-hidden rounded-xl border border-gray-300 dark:border-gray-600">
+        <article className="group relative flex justify-center overflow-hidden rounded-xl border border-gray-300 shadow-lg dark:border-gray-600">
           <img
             src={project.image}
             alt={project.title}
@@ -113,7 +113,7 @@ export default function Projects() {
           />
           <Link
             to={`/post/${project.slug}`}
-            className="absolute bottom-0 left-0 right-0 translate-y-full bg-sky-500 py-1 text-center text-white transition duration-500 group-hover:translate-y-0"
+            className="absolute bottom-0 left-0 right-0 translate-y-full bg-sky-500 py-1 text-center font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0"
           >
             {project.link || "Link"}
           </Link>
