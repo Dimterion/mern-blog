@@ -272,11 +272,11 @@ export default function DashProfile() {
           className="mt-8 rounded-lg border-2 border-sky-500 p-2 font-semibold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-gray-100"
           disabled={loading || imageFileUploading}
         >
-          {loading ? "Loading..." : "Update"}
+          {loading ? "Loading..." : "Update info"}
         </button>
         {currentUser.isAdmin && (
           <Link
-            className="w-full rounded-lg border-2 border-sky-500 bg-sky-500 p-2 text-center font-semibold text-gray-100 hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
+            className="mt-6 w-full rounded-lg border-2 border-sky-500 bg-sky-500 p-2 text-center font-semibold text-gray-100 shadow-lg hover:bg-gray-100 hover:text-sky-500 dark:hover:bg-transparent"
             to="/create-post"
           >
             Create a post
