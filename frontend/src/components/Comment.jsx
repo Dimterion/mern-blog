@@ -59,14 +59,18 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
       <section className="mr-1 flex-shrink-0">
         <img
           className="size-10 rounded-full bg-gray-200"
-          src={user.profilePicture}
-          alt={user.username}
+          src={
+            user.profilePicture
+              ? user.profilePicture
+              : "https://raw.githubusercontent.com/Dimterion/Posts-app/master/src/assets/svg/personIcon.svg"
+          }
+          alt={user.username ? user.username : "Anonymous user"}
         />
       </section>
       <section className="flex-1">
         <article className="mb-1 flex items-center">
           <span className="mr-1 truncate text-xs font-bold text-gray-600 dark:text-gray-400">
-            {user ? `@${user.username}` : "Anonymous user"}
+            {user.username ? `@${user.username}` : "Anonymous user"}
           </span>
           <span className="text-xs text-gray-600 dark:text-gray-400">
             {moment(comment.createdAt).fromNow()}
