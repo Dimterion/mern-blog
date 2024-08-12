@@ -89,14 +89,14 @@ export default function Projects() {
     .filter(
       (project) =>
         selectedCategories.length === 0 ||
-        selectedCategories.includes(project.category),
+        selectedCategories.includes(project.technology),
     )
     .filter(
       (project) =>
         project.title
           .toLowerCase()
           .includes(searchQuery.trim().toLowerCase()) ||
-        project.category
+        project.technology
           .toLowerCase()
           .includes(searchQuery.trim().toLowerCase()),
     )
@@ -119,7 +119,7 @@ export default function Projects() {
           </Link>
         </article>
         <p className="font-semibold">{project.title}</p>
-        <pre>{project.category}</pre>
+        <pre>{project.technology}</pre>
       </section>
     ));
 
@@ -143,38 +143,49 @@ export default function Projects() {
       <section className="container mx-auto flex max-w-6xl flex-col md:flex-row">
         <article className="w-full max-w-[10rem] space-y-4 p-2 text-gray-600 dark:text-gray-400">
           <h2 className="text-xl font-semibold">Category</h2>
-          <aside className="flex gap-2 sm:flex-col">
+          <aside className="flex flex-col gap-1">
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
-                id="project"
+                id="general"
                 className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="project" className="cursor-pointer">
-                Project
+              <label htmlFor="general" className="cursor-pointer">
+                General
               </label>
             </div>
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
-                id="thoughts"
+                id="javascript"
                 className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="thoughts" className="cursor-pointer">
-                Thoughts
+              <label htmlFor="javascript" className="cursor-pointer">
+                JavaScript
               </label>
             </div>
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
-                id="coding"
+                id="react"
                 className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="coding" className="cursor-pointer">
-                Coding
+              <label htmlFor="react" className="cursor-pointer">
+                React
+              </label>
+            </div>
+            <div className="flex flex-row items-center">
+              <input
+                type="checkbox"
+                id="nextjs"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
+                onChange={handleCheckbox}
+              />
+              <label htmlFor="nextjs" className="cursor-pointer">
+                Next.js
               </label>
             </div>
           </aside>
