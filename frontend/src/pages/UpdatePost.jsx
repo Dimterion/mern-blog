@@ -161,6 +161,17 @@ export default function UpdatePost() {
             <option value="coding">Coding</option>
             <option value="thoughts">Thoughts</option>
           </Select>
+          <Select
+            onChange={(e) =>
+              setFormData({ ...formData, technology: e.target.value })
+            }
+            value={formData.technology || ""}
+          >
+            <option value="general">Select a technology</option>
+            <option value="javascript">JavaScript</option>
+            <option value="react">React</option>
+            <option value="nextjs">Next.js</option>
+          </Select>
           <TextInput
             type="text"
             placeholder="Link"

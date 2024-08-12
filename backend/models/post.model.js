@@ -27,6 +27,10 @@ const postSchema = new mongoose.Schema(
       type: String,
       default: "uncategorized",
     },
+    technology: {
+      type: String,
+      default: "general",
+    },
     slug: {
       type: String,
       required: true,
