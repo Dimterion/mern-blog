@@ -10,6 +10,12 @@ export default function Projects() {
   const [showMore, setShowMore] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
+  const [checkboxes, setCheckboxes] = useState({
+    general: false,
+    javascript: false,
+    react: false,
+    nextjs: false,
+  });
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -47,6 +53,11 @@ export default function Projects() {
   function handleCheckbox(e) {
     const category = e.target.id;
 
+    setCheckboxes((prevCheckboxes) => ({
+      ...prevCheckboxes,
+      [category]: !prevCheckboxes[category],
+    }));
+
     if (e.target.checked) {
       setSelectedCategories((prevCategories) => [...prevCategories, category]);
     } else {
@@ -54,6 +65,16 @@ export default function Projects() {
         prevCategories.filter((prevCategory) => prevCategory !== category),
       );
     }
+  }
+
+  function handleUncheck() {
+    setSelectedCategories([]);
+    setCheckboxes({
+      general: false,
+      javascript: false,
+      react: false,
+      nextjs: false,
+    });
   }
 
   const handleShowMore = async () => {
@@ -147,6 +168,7 @@ export default function Projects() {
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
+                checked={checkboxes.general}
                 id="general"
                 className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
@@ -158,6 +180,7 @@ export default function Projects() {
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
+                checked={checkboxes.javascript}
                 id="javascript"
                 className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
@@ -169,6 +192,7 @@ export default function Projects() {
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
+                checked={checkboxes.react}
                 id="react"
                 className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
@@ -180,6 +204,7 @@ export default function Projects() {
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
+                checked={checkboxes.nextjs}
                 id="nextjs"
                 className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
@@ -188,6 +213,12 @@ export default function Projects() {
                 Next.js
               </label>
             </div>
+            <button
+              className="mt-2 rounded-lg border-2 border-sky-500 bg-sky-500 font-bold text-white shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
+              onClick={handleUncheck}
+            >
+              Reset Filters
+            </button>
           </aside>
         </article>
         {loading ? (
@@ -195,7 +226,7 @@ export default function Projects() {
             <Spinner size="xl" className="fill-sky-500 text-gray-300" />
           </article>
         ) : (
-          <article className="mx-auto grid grid-cols-1 place-content-center gap-6 p-2 sm:grid-cols-2 md:grid-cols-3">
+          <article className="mx-auto grid grid-cols-1 place-content-center gap-6 p-2 sm:grid-cols-2 md:min-h-[30rem] md:grid-cols-3">
             {displayedProjects.length > 0 ? (
               displayedProjects
             ) : (
