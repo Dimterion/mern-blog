@@ -122,10 +122,7 @@ export default function Projects() {
           .includes(searchQuery.trim().toLowerCase()),
     )
     .map((project) => (
-      <section
-        key={project._id}
-        className="project mt-2 max-w-[300px] space-y-1"
-      >
+      <section key={project._id} className="mt-2 w-60 space-y-1">
         <article className="group relative flex justify-center overflow-hidden rounded-xl border border-gray-300 shadow-lg dark:border-gray-600">
           <img
             src={project.image}
@@ -226,11 +223,11 @@ export default function Projects() {
             <Spinner size="xl" className="fill-sky-500 text-gray-300" />
           </article>
         ) : (
-          <article className="mx-auto grid grid-cols-1 place-content-center gap-6 p-2 sm:grid-cols-2 md:min-h-[30rem] md:grid-cols-3">
+          <article className="mx-auto grid grid-cols-1 gap-6 p-2 sm:grid-cols-2 md:min-h-[30rem] lg:grid-cols-3">
             {displayedProjects.length > 0 ? (
               displayedProjects
             ) : (
-              <p className="mx-auto text-center font-semibold">
+              <p className="mt-4 text-lg font-semibold md:mt-20">
                 No projects found at the moment.
               </p>
             )}
