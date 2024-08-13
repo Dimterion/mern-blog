@@ -142,12 +142,12 @@ export default function Projects() {
     ));
 
   return (
-    <main className="mx-auto mb-6 flex min-h-screen flex-col items-center justify-center gap-6 p-3">
+    <main className="mx-auto mb-6 flex min-h-screen flex-col items-center justify-center gap-4 p-3">
       <h1 className="my-6 text-3xl font-semibold text-gray-600 dark:text-gray-400">
         Projects
       </h1>
       <section>
-        <article className="relative mb-6">
+        <article className="relative">
           <input
             type="text"
             id="search"
@@ -159,15 +159,15 @@ export default function Projects() {
         </article>
       </section>
       <section className="container mx-auto flex max-w-6xl flex-col md:flex-row">
-        <article className="w-full max-w-[10rem] space-y-4 p-2 text-gray-600 dark:text-gray-400">
+        <article className="mb-2 w-full space-y-4 p-2 text-gray-600 md:max-w-[10rem] dark:text-gray-400">
           <h2 className="text-xl font-semibold">Category</h2>
-          <aside className="flex flex-col gap-1">
+          <aside className="flex flex-wrap gap-3 md:flex-col md:gap-2">
             <div className="flex flex-row items-center">
               <input
                 type="checkbox"
                 checked={checkboxes.general}
                 id="general"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="general" className="cursor-pointer">
@@ -179,7 +179,7 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.javascript}
                 id="javascript"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="javascript" className="cursor-pointer">
@@ -191,7 +191,7 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.react}
                 id="react"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="react" className="cursor-pointer">
@@ -203,20 +203,20 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.nextjs}
                 id="nextjs"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 sm:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="nextjs" className="cursor-pointer">
                 Next.js
               </label>
             </div>
-            <button
-              className="mt-2 rounded-lg border-2 border-sky-500 bg-sky-500 font-bold text-white shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
-              onClick={handleUncheck}
-            >
-              Reset Filters
-            </button>
           </aside>
+          <button
+            className="mt-2 rounded-lg border-2 border-sky-500 bg-sky-500 px-4 py-1 font-bold text-white shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
+            onClick={handleUncheck}
+          >
+            Reset Filters
+          </button>
         </article>
         {loading ? (
           <article className="mx-auto my-16">
@@ -234,7 +234,7 @@ export default function Projects() {
           </article>
         )}
       </section>
-      {showMore && displayedProjects.length > 0 && (
+      {showMore && displayedProjects.length > 1 && (
         <button
           onClick={handleShowMore}
           className="mx-auto mb-4 w-fit text-lg font-bold text-sky-500 hover:underline"
