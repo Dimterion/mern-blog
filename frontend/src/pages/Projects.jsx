@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
+import { MdRefresh } from "react-icons/md";
 import { Spinner } from "flowbite-react";
 import CallToAction from "../components/CallToAction";
 
@@ -162,7 +163,7 @@ export default function Projects() {
         <article className="mb-2 w-full space-y-4 p-2 text-gray-600 md:max-w-[10rem] dark:text-gray-400">
           <h2 className="text-xl font-semibold">Category</h2>
           <aside className="flex flex-wrap gap-3 md:flex-col md:gap-2">
-            <div className="flex flex-row items-center">
+            <article className="flex flex-row items-center">
               <input
                 type="checkbox"
                 checked={checkboxes.general}
@@ -173,8 +174,8 @@ export default function Projects() {
               <label htmlFor="general" className="cursor-pointer">
                 General
               </label>
-            </div>
-            <div className="flex flex-row items-center">
+            </article>
+            <article className="flex flex-row items-center">
               <input
                 type="checkbox"
                 checked={checkboxes.javascript}
@@ -185,8 +186,8 @@ export default function Projects() {
               <label htmlFor="javascript" className="cursor-pointer">
                 JavaScript
               </label>
-            </div>
-            <div className="flex flex-row items-center">
+            </article>
+            <article className="flex flex-row items-center">
               <input
                 type="checkbox"
                 checked={checkboxes.react}
@@ -197,8 +198,8 @@ export default function Projects() {
               <label htmlFor="react" className="cursor-pointer">
                 React
               </label>
-            </div>
-            <div className="flex flex-row items-center">
+            </article>
+            <article className="flex flex-row items-center">
               <input
                 type="checkbox"
                 checked={checkboxes.nextjs}
@@ -209,14 +210,15 @@ export default function Projects() {
               <label htmlFor="nextjs" className="cursor-pointer">
                 Next.js
               </label>
-            </div>
+            </article>
+            <button
+              aria-label="Reset filters"
+              className="w-fit rounded-lg border-2 border-sky-500 bg-sky-500 p-1 text-gray-200 shadow-lg hover:bg-white hover:text-sky-500 md:mt-2 dark:hover:bg-transparent"
+              onClick={handleUncheck}
+            >
+              <MdRefresh />
+            </button>
           </aside>
-          <button
-            className="mt-2 rounded-lg border-2 border-sky-500 bg-sky-500 px-4 py-1 font-bold text-white shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
-            onClick={handleUncheck}
-          >
-            Reset Filters
-          </button>
         </article>
         {loading ? (
           <article className="mx-auto my-16">
@@ -227,7 +229,7 @@ export default function Projects() {
             {displayedProjects.length > 0 ? (
               displayedProjects
             ) : (
-              <p className="mt-4 text-lg font-semibold md:mt-20">
+              <p className="mt-4 text-lg font-semibold text-gray-600 md:mt-20 dark:text-gray-400">
                 No projects found at the moment.
               </p>
             )}
@@ -236,6 +238,7 @@ export default function Projects() {
       </section>
       {showMore && displayedProjects.length > 1 && (
         <button
+          aria-label="Show more"
           onClick={handleShowMore}
           className="mx-auto mb-4 w-fit text-lg font-bold text-sky-500 hover:underline"
         >
