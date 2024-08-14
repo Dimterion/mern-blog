@@ -68,6 +68,8 @@ export default function Projects() {
     }
   }
 
+  const resetBtnEnabled = Object.values(checkboxes).some((e) => e);
+
   function handleUncheck() {
     setSelectedCategories([]);
     setCheckboxes({
@@ -165,14 +167,15 @@ export default function Projects() {
             <h2 className="text-xl font-semibold">Category</h2>
             <button
               aria-label="Reset filters"
-              className="w-fit rounded-lg border-2 border-sky-500 bg-sky-500 text-gray-200 shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
+              className={`w-fit rounded-lg border-2 border-sky-500 bg-sky-500 text-gray-200 shadow-lg dark:hover:bg-transparent ${resetBtnEnabled ? "hover:bg-white hover:text-sky-500" : "opacity-50"}`}
               onClick={handleUncheck}
+              disabled={resetBtnEnabled ? false : true}
             >
               <MdRefresh />
             </button>
           </section>
           <aside className="flex flex-wrap gap-3 md:flex-col md:gap-2">
-            <article className="flex flex-row items-center">
+            <article className="flex flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.general}
@@ -184,7 +187,7 @@ export default function Projects() {
                 General
               </label>
             </article>
-            <article className="flex flex-row items-center">
+            <article className="flex flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.javascript}
@@ -196,7 +199,7 @@ export default function Projects() {
                 JavaScript
               </label>
             </article>
-            <article className="flex flex-row items-center">
+            <article className="flex flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.react}
@@ -208,7 +211,7 @@ export default function Projects() {
                 React
               </label>
             </article>
-            <article className="flex flex-row items-center">
+            <article className="flex flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.nextjs}
