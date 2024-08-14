@@ -161,7 +161,16 @@ export default function Projects() {
       </section>
       <section className="container mx-auto flex max-w-6xl flex-col md:flex-row">
         <article className="mb-2 w-full space-y-4 p-2 text-gray-600 md:max-w-[10rem] dark:text-gray-400">
-          <h2 className="text-xl font-semibold">Category</h2>
+          <section className="flex items-center gap-3">
+            <h2 className="text-xl font-semibold">Category</h2>
+            <button
+              aria-label="Reset filters"
+              className="w-fit rounded-lg border-2 border-sky-500 bg-sky-500 text-gray-200 shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
+              onClick={handleUncheck}
+            >
+              <MdRefresh />
+            </button>
+          </section>
           <aside className="flex flex-wrap gap-3 md:flex-col md:gap-2">
             <article className="flex flex-row items-center">
               <input
@@ -211,13 +220,6 @@ export default function Projects() {
                 Next.js
               </label>
             </article>
-            <button
-              aria-label="Reset filters"
-              className="w-fit rounded-lg border-2 border-sky-500 bg-sky-500 p-1 text-gray-200 shadow-lg hover:bg-white hover:text-sky-500 md:mt-2 dark:hover:bg-transparent"
-              onClick={handleUncheck}
-            >
-              <MdRefresh />
-            </button>
           </aside>
         </article>
         {loading ? (
