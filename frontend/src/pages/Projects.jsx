@@ -125,7 +125,7 @@ export default function Projects() {
           .includes(searchQuery.trim().toLowerCase()),
     )
     .map((project) => (
-      <section key={project._id} className="mt-2 w-60 space-y-1">
+      <section key={project._id} className="mt-2 w-60 space-y-2">
         <article className="group relative flex justify-center overflow-hidden rounded-xl border border-gray-300 shadow-lg dark:border-gray-600">
           <img
             src={project.image}
@@ -139,8 +139,14 @@ export default function Projects() {
             {project.link || "Link"}
           </Link>
         </article>
-        <p className="font-semibold">{project.title}</p>
-        <pre>{project.technology}</pre>
+        <section className="flex flex-wrap justify-between">
+          <p className="text-lg font-semibold text-gray-600 dark:text-gray-400">
+            {project.title}
+          </p>
+          <pre className="flex w-fit items-center rounded-lg bg-sky-500 px-2 text-gray-200">
+            {project.technology}
+          </pre>
+        </section>
       </section>
     ));
 
