@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdRefresh } from "react-icons/md";
 import { Spinner } from "flowbite-react";
+import ProjectCard from "../components/ProjectCard";
 import CallToAction from "../components/CallToAction";
 
 export default function Projects() {
@@ -124,31 +124,7 @@ export default function Projects() {
           .toLowerCase()
           .includes(searchQuery.trim().toLowerCase()),
     )
-    .map((project) => (
-      <section key={project._id} className="mt-2 w-60 space-y-2">
-        <article className="group relative flex justify-center overflow-hidden rounded-xl border border-gray-300 shadow-lg dark:border-gray-600">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-[200px] max-h-[40vh] w-full object-cover"
-          />
-          <Link
-            to={`/post/${project.slug}`}
-            className="absolute bottom-0 left-0 right-0 translate-y-full bg-sky-500 py-1 text-center font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0"
-          >
-            {project.link || "Link"}
-          </Link>
-        </article>
-        <section className="flex flex-wrap justify-between">
-          <p className="text-lg font-semibold text-gray-600 dark:text-gray-400">
-            {project.title}
-          </p>
-          <pre className="flex w-fit items-center rounded-lg bg-sky-500 px-2 text-gray-200">
-            {project.technology}
-          </pre>
-        </section>
-      </section>
-    ));
+    .map((project) => <ProjectCard key={project._id} project={project} />);
 
   return (
     <main className="mx-auto mb-6 flex min-h-screen flex-col items-center justify-center gap-4 p-3">
@@ -251,12 +227,12 @@ export default function Projects() {
         <button
           aria-label="Show more"
           onClick={handleShowMore}
-          className="mx-auto mb-4 w-fit text-lg font-bold text-sky-500 hover:underline"
+          className="mx-auto mt-2 w-fit text-lg font-bold text-sky-500 hover:underline"
         >
           Show More
         </button>
       )}
-      <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
+      <section className="mx-auto my-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
     </main>
