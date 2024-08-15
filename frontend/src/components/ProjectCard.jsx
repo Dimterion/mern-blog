@@ -17,7 +17,7 @@ export default function ProjectCard({ project }) {
           {project.link || "Link"}
         </Link>
       </article>
-      <section className="flex flex-wrap justify-between">
+      <section className="flex flex-wrap justify-between px-2">
         <p className="text-lg font-semibold text-gray-600 dark:text-gray-400">
           {project.title}
         </p>

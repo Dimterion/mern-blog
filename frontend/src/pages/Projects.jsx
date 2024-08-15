@@ -136,7 +136,7 @@ export default function Projects() {
           <input
             type="text"
             id="search"
-            className="rounded-md border-gray-300 bg-gray-50 p-2 pl-9 focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+            className="rounded-md border-gray-300 bg-gray-50 p-2 pl-9 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             placeholder="Search projects..."
             onChange={handleSearch}
           />
@@ -162,7 +162,7 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.general}
                 id="general"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="general" className="cursor-pointer">
@@ -174,7 +174,7 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.javascript}
                 id="javascript"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="javascript" className="cursor-pointer">
@@ -186,7 +186,7 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.react}
                 id="react"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="react" className="cursor-pointer">
@@ -198,7 +198,7 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.nextjs}
                 id="nextjs"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 md:mr-2 dark:bg-gray-400"
+                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
               <label htmlFor="nextjs" className="cursor-pointer">
