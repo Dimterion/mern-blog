@@ -21,7 +21,7 @@ export default function ProjectCard({ project }) {
         <p className="text-lg font-semibold text-gray-600 dark:text-gray-400">
           {project.title}
         </p>
-        <pre className="flex w-fit items-center rounded-lg bg-sky-500 px-2 text-gray-200">
+        <pre className="flex w-fit items-center rounded-lg bg-sky-500 px-2 text-sm font-semibold text-gray-200">
           {project.technology}
         </pre>
       </section>
