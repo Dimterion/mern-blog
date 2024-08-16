@@ -124,7 +124,7 @@ export default function Projects() {
           .toLowerCase()
           .includes(searchQuery.trim().toLowerCase()),
     )
-    .map((project) => <ProjectCard key={project._id} project={project} />);
+    .map((project) => <ProjectCard key={project._id} project={project} setCheckboxes={setCheckboxes} setSelectedCategories={setSelectedCategories} />);
 
   return (
     <main className="mx-auto mb-6 flex min-h-screen flex-col items-center justify-center gap-4 p-3">
