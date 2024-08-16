@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import { MdOutlineClear } from "react-icons/md";
 import { MdRefresh } from "react-icons/md";
 import { Spinner } from "flowbite-react";
 import ProjectCard from "../components/ProjectCard";
@@ -49,6 +50,10 @@ export default function Projects() {
 
   function handleSearch(e) {
     setSearchQuery(e.target.value);
+  }
+
+  function clearSearch() {
+    setSearchQuery("");
   }
 
   function handleCheckbox(e) {
@@ -144,11 +149,17 @@ export default function Projects() {
           <input
             type="text"
             id="search"
+            value={searchQuery}
             className="rounded-md border-gray-300 bg-gray-50 p-2 pl-9 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             placeholder="Search projects..."
             onChange={handleSearch}
           />
           <AiOutlineSearch className="absolute bottom-1 left-3 -translate-y-1/2" />
+          {searchQuery.length > 0 && (
+            <button onClick={clearSearch}>
+              <MdOutlineClear className="absolute bottom-1 right-3 -translate-y-1/2" />
+            </button>
+          )}
         </article>
       </section>
       <section className="container mx-auto flex max-w-6xl flex-col md:flex-row">
