@@ -3,10 +3,13 @@ import PropTypes from "prop-types";
 
 export default function ProjectCard({
   project,
+  handleUncheck,
   setCheckboxes,
   setSelectedCategories,
 }) {
   function handleTagClick() {
+    handleUncheck();
+
     setCheckboxes((prevCheckboxes) => ({
       ...prevCheckboxes,
       [project.technology]: true,
@@ -39,7 +42,7 @@ export default function ProjectCard({
         </p>
         <button
           onClick={handleTagClick}
-          className="flex w-fit items-center rounded-lg bg-sky-500 px-2 pb-1 text-sm font-semibold text-gray-200"
+          className="flex w-fit items-center rounded-lg bg-sky-500 px-2 pb-1 text-sm font-semibold text-gray-200 shadow-lg hover:opacity-90"
         >
           {project.technology}
         </button>
@@ -50,6 +53,7 @@ export default function ProjectCard({
 
 ProjectCard.propTypes = {
   project: PropTypes.object,
+  handleUncheck: PropTypes.func,
   setCheckboxes: PropTypes.func,
   setSelectedCategories: PropTypes.func,
 };
