@@ -80,7 +80,7 @@ export default function Post() {
       </h1>
       <Link
         to={`/search?category=${post && post.category}`}
-        className="my-2 self-center rounded-2xl border-2 border-gray-400 px-4 py-1 text-sm font-semibold uppercase text-gray-500 hover:bg-gray-400 hover:text-gray-100 dark:border-gray-500 dark:hover:border-sky-500 dark:hover:bg-sky-500 dark:hover:text-gray-100"
+        className="my-2 self-center rounded-2xl border-2 border-gray-400 px-4 py-1 text-sm font-semibold uppercase text-gray-500 hover:bg-gray-400 hover:text-gray-100 dark:text-gray-400 dark:hover:border-sky-500 dark:hover:bg-sky-500 dark:hover:text-gray-200"
       >
         {post && post.category}
       </Link>
@@ -110,7 +110,7 @@ export default function Post() {
       {recentPosts && (
         <section className="mb-5 flex flex-col items-center justify-center">
           <h1 className="mb-2 mt-1 text-xl font-semibold">Recent posts</h1>
-          <aside className="mt-5 grid grid-cols-1 justify-center gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <aside className="mt-5 grid grid-cols-1 justify-center gap-5 md:grid-cols-2">
             {recentPosts.map(
               (recentPost) =>
                 post._id !== recentPost._id && (
