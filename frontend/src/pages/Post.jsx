@@ -68,7 +68,7 @@ export default function Post() {
 
   if (error)
     return (
-      <main className="flex min-h-screen items-center justify-center">
+      <main className="flex min-h-screen items-center justify-center font-semibold">
         Error loading page.
       </main>
     );
@@ -90,7 +90,7 @@ export default function Post() {
         className="m-auto my-4 h-[30vh] max-h-[400px] w-full max-w-[1000px] rounded-md object-cover sm:h-full"
       />
       <aside className="mx-auto flex w-full max-w-2xl justify-between border-b border-slate-500 p-3 text-sm">
-        <span>
+        <span className="font-semibold">
           {post && new Date(post.createdAt).toLocaleDateString("en-GB")}
         </span>
         <span className="italic">

@@ -140,12 +140,12 @@ export default function CommentSection({ postId }) {
             to="/dashboard?tab=profile"
             className="text-xs text-sky-500 hover:underline"
           >
-            @ {currentUser.username}
+            @{currentUser.username}
           </Link>
         </aside>
       ) : (
         <aside className="my-5 flex flex-col gap-2 text-sm text-sky-500">
-          <p className="mb-2 w-fit border-b-2 border-sky-500 p-2">
+          <p className="mb-2 w-fit border-b-2 border-sky-500 p-2 font-semibold">
             You must be signed in to comment.
           </p>
           <Link
@@ -187,7 +187,7 @@ export default function CommentSection({ postId }) {
         </form>
       )}
       {comments.length === 0 ? (
-        <p className="my-5">No comments yet.</p>
+        <p className="my-5 font-semibold">No comments yet.</p>
       ) : (
         <>
           <aside className="my-5 flex items-center gap-1 font-semibold">
