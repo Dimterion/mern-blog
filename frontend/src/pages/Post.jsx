@@ -107,18 +107,25 @@ export default function Post() {
         <CallToAction />
       </section>
       <CommentSection postId={post._id} />
-      <section className="mb-5 flex flex-col items-center justify-center">
-        <h1 className="mt-1 text-xl font-semibold">Recent articles</h1>
-        <aside className="mt-5 grid grid-cols-1 justify-center gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {recentPosts &&
-            recentPosts.map(
+      {recentPosts && (
+        <section className="mb-5 flex flex-col items-center justify-center">
+          <h1 className="mb-2 mt-1 text-xl font-semibold">Recent posts</h1>
+          <aside className="mt-5 grid grid-cols-1 justify-center gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {recentPosts.map(
               (recentPost) =>
                 post._id !== recentPost._id && (
                   <PostCard key={recentPost._id} post={recentPost} />
                 ),
             )}
-        </aside>
-      </section>
+          </aside>
+          <Link
+            to={"/search"}
+            className="mx-auto mt-8 w-fit text-center text-lg font-bold text-sky-500 hover:underline"
+          >
+            View all posts
+          </Link>
+        </section>
+      )}
     </main>
   );
 }
