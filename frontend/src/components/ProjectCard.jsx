@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 export default function ProjectCard({
   project,
@@ -35,8 +36,9 @@ export default function ProjectCard({
             alt={project.title}
             className="h-[200px] max-h-[40vh] w-full object-cover"
           />
-          <p className="absolute bottom-0 left-0 right-0 translate-y-full bg-sky-500 py-1 text-center font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0">
+          <p className="absolute bottom-0 left-0 right-0 flex translate-y-full flex-row items-center justify-center gap-2 bg-sky-500 py-1 text-center font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0">
             View
+            <HiOutlineExternalLink />
           </p>
         </a>
       ) : (
