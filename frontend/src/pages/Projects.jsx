@@ -150,7 +150,7 @@ export default function Projects() {
             type="text"
             id="search"
             value={searchQuery}
-            className="rounded-md border-gray-300 bg-gray-50 p-2 pl-9 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
+            className="truncate rounded-md border-gray-300 bg-gray-50 px-9 py-2 shadow-lg focus:border-sky-500 focus:ring-0 dark:border-gray-600 dark:bg-gray-700 dark:focus:border-sky-500"
             placeholder="Search projects..."
             onChange={handleSearch}
           />

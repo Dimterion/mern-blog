@@ -57,12 +57,12 @@ export default function ProjectCard({
         </Link>
       )}
       <section className="flex flex-wrap justify-between px-2">
-        <p className="text-lg font-semibold text-gray-600 dark:text-gray-400">
+        <p className="max-w-[65%] truncate text-lg font-semibold text-gray-600 dark:text-gray-400">
           {project.title}
         </p>
         <button
           onClick={handleTagClick}
-          className="flex w-fit items-center rounded-lg bg-sky-500 px-2 pb-1 text-sm font-semibold text-gray-200 shadow-lg hover:opacity-90"
+          className="flex w-fit items-center truncate rounded-lg bg-sky-500 px-2 pb-1 text-sm font-semibold text-gray-200 shadow-lg hover:opacity-90"
         >
           {project.technology}
         </button>
