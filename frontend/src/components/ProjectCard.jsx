@@ -36,7 +36,7 @@ export default function ProjectCard({
             alt={project.title}
             className="h-[200px] max-h-[40vh] w-full object-cover"
           />
-          <p className="absolute bottom-0 left-0 right-0 flex translate-y-full flex-row items-center justify-center gap-2 bg-sky-500 py-1 text-center font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0">
+          <p className="absolute bottom-0 left-0 right-0 flex translate-y-full flex-row items-center justify-center gap-2 bg-sky-500 py-1 text-center text-sm font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0">
             View
             <HiOutlineExternalLink />
           </p>
@@ -51,18 +51,18 @@ export default function ProjectCard({
             alt={project.title}
             className="h-[200px] max-h-[40vh] w-full object-cover"
           />
-          <p className="absolute bottom-0 left-0 right-0 translate-y-full bg-sky-500 py-1 text-center font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0">
+          <p className="absolute bottom-0 left-0 right-0 translate-y-full bg-sky-500 py-1 text-center text-sm font-semibold uppercase text-gray-200 transition duration-500 group-hover:translate-y-0">
             View
           </p>
         </Link>
       )}
-      <section className="flex flex-wrap justify-between px-2">
-        <p className="max-w-[65%] truncate text-lg font-semibold text-gray-600 dark:text-gray-400">
+      <section className="flex flex-wrap items-center justify-between px-2">
+        <p className="max-w-[65%] truncate text-sm font-semibold text-gray-600 dark:text-gray-400">
           {project.title}
         </p>
         <button
           onClick={handleTagClick}
-          className="flex w-fit items-center truncate rounded-lg bg-sky-500 px-2 pb-1 text-sm font-semibold text-gray-200 shadow-lg hover:opacity-90"
+          className="flex w-20 max-w-[35%] items-center justify-center truncate rounded-lg bg-sky-500 px-2 pb-1 text-sm font-semibold text-gray-200 shadow-lg hover:opacity-90"
         >
           {project.technology}
         </button>

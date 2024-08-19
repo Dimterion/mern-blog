@@ -181,10 +181,10 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.general}
                 id="general"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
+                className="cursor-pointer rounded bg-gray-100 p-2 shadow-lg dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="general" className="cursor-pointer">
+              <label htmlFor="general" className="cursor-pointer pl-1 md:pl-2">
                 General
               </label>
             </article>
@@ -193,10 +193,13 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.javascript}
                 id="javascript"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
+                className="cursor-pointer rounded bg-gray-100 p-2 shadow-lg dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="javascript" className="cursor-pointer">
+              <label
+                htmlFor="javascript"
+                className="cursor-pointer pl-1 md:pl-2"
+              >
                 JavaScript
               </label>
             </article>
@@ -205,10 +208,10 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.react}
                 id="react"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
+                className="cursor-pointer rounded bg-gray-100 p-2 shadow-lg dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="react" className="cursor-pointer">
+              <label htmlFor="react" className="cursor-pointer pl-1 md:pl-2">
                 React
               </label>
             </article>
@@ -217,10 +220,10 @@ export default function Projects() {
                 type="checkbox"
                 checked={checkboxes.nextjs}
                 id="nextjs"
-                className="mr-1 cursor-pointer rounded bg-gray-100 p-2 shadow-lg md:mr-2 dark:bg-gray-400"
+                className="cursor-pointer rounded bg-gray-100 p-2 shadow-lg dark:bg-gray-400"
                 onChange={handleCheckbox}
               />
-              <label htmlFor="nextjs" className="cursor-pointer">
+              <label htmlFor="nextjs" className="cursor-pointer pl-1 md:pl-2">
                 Next.js
               </label>
             </article>
