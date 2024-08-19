@@ -175,8 +175,8 @@ export default function Projects() {
               <MdRefresh />
             </button>
           </section>
-          <aside className="flex flex-wrap gap-3 md:flex-col md:gap-2">
-            <article className="flex flex-row items-center hover:text-sky-500">
+          <aside className="flex flex-wrap gap-4 md:flex-col md:gap-2">
+            <article className="flex w-fit flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.general}
@@ -188,7 +188,7 @@ export default function Projects() {
                 General
               </label>
             </article>
-            <article className="flex flex-row items-center hover:text-sky-500">
+            <article className="flex w-fit flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.javascript}
@@ -203,7 +203,7 @@ export default function Projects() {
                 JavaScript
               </label>
             </article>
-            <article className="flex flex-row items-center hover:text-sky-500">
+            <article className="flex w-fit flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.react}
@@ -215,7 +215,7 @@ export default function Projects() {
                 React
               </label>
             </article>
-            <article className="flex flex-row items-center hover:text-sky-500">
+            <article className="flex w-fit flex-row items-center hover:text-sky-500">
               <input
                 type="checkbox"
                 checked={checkboxes.nextjs}
@@ -238,7 +238,7 @@ export default function Projects() {
             {displayedProjects.length > 0 ? (
               displayedProjects
             ) : (
-              <p className="mt-4 text-lg font-semibold text-gray-600 md:mt-20 dark:text-gray-400">
+              <p className="text mt-4 font-semibold text-gray-600 sm:min-h-[15rem] md:mt-20 dark:text-gray-400">
                 No projects found at the moment.
               </p>
             )}
