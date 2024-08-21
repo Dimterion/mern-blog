@@ -21,7 +21,7 @@ const postSchema = new mongoose.Schema(
     image: {
       type: String,
       default:
-        "https://raw.githubusercontent.com/Dimterion/Notes-app/master/frontend/src/assets/home_page_img.jpg",
+        "https://raw.githubusercontent.com/Dimterion/mern-blog/main/frontend/src/assets/default_post_img.jpg",
     },
     category: {
       type: String,

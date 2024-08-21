@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     profilePicture: {
       type: String,
       default:
-        "https://raw.githubusercontent.com/Dimterion/Posts-app/master/src/assets/svg/personIcon.svg",
+        "https://raw.githubusercontent.com/Dimterion/mern-blog/2790bbecec18dc93955bff2c44d883ccb919a913/frontend/src/assets/default_user_icon.svg",
     },
     isAdmin: {
       type: Boolean,
