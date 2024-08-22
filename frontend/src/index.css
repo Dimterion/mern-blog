@@ -10,25 +10,23 @@ body {
   height: 100vh;
 }
 
-.ql-editor {
-  font-size: 1.05rem;
-}
-
 .post-content p {
   margin-bottom: 0.5rem;
+}
+
+.post-content h1,
+.post-content h2 {
+  font-family: sans-serif;
+  margin: 1.5rem 0;
 }
 
 .post-content h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  font-family: sans-serif;
-  margin: 1.5rem 0;
 }
 
 .post-content h2 {
   font-size: 1.4rem;
-  font-family: sans-serif;
-  margin: 1.5rem 0;
 }
 
 .post-content a {
@@ -55,6 +53,17 @@ body {
 }
 
 /* Quill Editor custom styles */
+.ql-editor {
+  font-size: 1.05rem;
+}
+
+.ql-editor a {
+  color: rgb(14 165 233);
+}
+
+.dark .ql-editor.ql-blank::before {
+  color: rgb(204, 204, 204);
+}
 
 .ql-toolbar,
 .ql-container {
@@ -96,14 +105,6 @@ body {
 
 .dark .ql-toolbar .ql-picker {
   color: rgb(255 255 255);
-}
-
-.ql-editor a {
-  color: rgb(14 165 233);
-}
-
-.dark .ql-editor.ql-blank::before {
-  color: rgb(204, 204, 204);
 }
 
 .ql-toolbar .ql-picker .ql-picker-item:hover {
