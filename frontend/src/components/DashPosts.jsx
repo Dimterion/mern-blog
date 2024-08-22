@@ -112,7 +112,7 @@ export default function DashPosts() {
                   </Table.Cell>
                   <Table.Cell>
                     <Link
-                      className="font-medium text-gray-600 dark:text-gray-300"
+                      className="font-medium text-gray-600 hover:underline dark:text-gray-300"
                       to={`/post/${post.slug}`}
                     >
                       {post.title}
@@ -152,7 +152,7 @@ export default function DashPosts() {
           )}
         </>
       ) : (
-        <p>You have no posts yet.</p>
+        <p>No posts yet.</p>
       )}
       <Modal
         show={showModal}

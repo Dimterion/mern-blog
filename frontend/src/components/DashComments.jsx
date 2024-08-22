@@ -129,7 +129,7 @@ export default function DashComments() {
           )}
         </>
       ) : (
-        <p>There are no comments yet.</p>
+        <p>No comments yet.</p>
       )}
       <Modal
         show={showModal}
