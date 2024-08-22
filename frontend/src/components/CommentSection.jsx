@@ -132,13 +132,13 @@ export default function CommentSection({ postId }) {
         <aside className="my-5 flex items-center gap-1 text-sm text-gray-500">
           <p>Signed in as:</p>
           <img
-            className="size-5 rounded-full object-cover"
+            className="ml-1 size-5 rounded-full object-cover"
             src={currentUser.profilePicture}
             alt="Current user profile picture."
           />
           <Link
             to="/dashboard?tab=profile"
-            className="text-xs text-sky-500 hover:underline"
+            className="text-sky-500 hover:underline"
           >
             @{currentUser.username}
           </Link>
@@ -169,7 +169,9 @@ export default function CommentSection({ postId }) {
             value={comment}
           />
           <article className="mt-5 flex items-center justify-between">
-            <p className="text-xs text-gray-500">
+            <p
+              className={`text-xs text-gray-500 ${comment.length === 200 && "text-red-500"}`}
+            >
               {200 - comment.length} characters remaining.
             </p>
             <button
