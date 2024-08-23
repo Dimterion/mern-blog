@@ -206,7 +206,7 @@ export default function Search() {
       <section className="flex w-full flex-col">
         <article className="flex flex-wrap justify-center gap-4 p-4 sm:px-16 sm:pt-16 lg:justify-start">
           {!loading && posts.length === 0 && (
-            <p className="text-xl font-semibold text-gray-500">
+            <p className="text-lg font-semibold text-gray-500">
               No posts found.
             </p>
           )}

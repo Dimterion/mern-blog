@@ -151,6 +151,13 @@ export default function DashPosts() {
             </button>
           )}
         </>
+      ) : showMore ? (
+        <button
+          onClick={handleShowMore}
+          className="w-fit p-7 font-bold text-sky-500 hover:underline"
+        >
+          Show More
+        </button>
       ) : (
         <p>No posts yet.</p>
       )}

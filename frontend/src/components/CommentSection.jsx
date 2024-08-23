@@ -189,7 +189,9 @@ export default function CommentSection({ postId }) {
         </form>
       )}
       {comments.length === 0 ? (
-        <p className="my-5 font-semibold">No comments yet.</p>
+        <p className="my-10 text-lg font-semibold text-gray-500">
+          No comments yet.
+        </p>
       ) : (
         <>
           <aside className="my-5 flex items-center gap-1 font-semibold">
