@@ -169,23 +169,29 @@ export default function DashboardComp() {
               See all
             </Link>
           </div>
-          <Table hoverable>
-            <Table.Head className="table-head">
-              <Table.HeadCell>Comment content</Table.HeadCell>
-              <Table.HeadCell>Likes</Table.HeadCell>
-            </Table.Head>
-            {comments &&
-              comments.map((comment) => (
-                <Table.Body key={comment._id} className="divide-y">
-                  <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                    <Table.Cell className="w-96">
-                      <p className="line-clamp-2">{comment.content}</p>
-                    </Table.Cell>
-                    <Table.Cell>{comment.numberOfLikes}</Table.Cell>
-                  </Table.Row>
-                </Table.Body>
-              ))}
-          </Table>
+          {comments.length > 0 ? (
+            <Table hoverable>
+              <Table.Head className="table-head">
+                <Table.HeadCell>Comment content</Table.HeadCell>
+                <Table.HeadCell>Likes</Table.HeadCell>
+              </Table.Head>
+              {comments &&
+                comments.map((comment) => (
+                  <Table.Body key={comment._id} className="divide-y">
+                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                      <Table.Cell className="w-96">
+                        <p className="line-clamp-2">{comment.content}</p>
+                      </Table.Cell>
+                      <Table.Cell>{comment.numberOfLikes}</Table.Cell>
+                    </Table.Row>
+                  </Table.Body>
+                ))}
+            </Table>
+          ) : (
+            <p className="mx-auto mb-2 font-semibold text-gray-500">
+              No comments yet.
+            </p>
+          )}
         </article>
         <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[260px] dark:bg-gray-800">
           <div className="flex justify-between py-3 text-sm font-semibold">

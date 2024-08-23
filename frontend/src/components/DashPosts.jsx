@@ -159,7 +159,9 @@ export default function DashPosts() {
           Show More
         </button>
       ) : (
-        <p>No posts yet.</p>
+        <p className="my-10 text-lg font-semibold text-gray-500">
+          No posts yet.
+        </p>
       )}
       <Modal
         show={showModal}
