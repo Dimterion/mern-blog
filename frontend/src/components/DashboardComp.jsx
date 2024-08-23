@@ -203,36 +203,42 @@ export default function DashboardComp() {
               See all
             </Link>
           </div>
-          <Table hoverable className="text-center">
-            <Table.Head className="table-head">
-              <Table.HeadCell>Post image</Table.HeadCell>
-              <Table.HeadCell>Post title</Table.HeadCell>
-            </Table.Head>
-            {posts &&
-              posts.map((post) => (
-                <Table.Body key={post._id} className="divide-y">
-                  <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                    <Table.Cell>
-                      <Link to={`/post/${post.slug}`}>
-                        <img
-                          src={post.image}
-                          alt="Post image"
-                          className="m-auto size-10 rounded-md bg-gray-500"
-                        />
-                      </Link>
-                    </Table.Cell>
-                    <Table.Cell className="w-96">
-                      <Link
-                        className="font-medium text-gray-600 dark:text-gray-300"
-                        to={`/post/${post.slug}`}
-                      >
-                        {post.title}
-                      </Link>
-                    </Table.Cell>
-                  </Table.Row>
-                </Table.Body>
-              ))}
-          </Table>
+          {posts.length > 0 ? (
+            <Table hoverable className="text-center">
+              <Table.Head className="table-head">
+                <Table.HeadCell>Post image</Table.HeadCell>
+                <Table.HeadCell>Post title</Table.HeadCell>
+              </Table.Head>
+              {posts &&
+                posts.map((post) => (
+                  <Table.Body key={post._id} className="divide-y">
+                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                      <Table.Cell>
+                        <Link to={`/post/${post.slug}`}>
+                          <img
+                            src={post.image}
+                            alt="Post image"
+                            className="m-auto size-10 rounded-md bg-gray-500"
+                          />
+                        </Link>
+                      </Table.Cell>
+                      <Table.Cell className="w-96">
+                        <Link
+                          className="font-medium text-gray-600 dark:text-gray-300"
+                          to={`/post/${post.slug}`}
+                        >
+                          {post.title}
+                        </Link>
+                      </Table.Cell>
+                    </Table.Row>
+                  </Table.Body>
+                ))}
+            </Table>
+          ) : (
+            <p className="mx-auto mb-2 font-semibold text-gray-500">
+              No posts yet.
+            </p>
+          )}
         </article>
       </section>
     </section>

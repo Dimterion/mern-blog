@@ -12,14 +12,20 @@ export default function Home() {
       const res = await fetch("/api/post/getposts");
       const data = await res.json();
 
-      setPosts([data.posts[0], data.posts[1], data.posts[2]]);
+      if (data.posts.length === 1) {
+        setPosts([data.posts[0]]);
+      } else if (data.posts.length === 2) {
+        setPosts([data.posts[0], data.posts[1]]);
+      } else if (data.posts.length === 3) {
+        setPosts([data.posts[0], data.posts[1], data.posts[2]]);
+      }
     };
 
     fetchPosts();
   }, []);
 
   return (
-    <main>
+    <main className="min-h-screen">
       <section className="mx-auto flex max-w-fit flex-col gap-6 p-10 px-3 pb-8">
         <h1 className="text-3xl font-bold text-gray-600 md:text-6xl dark:text-gray-400">
           Hi, I&apos;m Dmitrii.
@@ -47,7 +53,7 @@ export default function Home() {
       <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
-      {posts && posts.length > 0 && (
+      {posts.length > 0 ? (
         <section id="home-posts" className="flex flex-col gap-6 px-3 pb-7">
           <h2 className="text-center text-2xl font-semibold text-gray-600 dark:text-gray-400">
             Posts
@@ -64,6 +70,13 @@ export default function Home() {
             View all posts
           </Link>
         </section>
+      ) : (
+        <p
+          id="home-posts"
+          className="mb-7 text-center text-lg font-semibold text-gray-500"
+        >
+          No posts yet.
+        </p>
       )}
     </main>
   );
