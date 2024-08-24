@@ -78,7 +78,9 @@ export default function DashboardComp() {
         <article className="mx-2 flex w-full flex-col gap-4 rounded-md bg-gray-100 p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
-              <h3 className="text-md uppercase text-gray-500">Total Users</h3>
+              <h3 className="text-md uppercase text-gray-500 dark:text-gray-300">
+                Total Users
+              </h3>
               <p className="text-2xl">{totalUsers}</p>
             </div>
             <HiOutlineUserGroup className="rounded-full bg-teal-600 p-3 text-5xl text-white shadow-lg" />
@@ -88,13 +90,13 @@ export default function DashboardComp() {
               <HiArrowNarrowUp />
               {lastMonthUsers}
             </span>
-            <div className="text-gray-500">Last month</div>
+            <div className="text-gray-500 dark:text-gray-300">Last month</div>
           </div>
         </article>
         <article className="mx-2 flex w-full flex-col gap-4 rounded-md bg-gray-100 p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
-              <h3 className="text-md uppercase text-gray-500">
+              <h3 className="text-md uppercase text-gray-500 dark:text-gray-300">
                 Total Comments
               </h3>
               <p className="text-2xl">{totalComments}</p>
@@ -106,13 +108,15 @@ export default function DashboardComp() {
               <HiArrowNarrowUp />
               {lastMonthComments}
             </span>
-            <div className="text-gray-500">Last month</div>
+            <div className="text-gray-500 dark:text-gray-300">Last month</div>
           </div>
         </article>
         <article className="mx-2 flex w-full flex-col gap-4 rounded-md bg-gray-100 p-3 shadow-md lg:mx-0 lg:w-60 dark:bg-slate-800">
           <div className="flex justify-between">
             <div>
-              <h3 className="text-md uppercase text-gray-500">Total Posts</h3>
+              <h3 className="text-md uppercase text-gray-500 dark:text-gray-300">
+                Total Posts
+              </h3>
               <p className="text-2xl">{totalPosts}</p>
             </div>
             <HiDocumentText className="rounded-full bg-lime-600 p-3 text-5xl text-white shadow-lg" />
@@ -122,7 +126,7 @@ export default function DashboardComp() {
               <HiArrowNarrowUp />
               {lastMonthPosts}
             </span>
-            <div className="text-gray-500">Last month</div>
+            <div className="text-gray-500 dark:text-gray-300">Last month</div>
           </div>
         </article>
       </section>
@@ -153,7 +157,9 @@ export default function DashboardComp() {
                         className="size-10 rounded-full bg-gray-500"
                       />
                     </Table.Cell>
-                    <Table.Cell>{user.username}</Table.Cell>
+                    <Table.Cell className="dark:text-gray-300">
+                      {user.username}
+                    </Table.Cell>
                   </Table.Row>
                 </Table.Body>
               ))}
