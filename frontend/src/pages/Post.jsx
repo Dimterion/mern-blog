@@ -107,7 +107,7 @@ export default function Post() {
         <CallToAction />
       </section>
       <CommentSection postId={post._id} />
-      {recentPosts && (
+      {recentPosts && recentPosts.length > 1 && (
         <section className="mb-5 flex flex-col items-center justify-center">
           <h1 className="mb-2 mt-1 text-xl font-semibold">Recent posts</h1>
           <aside className="mt-5 grid grid-cols-1 justify-center gap-5 md:grid-cols-2">

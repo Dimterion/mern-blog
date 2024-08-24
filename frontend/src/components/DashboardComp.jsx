@@ -188,7 +188,7 @@ export default function DashboardComp() {
                 ))}
             </Table>
           ) : (
-            <p className="mx-auto mb-2 font-semibold text-gray-500">
+            <p className="mx-auto mb-2 w-full rounded-lg bg-white p-2 text-center font-semibold text-gray-500 dark:bg-gray-700 dark:text-gray-300">
               No comments yet.
             </p>
           )}
@@ -235,7 +235,7 @@ export default function DashboardComp() {
                 ))}
             </Table>
           ) : (
-            <p className="mx-auto mb-2 font-semibold text-gray-500">
+            <p className="mx-auto mb-2 w-full rounded-lg bg-white p-2 text-center font-semibold text-gray-500 dark:bg-gray-700 dark:text-gray-300">
               No posts yet.
             </p>
           )}
