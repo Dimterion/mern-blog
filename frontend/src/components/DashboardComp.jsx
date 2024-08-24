@@ -86,8 +86,10 @@ export default function DashboardComp() {
             <HiOutlineUserGroup className="rounded-full bg-teal-600 p-3 text-5xl text-white shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="flex items-center text-green-500">
-              <HiArrowNarrowUp />
+            <span
+              className={`flex items-center ${lastMonthUsers > 0 && "text-green-500"}`}
+            >
+              {lastMonthUsers > 0 && <HiArrowNarrowUp />}
               {lastMonthUsers}
             </span>
             <div className="text-gray-500 dark:text-gray-300">Last month</div>
@@ -104,8 +106,10 @@ export default function DashboardComp() {
             <HiAnnotation className="rounded-full bg-indigo-600 p-3 text-5xl text-white shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="flex items-center text-green-500">
-              <HiArrowNarrowUp />
+            <span
+              className={`flex items-center ${lastMonthComments > 0 && "text-green-500"}`}
+            >
+              {lastMonthComments > 0 && <HiArrowNarrowUp />}
               {lastMonthComments}
             </span>
             <div className="text-gray-500 dark:text-gray-300">Last month</div>
@@ -122,8 +126,10 @@ export default function DashboardComp() {
             <HiDocumentText className="rounded-full bg-lime-600 p-3 text-5xl text-white shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
-            <span className="flex items-center text-green-500">
-              <HiArrowNarrowUp />
+            <span
+              className={`flex items-center ${lastMonthPosts > 0 && "text-green-500"}`}
+            >
+              {lastMonthPosts > 0 && <HiArrowNarrowUp />}
               {lastMonthPosts}
             </span>
             <div className="text-gray-500 dark:text-gray-300">Last month</div>
