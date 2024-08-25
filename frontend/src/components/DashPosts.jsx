@@ -81,7 +81,7 @@ export default function DashPosts() {
   };
 
   return (
-    <section className="scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300 table-auto overflow-x-scroll p-3 text-center md:mx-auto md:overflow-x-auto">
+    <section className="scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300 mr-3 table-auto overflow-x-scroll p-3 text-center md:mx-auto md:overflow-x-auto">
       {currentUser.isAdmin && userPosts.length > 0 ? (
         <>
           <Table hoverable className="rounded-lg shadow-md">
@@ -106,7 +106,7 @@ export default function DashPosts() {
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="h-10 w-20 bg-gray-500 object-cover"
+                        className="m-auto size-10 rounded-md bg-gray-500 object-cover"
                       />
                     </Link>
                   </Table.Cell>
@@ -145,7 +145,7 @@ export default function DashPosts() {
           {showMore && (
             <button
               onClick={handleShowMore}
-              className="w-fit p-7 font-bold text-sky-500 hover:underline"
+              className="ml-3 w-fit p-7 font-bold text-sky-500 hover:underline"
             >
               Show More
             </button>

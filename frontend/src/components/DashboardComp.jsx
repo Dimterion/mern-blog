@@ -236,7 +236,7 @@ export default function DashboardComp() {
                       </Table.Cell>
                       <Table.Cell className="w-96">
                         <Link
-                          className="font-medium text-gray-600 dark:text-gray-300"
+                          className="font-medium text-gray-600 hover:underline dark:text-gray-300"
                           to={`/post/${post.slug}`}
                         >
                           {post.title}

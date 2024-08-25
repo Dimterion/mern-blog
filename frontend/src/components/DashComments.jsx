@@ -80,7 +80,7 @@ export default function DashComments() {
   };
 
   return (
-    <section className="scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300 table-auto overflow-x-scroll p-3 text-center sm:overflow-x-auto md:mx-auto">
+    <section className="scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-300 mr-3 table-auto overflow-x-scroll p-3 text-center sm:overflow-x-auto md:mx-auto">
       {currentUser.isAdmin && comments.length > 0 ? (
         <>
           <Table hoverable className="rounded-lg shadow-md">
@@ -122,7 +122,7 @@ export default function DashComments() {
           {showMore && (
             <button
               onClick={handleShowMore}
-              className="w-fit p-7 font-bold text-sky-500 hover:underline"
+              className="ml-3 w-fit p-7 font-bold text-sky-500 hover:underline"
             >
               Show More
             </button>
