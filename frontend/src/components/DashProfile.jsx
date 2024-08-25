@@ -198,7 +198,7 @@ export default function DashProfile() {
           hidden
         />
         <article
-          className="relative size-32 cursor-pointer self-center overflow-hidden rounded-full shadow-lg hover:opacity-90"
+          className="relative size-32 cursor-pointer self-center overflow-hidden rounded-full shadow-lg hover:opacity-85"
           onClick={() => filePickerRef.current.click()}
         >
           {imageFileUploadProgress && (
@@ -286,13 +286,13 @@ export default function DashProfile() {
       <article className="mt-5 flex justify-between text-red-500">
         <span
           onClick={() => setShowModal(true)}
-          className="cursor-pointer hover:opacity-80"
+          className="cursor-pointer hover:opacity-85"
         >
           Delete Account
         </span>
         <span
           onClick={handleSignout}
-          className="cursor-pointer hover:opacity-80"
+          className="cursor-pointer hover:opacity-85"
         >
           Sign Out
         </span>

@@ -230,7 +230,7 @@ export default function DashboardComp() {
                           <img
                             src={post.image}
                             alt="Post image"
-                            className="m-auto size-10 rounded-md bg-gray-500"
+                            className="m-auto size-10 rounded-md bg-gray-500 hover:opacity-85"
                           />
                         </Link>
                       </Table.Cell>

@@ -109,7 +109,7 @@ export default function DashPosts() {
                         <img
                           src={post.image}
                           alt={post.title}
-                          className="m-auto size-10 rounded-md bg-gray-500 object-cover"
+                          className="m-auto size-10 rounded-md bg-gray-500 object-cover hover:opacity-85"
                         />
                       </Link>
                     </Table.Cell>
