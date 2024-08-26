@@ -12,11 +12,13 @@ export default function Home() {
       const res = await fetch("/api/post/getposts");
       const data = await res.json();
 
-      if (data.posts.length === 1) {
+      if (data.posts.length === 0) {
+        setPosts([]);
+      } else if (data.posts.length === 1) {
         setPosts([data.posts[0]]);
       } else if (data.posts.length === 2) {
         setPosts([data.posts[0], data.posts[1]]);
-      } else if (data.posts.length === 3) {
+      } else {
         setPosts([data.posts[0], data.posts[1], data.posts[2]]);
       }
     };
