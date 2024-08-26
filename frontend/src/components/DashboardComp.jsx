@@ -137,7 +137,7 @@ export default function DashboardComp() {
         </article>
       </section>
       <section className="mx-auto flex flex-wrap justify-center gap-4 py-3">
-        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[260px] dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-60 lg:max-w-[260px] dark:bg-gray-800">
           <div className="flex justify-between py-3 text-sm font-semibold">
             <h1 className="p-2 text-center uppercase">Recent users</h1>
             <Link
@@ -171,7 +171,7 @@ export default function DashboardComp() {
               ))}
           </Table>
         </article>
-        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[260px] dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-60 lg:max-w-[260px] dark:bg-gray-800">
           <div className="flex justify-between py-3 text-sm font-semibold">
             <h1 className="p-2 text-center uppercase">Recent comments</h1>
             <Link
@@ -192,7 +192,9 @@ export default function DashboardComp() {
                   <Table.Body key={comment._id} className="divide-y">
                     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
                       <Table.Cell className="w-96">
-                        <p className="line-clamp-2">{comment.content}</p>
+                        <p className="line-clamp-2 flex min-h-[40px] items-center">
+                          {comment.content}
+                        </p>
                       </Table.Cell>
                       <Table.Cell>{comment.numberOfLikes}</Table.Cell>
                     </Table.Row>
@@ -205,7 +207,7 @@ export default function DashboardComp() {
             </p>
           )}
         </article>
-        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-auto lg:max-w-[260px] dark:bg-gray-800">
+        <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-60 lg:max-w-[260px] dark:bg-gray-800">
           <div className="flex justify-between py-3 text-sm font-semibold">
             <h1 className="p-2 text-center uppercase">Recent posts</h1>
             <Link
