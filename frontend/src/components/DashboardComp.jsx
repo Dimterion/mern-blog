@@ -147,29 +147,35 @@ export default function DashboardComp() {
               See all
             </Link>
           </div>
-          <Table hoverable>
-            <Table.Head className="table-head">
-              <Table.HeadCell>User image</Table.HeadCell>
-              <Table.HeadCell>User name</Table.HeadCell>
-            </Table.Head>
-            {users &&
-              users.map((user) => (
-                <Table.Body key={user._id} className="divide-y">
-                  <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
-                    <Table.Cell>
-                      <img
-                        src={user.profilePicture}
-                        alt="User"
-                        className="size-10 rounded-full bg-gray-500"
-                      />
-                    </Table.Cell>
-                    <Table.Cell className="dark:text-gray-300">
-                      {user.username}
-                    </Table.Cell>
-                  </Table.Row>
-                </Table.Body>
-              ))}
-          </Table>
+          {users.length > 0 ? (
+            <Table hoverable>
+              <Table.Head className="table-head">
+                <Table.HeadCell>User image</Table.HeadCell>
+                <Table.HeadCell>User name</Table.HeadCell>
+              </Table.Head>
+              {users &&
+                users.map((user) => (
+                  <Table.Body key={user._id} className="divide-y">
+                    <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                      <Table.Cell>
+                        <img
+                          src={user.profilePicture}
+                          alt="User"
+                          className="size-10 rounded-full bg-gray-500"
+                        />
+                      </Table.Cell>
+                      <Table.Cell className="dark:text-gray-300">
+                        {user.username}
+                      </Table.Cell>
+                    </Table.Row>
+                  </Table.Body>
+                ))}
+            </Table>
+          ) : (
+            <p className="mx-auto mb-2 w-full rounded-lg bg-white p-2 text-center font-semibold text-gray-500 dark:bg-gray-700 dark:text-gray-300">
+              No users yet.
+            </p>
+          )}
         </article>
         <article className="mx-2 flex w-full flex-col rounded-md bg-gray-100 p-2 shadow-md lg:mx-0 lg:w-60 lg:max-w-[260px] dark:bg-gray-800">
           <div className="flex justify-between py-3 text-sm font-semibold">
