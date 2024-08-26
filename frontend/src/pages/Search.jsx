@@ -204,7 +204,9 @@ export default function Search() {
         </Link>
       </section>
       <section className="flex w-full flex-col">
-        <article className="flex flex-wrap justify-center gap-4 p-4 sm:px-16 sm:pt-16 lg:justify-start">
+        <article
+          className={`flex flex-wrap justify-center gap-4 p-4 sm:px-16 sm:pt-16 lg:justify-start ${loading && "mx-auto"}`}
+        >
           {!loading && posts.length === 0 && (
             <p className="text-lg font-semibold text-gray-500">
               No posts found.
