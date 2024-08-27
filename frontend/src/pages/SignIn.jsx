@@ -65,8 +65,13 @@ export default function SignIn() {
             <span>site</span>
           </Link>
           <p className="mt-5 text-sm">
-            Sign in with your email and password or your Google account.
+            Sign in with your email and password or your Google account.*
           </p>
+          <aside className="mt-8 text-xs">
+            *Please note that the site is in Work In Progress state which means
+            that it may change in the future and any saved data may be deleted
+            from it.
+          </aside>
         </article>
         <article className="relative flex-1">
           <form className="flex flex-col" onSubmit={handleSubmit}>
