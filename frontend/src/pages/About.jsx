@@ -3,8 +3,8 @@ import CallToAction from "../components/CallToAction";
 
 export default function About() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-10 pb-10">
-      <h1 className="mt-10 text-3xl font-bold text-gray-600 dark:text-gray-400">
+    <main className="flex min-h-screen flex-col items-center justify-center gap-10 pb-10 md:pb-0">
+      <h1 className="mt-10 text-3xl font-bold text-gray-600 md:mt-0 dark:text-gray-400">
         About me
       </h1>
       <h2 className="text-center text-xl text-gray-600 dark:text-gray-400">
@@ -28,7 +28,7 @@ export default function About() {
       <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
-      <section className="flex max-w-[90vw] flex-col items-center gap-6 rounded-lg border border-sky-500 bg-sky-50 p-3 text-center shadow-lg md:flex-row dark:bg-gray-800">
+      <section className="flex max-w-[90vw] flex-col items-center gap-6 rounded-lg border border-sky-500 bg-sky-50 p-6 text-center shadow-lg md:flex-row dark:bg-gray-800">
         <article className="flex flex-1 flex-col items-center justify-center gap-6">
           <h2 className="text-2xl font-semibold text-gray-600 dark:text-gray-400">
             Contacts & Info
