@@ -80,14 +80,14 @@ export default function Post() {
       </h1>
       <Link
         to={`/search?category=${post && post.category}`}
-        className="my-2 self-center rounded-2xl border-2 border-gray-400 px-4 py-1 text-sm font-semibold uppercase text-gray-500 hover:bg-gray-400 hover:text-gray-100 dark:text-gray-400 dark:hover:border-sky-500 dark:hover:bg-sky-500 dark:hover:text-gray-200"
+        className="my-2 self-center rounded-2xl border-2 border-gray-400 px-4 py-1 text-sm font-semibold uppercase text-gray-500 hover:border-sky-500 hover:bg-sky-500 hover:text-gray-100 dark:text-gray-400 dark:hover:text-gray-200"
       >
         {post && post.category}
       </Link>
       <img
         src={post && post.image}
         alt={post && post.title}
-        className="m-auto my-4 h-[30vh] max-h-[400px] w-full max-w-[1000px] rounded-md object-cover sm:h-full"
+        className="m-auto my-4 h-[30vh] max-h-[400px] w-full max-w-[800px] rounded-lg border border-gray-400 object-cover sm:h-full"
       />
       <aside className="mx-auto flex w-full max-w-2xl justify-between border-b border-slate-500 p-3 text-sm">
         <span className="font-semibold">

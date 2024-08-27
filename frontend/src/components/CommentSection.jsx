@@ -127,7 +127,7 @@ export default function CommentSection({ postId }) {
   };
 
   return (
-    <section className="mx-auto w-full max-w-2xl p-3">
+    <section className="mx-auto mb-4 w-full max-w-2xl border-b border-gray-400 p-3">
       {currentUser ? (
         <aside className="my-5 flex items-center gap-1 text-sm text-gray-500">
           <p>Signed in as:</p>
@@ -189,7 +189,7 @@ export default function CommentSection({ postId }) {
         </form>
       )}
       {comments.length === 0 ? (
-        <p className="my-10 text-lg font-semibold text-gray-500">
+        <p className="mb-5 mt-8 text-lg font-semibold text-gray-500">
           No comments yet.
         </p>
       ) : (

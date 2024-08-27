@@ -55,7 +55,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
   };
 
   return (
-    <section className="flex border-b p-1 text-sm dark:border-gray-600">
+    <section className="mb-4 flex border-b p-1 text-sm dark:border-gray-600">
       <section className="mr-1 flex-shrink-0">
         <img
           className="size-10 rounded-full bg-gray-200"
