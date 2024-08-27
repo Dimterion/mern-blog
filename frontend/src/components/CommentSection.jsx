@@ -127,7 +127,7 @@ export default function CommentSection({ postId }) {
   };
 
   return (
-    <section className="mx-auto mb-4 w-full max-w-2xl border-b border-gray-400 p-3">
+    <section className="mx-auto mb-4 w-full max-w-2xl border-b border-gray-500 p-3">
       {currentUser ? (
         <aside className="my-5 flex items-center gap-1 text-sm text-gray-500">
           <p>Signed in as:</p>
@@ -144,12 +144,12 @@ export default function CommentSection({ postId }) {
           </Link>
         </aside>
       ) : (
-        <aside className="my-5 flex flex-col gap-2 text-sm text-sky-500">
-          <p className="mb-2 w-fit border-b-2 border-sky-500 p-2 font-semibold">
+        <aside className="my-5 flex flex-col gap-2 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mb-2 w-fit border-b border-gray-500 p-2 font-semibold">
             You must be signed in to comment.
           </p>
           <Link
-            className="w-fit rounded-md border-2 border-sky-500 px-2 py-1 font-bold uppercase hover:bg-sky-500 hover:text-gray-100"
+            className="w-fit rounded-md border-2 border-sky-500 px-2 py-1 font-bold uppercase text-sky-500 hover:bg-sky-500 hover:text-gray-100"
             to={"/sign-in"}
           >
             Sign In
