@@ -58,8 +58,8 @@ export default function SignIn() {
     <main className="mt-20 min-h-screen">
       <section className="mx-auto flex max-w-3xl flex-col gap-5 p-3 md:flex-row md:items-center">
         <article className="flex-1">
-          <Link to="/" className="text-3xl font-bold dark:text-white">
-            <span className="rounded-lg bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-2 py-1 text-white">
+          <Link to="/" className="text-3xl font-bold dark:text-gray-100">
+            <span className="rounded-lg bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-2 py-1 text-gray-100">
               Dimterion&apos;s
             </span>
             <span>site</span>

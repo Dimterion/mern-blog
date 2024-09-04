@@ -184,14 +184,14 @@ export default function Search() {
           </aside>
           <button
             type="submit"
-            className="mx-auto mt-6 w-56 max-w-[200px] rounded-lg border-2 border-sky-500 bg-sky-500 py-2 text-center text-sm font-bold text-white shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
+            className="mx-auto mt-6 w-56 max-w-[200px] rounded-lg border-2 border-sky-500 bg-sky-500 py-2 text-center text-sm font-bold text-gray-100 shadow-lg hover:bg-white hover:text-sky-500 dark:hover:bg-transparent"
           >
             Search
           </button>
         </form>
         <Link
           to="/search"
-          className="mx-auto w-56 max-w-[200px] rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-white"
+          className="mx-auto w-56 max-w-[200px] rounded-lg border-2 border-sky-500 py-2 text-center text-sm font-bold text-sky-500 shadow-lg hover:bg-sky-500 hover:text-gray-100"
           onClick={() =>
             setSidebarData({
               searchTerm: "",

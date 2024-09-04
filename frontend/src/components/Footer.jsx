@@ -18,7 +18,7 @@ export default function FooterComponent() {
         <article className="grid justify-center sm:flex sm:justify-between md:grid-cols-1">
           <Link
             to="/"
-            className="mx-auto self-center rounded-br-full rounded-tl-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-4 py-1 text-lg font-semibold text-white shadow-lg hover:opacity-95 sm:mx-0 sm:px-6 sm:text-xl"
+            className="mx-auto self-center rounded-br-full rounded-tl-full bg-gradient-to-r from-cyan-500 via-sky-500 to-blue-500 px-4 py-1 text-lg font-semibold text-gray-100 shadow-lg hover:opacity-95 sm:mx-0 sm:px-6 sm:text-xl"
           >
             Dimterion
           </Link>

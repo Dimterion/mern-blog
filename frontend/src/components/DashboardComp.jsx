@@ -83,7 +83,7 @@ export default function DashboardComp() {
               </h3>
               <p className="text-2xl">{totalUsers}</p>
             </div>
-            <HiOutlineUserGroup className="rounded-full bg-teal-600 p-3 text-5xl text-white shadow-lg" />
+            <HiOutlineUserGroup className="rounded-full bg-teal-600 p-3 text-5xl text-gray-100 shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
             <span
@@ -103,7 +103,7 @@ export default function DashboardComp() {
               </h3>
               <p className="text-2xl">{totalComments}</p>
             </div>
-            <HiAnnotation className="rounded-full bg-indigo-600 p-3 text-5xl text-white shadow-lg" />
+            <HiAnnotation className="rounded-full bg-indigo-600 p-3 text-5xl text-gray-100 shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
             <span
@@ -123,7 +123,7 @@ export default function DashboardComp() {
               </h3>
               <p className="text-2xl">{totalPosts}</p>
             </div>
-            <HiDocumentText className="rounded-full bg-lime-600 p-3 text-5xl text-white shadow-lg" />
+            <HiDocumentText className="rounded-full bg-lime-600 p-3 text-5xl text-gray-100 shadow-lg" />
           </div>
           <div className="flex gap-2 text-sm">
             <span
