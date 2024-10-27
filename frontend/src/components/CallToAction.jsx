@@ -1,3 +1,5 @@
+import profilePicture from "../assets/profile_picture.jpg";
+
 export default function CallToAction() {
   return (
     <section className="flex flex-col items-center gap-6 rounded-lg border border-sky-500 p-3 text-center sm:flex-row">
@@ -29,8 +31,8 @@ export default function CallToAction() {
         </aside>
       </article>
       <img
-        src="https://dimterion.github.io/assets/profile_picture.jpg"
-        alt="Placeholder image."
+        src={profilePicture}
+        alt="Profile picture"
         className="h-[200px] max-h-[60vh] w-[200px] max-w-[95vw] rounded-lg border border-sky-500 sm:object-cover"
       />
     </section>
