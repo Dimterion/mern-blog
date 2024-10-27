@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowDown, FaArrowRight } from "react-icons/fa";
 import CallToAction from "../components/CallToAction";
@@ -12,17 +12,13 @@ export default function Home() {
       const res = await fetch("/api/post/getposts");
       const data = await res.json();
 
-      if (data.posts.length === 0) {
-        setPosts([]);
-      } else if (data.posts.length === 1) {
-        setPosts([data.posts[0]]);
-      } else {
-        setPosts([data.posts[0], data.posts[1]]);
-      }
+      setPosts(data.posts.slice(0, 2));
     };
 
     fetchPosts();
   }, []);
+
+  const memoizedPosts = useMemo(() => posts.slice(0, 2), [posts]);
 
   return (
     <main className="min-h-screen">
@@ -53,13 +49,13 @@ export default function Home() {
       <section className="mx-auto mb-7 max-w-[1000px] rounded-md bg-sky-100 p-3 dark:bg-slate-700">
         <CallToAction />
       </section>
-      {posts.length > 0 ? (
+      {memoizedPosts.length > 0 ? (
         <section id="home-posts" className="flex flex-col gap-6 px-3 pb-7">
           <h2 className="text-center text-2xl font-semibold text-gray-600 dark:text-gray-400">
             Posts
           </h2>
           <section className="mx-auto mt-3 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {posts.map((post) => (
+            {memoizedPosts.map((post) => (
               <PostCard key={post._id} post={post} />
             ))}
           </section>
