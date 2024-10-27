@@ -16,10 +16,8 @@ export default function Home() {
         setPosts([]);
       } else if (data.posts.length === 1) {
         setPosts([data.posts[0]]);
-      } else if (data.posts.length === 2) {
-        setPosts([data.posts[0], data.posts[1]]);
       } else {
-        setPosts([data.posts[0], data.posts[1], data.posts[2]]);
+        setPosts([data.posts[0], data.posts[1]]);
       }
     };
 
@@ -60,7 +58,7 @@ export default function Home() {
           <h2 className="text-center text-2xl font-semibold text-gray-600 dark:text-gray-400">
             Posts
           </h2>
-          <section className="mx-auto mt-3 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <section className="mx-auto mt-3 grid grid-cols-1 gap-4 md:grid-cols-2">
             {posts.map((post) => (
               <PostCard key={post._id} post={post} />
             ))}

@@ -2,7 +2,7 @@
 
 Full-stack project (Work In Progress)
 
-Personal web-site / blog displaying various posts and projects.
+Blogging site displaying various posts and projects.
 
 Functionality to create accounts, including admin accounts.
 
