@@ -1,6 +1,8 @@
+<img src="./frontend/src/assets/mern-blog_readme_header.svg" alt="Blogging Site readme header" />
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-# Blog
+# Blogging Site
 
 React / JavaScript application
 
@@ -8,19 +10,37 @@ React / JavaScript application
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Live Version](#live-version)
 - [Contact Info](#contact-info)
 
 ## <a id="introduction"></a>🔎 Introduction
 
-Blogging site displaying various posts and projects.
+Blogging site is a full-stack platform displaying various posts, projects and users comments.
 
 ## <a id="features"></a>📌 Features
 
-- Functionality to create accounts, including admin accounts.
-- Functionality to add and edit comments.
-- Functionality to monitor various statistics for the site.
+- Create account (standard or admin account)
+- Google authentication or standard name/email/password sign up
+- Manage account (edit user's profile picture/name/email/password + account deletion)
+- Content management system (write/edit/delete posts and comments)
+- Monitor blog statistics (view number of users/posts/comments)
+- Search for posts based on search terms and/or category (+ sort posts based on date)
+
+## <a id="screenshots"></a>📷 Screenshots
+
+### Recent posts
+
+<img src="./frontend/src/assets/mern-blog_recent_posts.svg" alt="Blogging Site recent posts section" />
+
+**Caption:** Section displaying recent posts.
+
+### Account management
+
+<img src="./frontend/src/assets/mern-blog_account_management.svg" alt="Blogging Site account management section" />
+
+**Caption:** User's account management section.
 
 ## <a id="tech-stack"></a>⚙️ Tech Stack
 
@@ -33,10 +53,13 @@ Blogging site displaying various posts and projects.
 - Mongo DB
 - Express
 - Node.js
+- Render
 
 ## <a id="live-version"></a>🔗 Live Version
 
-### [Blog](https://mern-blog-chsq.onrender.com/)
+### [Blogging Site](https://mern-blog-chsq.onrender.com/)
+
+**Note:** Current live version takes a few minutes to load.
 
 ## <a id="contact-info"></a>📫 Contact info
 
