@@ -8,7 +8,8 @@ export default function About() {
         About me
       </h1>
       <h2 className="text-center text-xl text-gray-600 dark:text-gray-400">
-        Web Developer | React.js | JavaScript | CSS | HTML | Tailwind CSS | Git
+        Developer | Technical Consultant | React | JavaScript | CSS | HTML |
+        Tailwind CSS | Git
       </h2>
       <section className="flex gap-2 sm:gap-4">
         <Link

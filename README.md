@@ -65,8 +65,8 @@ Blogging site is a full-stack platform displaying various posts, projects and us
 
 ### Bio Link ⬇️
 
-<a href="https://dimterion.bio.link/">
-  <img src="https://raw.githubusercontent.com/Dimterion/Dimterion/1521172f216f8f90db6b3b986c1cbb19994847eb/images/bio_link_image.svg" alt="Mern-blog readme header" />
+<a href="https://linktr.ee/dimterion">
+  <img src="https://raw.githubusercontent.com/Dimterion/Dimterion/1521172f216f8f90db6b3b986c1cbb19994847eb/images/bio_link_image.svg" alt="Dimterion profile links image" />
 </a>
 
 **Note:** Ctrl+Click (Windows/Linux) or Cmd+Click (macOS) the image to open link in a new tab.
