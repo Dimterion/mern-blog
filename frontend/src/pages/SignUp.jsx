@@ -63,12 +63,23 @@ export default function SignUp() {
             <span>site</span>
           </Link>
           <p className="mt-5 text-sm">
-            Sign up with your email and password or your Google account.*
+            Sign up with your email and password or your Google account.
           </p>
           <aside className="mt-8 text-xs">
-            *Please note that the site is in Work In Progress state which means
-            that it may change in the future and any saved data may be deleted
-            from it.
+            <strong>Privacy notice:</strong> this site is currently a portfolio
+            project and is in a Work In Progress state. Users can create
+            accounts and use the site, but please note that any data entered may
+            be deleted or altered as the site evolves. Basic information such as
+            email and name is collected for authentication purposes using{" "}
+            <a
+              href="https://www.mongodb.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              MongoDB
+            </a>
+            . Data is stored using MongoDB as well.
           </aside>
         </article>
         <article className="relative flex-1">

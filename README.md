@@ -63,7 +63,7 @@ Blogging site is a full-stack platform displaying various posts, projects and us
 
 ## <a id="contact-info"></a>📫 Contact info
 
-### Bio Link ⬇️
+### Profile Links ⬇️
 
 <a href="https://linktr.ee/dimterion">
   <img src="https://raw.githubusercontent.com/Dimterion/Dimterion/1521172f216f8f90db6b3b986c1cbb19994847eb/images/bio_link_image.svg" alt="Dimterion profile links image" />
